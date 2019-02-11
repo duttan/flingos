@@ -37,9 +37,9 @@ public class StarterApplication extends Application {
     );
 
 
-    ParseObject object = new ParseObject("ExampleObject");
+    ParseObject object = new ParseObject("ExampleObject1");
     object.put("myNumber", "123");
-    object.put("myString", "rob");
+    object.put("myString", "neetu");
 
     object.saveInBackground(new SaveCallback () {
       @Override

@@ -1,6 +1,42 @@
 [
     {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\password.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\password.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\user.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\user.png"
+    },
+    {
         "merged": "C:\\Users\\dutta\\AndroidStudioProjects\\Instagram\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\dutta\\AndroidStudioProjects\\Instagram\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\error.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\error.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\location.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\location.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\close.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\close.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\phone.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\phone.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\email.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\email.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\confirm_password.png",
+        "source": "C:\\Users\\666299\\AS projects\\flingos\\ParseStarterProject\\src\\main\\res\\mipmap-hdpi\\confirm_password.png"
     }
 ]
