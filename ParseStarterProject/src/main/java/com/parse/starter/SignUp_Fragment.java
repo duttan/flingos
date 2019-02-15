@@ -17,22 +17,55 @@ import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class SignUp_Fragment extends Fragment implements View.OnClickListener {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class SignUp_Fragment extends Fragment {
 
     private  View view;
-    private  EditText fullName, emailId, mobileNumber, location,
-            password, confirmPassword;
-    private  TextView login;
-    private  Button signUpButton;
-    private  CheckBox terms_conditions;
+    @BindView(R.id.fullName)
+    EditText fullName;
+    @BindView(R.id.userEmailId)
+    EditText emailId;
+    @BindView(R.id.mobileNumber)
+    EditText mobileNumber;
+    @BindView(R.id.location)
+    EditText location;
+    @BindView(R.id.password)
+    EditText password;
+    @BindView(R.id.confirmPassword)
+    EditText confirmPassword;
+    @BindView(R.id.already_user)
+    TextView login;
+    @BindView(R.id.signUpBtn)
+    Button signUpButton;
+    @BindView(R.id.terms_conditions)
+    CheckBox terms_conditions;
 
-    public SignUp_Fragment() {
+    @OnClick({R.id.signUpBtn,R.id.already_user})
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.signUpBtn:
+                // Call checkValidation method
+                checkValidation();
+                break;
+
+            case R.id.already_user:
+                // Replace login fragment
+                new MainActivity().replaceLoginFragment();
+                break;
+        }
+    }
+        public SignUp_Fragment() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.signup_layout, container, false);
+        ButterKnife.bind(view);
         initViews();
         setListeners();
         return view;
@@ -41,22 +74,10 @@ public class SignUp_Fragment extends Fragment implements View.OnClickListener {
 
 
     private void initViews() {
-        fullName = (EditText) view.findViewById(R.id.fullName);
-        emailId = (EditText) view.findViewById(R.id.userEmailId);
-        mobileNumber = (EditText) view.findViewById(R.id.mobileNumber);
-        location = (EditText) view.findViewById(R.id.location);
-        password = (EditText) view.findViewById(R.id.password);
-        confirmPassword = (EditText) view.findViewById(R.id.confirmPassword);
-        signUpButton = (Button) view.findViewById(R.id.signUpBtn);
-        login = (TextView) view.findViewById(R.id.already_user);
-        terms_conditions = (CheckBox) view.findViewById(R.id.terms_conditions);
-
         // Setting text selector over textviews
         @SuppressLint("ResourceType") XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
         try {
-            ColorStateList csl = ColorStateList.createFromXml(getResources(),
-                    xrp);
-
+            ColorStateList csl = ColorStateList.createFromXml(getResources(), xrp);
             login.setTextColor(csl);
             terms_conditions.setTextColor(csl);
         } catch (Exception e) {
@@ -65,30 +86,11 @@ public class SignUp_Fragment extends Fragment implements View.OnClickListener {
 
 
     private void setListeners() {
-        signUpButton.setOnClickListener(this);
-        login.setOnClickListener(this);
+       // signUpButton.setOnClickListener(this);
+        //login.setOnClickListener(this);
     }
 
 
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.signUpBtn:
-
-                // Call checkValidation method
-                checkValidation();
-                break;
-
-            case R.id.already_user:
-
-                // Replace login fragment
-                new MainActivity().replaceLoginFragment();
-                break;
-        }
-
-
-    }
 
     private void checkValidation() {
         String getFullName = fullName.getText().toString();
@@ -111,7 +113,7 @@ public class SignUp_Fragment extends Fragment implements View.OnClickListener {
                 || getConfirmPassword.equals("")
                 || getConfirmPassword.length() == 0)
 
-            new CustomToast().Show_Toast(getActivity(), view,
+            new CustomToast().Show_Toast(getActivity(), getView(),
                     "All fields are required.");
 
             // Check if email id valid or not

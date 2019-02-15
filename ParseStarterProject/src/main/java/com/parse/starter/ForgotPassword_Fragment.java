@@ -15,17 +15,39 @@ import android.widget.Toast;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ForgotPassword_Fragment extends Fragment implements View.OnClickListener {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class ForgotPassword_Fragment extends Fragment {
+
     private View view;
+    @BindView(R.id.registered_emailid) EditText emailId;
+    @BindView(R.id.backToLoginBtn) TextView submit;
+    @BindView(R.id.forgot_button) TextView back;
 
-    private  EditText emailId;
-    private  TextView submit, back;
+    @OnClick({R.id.backToLoginBtn,R.id.forgot_button})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.backToLoginBtn:
+                // Replace Login Fragment on Back Presses
+                new MainActivity().replaceLoginFragment();
+                break;
 
+            case R.id.forgot_button:
+                // Call Submit button task
+                submitButtonTask();
+                break;
+
+        }
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.forgotpassword_layout, container,
                 false);
+        ButterKnife.bind(view);
         initViews();
         setListeners();
         return view;
@@ -34,17 +56,10 @@ public class ForgotPassword_Fragment extends Fragment implements View.OnClickLis
 
 
     private void initViews() {
-
-        emailId = (EditText) view.findViewById(R.id.registered_emailid);
-        submit = (TextView) view.findViewById(R.id.forgot_button);
-        back = (TextView) view.findViewById(R.id.backToLoginBtn);
-
         // Setting text selector over textviews
         @SuppressLint("ResourceType") XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
         try {
-            ColorStateList csl = ColorStateList.createFromXml(getResources(),
-                    xrp);
-
+            ColorStateList csl = ColorStateList.createFromXml(getResources(),xrp);
             back.setTextColor(csl);
             submit.setTextColor(csl);
 
@@ -55,38 +70,18 @@ public class ForgotPassword_Fragment extends Fragment implements View.OnClickLis
     }
 
     private void setListeners() {
-        back.setOnClickListener(this);
-        submit.setOnClickListener(this);
+       // back.setOnClickListener(this);
+        //submit.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.backToLoginBtn:
 
-                // Replace Login Fragment on Back Presses
-                new MainActivity().replaceLoginFragment();
-                break;
-
-            case R.id.forgot_button:
-
-                // Call Submit button task
-                submitButtonTask();
-                break;
-
-        }
-
-    }
 
     private void submitButtonTask() {
         String getEmailId = emailId.getText().toString();
-
         // Pattern for email id validation
         Pattern p = Pattern.compile(Utils.regEx);
-
         // Match the pattern
         Matcher m = p.matcher(getEmailId);
-
         // First check if email id is not null else show error toast
         if (getEmailId.equals("") || getEmailId.length() == 0)
 
