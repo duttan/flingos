@@ -13,7 +13,7 @@ import com.parse.ParseAnalytics;
 public class MainActivity extends AppCompatActivity {
 
   private static android.support.v4.app.FragmentManager fragmentManager;
-
+  LoginFragment loginFragment = LoginFragment.newInstance();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -21,35 +21,33 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
     fragmentManager = getSupportFragmentManager();
 
-    // If savedinstnacestate is null then replace login fragment
+
     if (savedInstanceState == null) {
       fragmentManager
               .beginTransaction()
-              .replace(R.id.frameContainer, new LoginFragment(),
-                      Utils.Login_Fragment).commit();
+              .replace(R.id.frameContainer, loginFragment, Utils.Login_Fragment)
+              .addToBackStack(null)
+              .commit();
     }
 
-    // On close icon click finish activity
+
     findViewById(R.id.close_activity).setOnClickListener(
             new View.OnClickListener() {
-
               @Override
               public void onClick(View arg0) {
                 finish();
-
-              }
+                }
             });
 
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
   }
 
-  protected void replaceLoginFragment() {
+  public void replaceLoginFragment() {
     fragmentManager
             .beginTransaction()
             .setCustomAnimations(R.anim.left_enter, R.anim.right_out)
-            .replace(R.id.frameContainer, new LoginFragment(),
-                    Utils.Login_Fragment).commit();
+            .replace(R.id.frameContainer, loginFragment, Utils.Login_Fragment).commit();
   }
 
 

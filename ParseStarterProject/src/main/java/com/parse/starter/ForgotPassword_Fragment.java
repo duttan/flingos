@@ -43,11 +43,23 @@ public class ForgotPassword_Fragment extends Fragment {
 
     }
 
+    public ForgotPassword_Fragment()
+    {}
+
+    public static ForgotPassword_Fragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        ForgotPassword_Fragment fragment = new ForgotPassword_Fragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.forgotpassword_layout, container,
                 false);
-        ButterKnife.bind(view);
+        ButterKnife.bind(this,view);
         initViews();
         setListeners();
         return view;

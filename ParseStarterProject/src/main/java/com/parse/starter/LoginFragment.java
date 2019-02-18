@@ -3,6 +3,7 @@ package com.parse.starter;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ public class LoginFragment extends android.support.v4.app.Fragment {
 
     private  View view;
     private  Animation shakeAnimation;
-    private  android.support.v4.app.FragmentManager fragmentManager;
+
 
     @BindView(R.id.login_emailid)
     EditText emailid;
@@ -50,8 +51,7 @@ public class LoginFragment extends android.support.v4.app.Fragment {
     @BindView(R.id.login_layout)
     LinearLayout loginLayout;
 
-
-    @OnClick({R.id.loginBtn,R.id.forgot_password,R.id.createAccount})
+    @OnClick({R.id.loginBtn,R.id.forgot_password,R.id.createAccount,R.id.show_hide_password})
     public void onClick(View view) {
 
         switch (view.getId()) {
@@ -60,7 +60,7 @@ public class LoginFragment extends android.support.v4.app.Fragment {
                 break;
 
             case R.id.forgot_password:
-                fragmentManager
+                getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
                         .replace(R.id.frameContainer,
@@ -70,25 +70,58 @@ public class LoginFragment extends android.support.v4.app.Fragment {
 
 
             case R.id.createAccount:
-                fragmentManager
+                getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
                         .replace(R.id.frameContainer, new SignUp_Fragment(),
                                 Utils.SignUp_Fragment).commit();
                 break;
+
+
+            case R.id.show_hide_password:
+                show_hide_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                        // If it is checked then show password else hide
+                        // password
+                        if (b){
+
+                            show_hide_password.setText(R.string.hide_pwd);// change // checkbox // text
+                            password.setInputType(InputType.TYPE_CLASS_TEXT);
+                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());       // show password
+                        } else {
+                            show_hide_password.setText(R.string.show_pwd);// change // checkbox // text
+                            password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());         // hide password
+
+                        }
+
+                    }
+                });
         }
     }
 
+    public LoginFragment() {
 
+    }
+
+    public static LoginFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        LoginFragment fragment = new LoginFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.login_layout, container, false);
-        ButterKnife.bind( view);
+        ButterKnife.bind(this,view);
         initViews();
-        setListeners();
         return view;
     }
+
 
 
     private void initViews() {
@@ -106,50 +139,6 @@ public class LoginFragment extends android.support.v4.app.Fragment {
         }
 
     }
-
-
-
-
-    private void setListeners() {
-//        loginButton.setOnClickListener(this);
-//        forgotPassword.setOnClickListener(this);
-//        signUp.setOnClickListener(this);
-// Set check listener over checkbox for showing and hiding password
-
-//        show_hide_password
-//                .setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//
-//                    @Override
-//                    public void onCheckedChanged(CompoundButton button, boolean isChecked) {
-//
-//                        // If it is checkec then show password else hide
-//                        // password
-//                        if (isChecked) {
-//
-//                            show_hide_password.setText(R.string.hide_pwd);// change
-//                            // checkbox
-//                            // text
-//
-//                            password.setInputType(InputType.TYPE_CLASS_TEXT);
-//                            password.setTransformationMethod(HideReturnsTransformationMethod
-//                                    .getInstance());// show password
-//                        } else {
-//                            show_hide_password.setText(R.string.show_pwd);// change
-//                            // checkbox
-//                            // text
-//
-//                            password.setInputType(InputType.TYPE_CLASS_TEXT
-//                                    | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-//                            password.setTransformationMethod(PasswordTransformationMethod
-//                                    .getInstance());// hide password
-//
-//                        }
-//
-//                    }
-//                });
-
-    }
-
 
     private void checkValidation() {
         // Get email id and password

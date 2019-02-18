@@ -58,14 +58,26 @@ public class SignUp_Fragment extends Fragment {
                 break;
         }
     }
-        public SignUp_Fragment() {
+
+
+    public SignUp_Fragment()
+    {
 
     }
+    public static SignUp_Fragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        SignUp_Fragment fragment = new SignUp_Fragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.signup_layout, container, false);
-        ButterKnife.bind(view);
+        ButterKnife.bind(this,view);
         initViews();
         setListeners();
         return view;
@@ -113,28 +125,23 @@ public class SignUp_Fragment extends Fragment {
                 || getConfirmPassword.equals("")
                 || getConfirmPassword.length() == 0)
 
-            new CustomToast().Show_Toast(getActivity(), getView(),
-                    "All fields are required.");
+            new CustomToast().Show_Toast(getActivity(), getView(), "All fields are required.");
 
-            // Check if email id valid or not
+        // Check if email id valid or not
         else if (!m.find())
-            new CustomToast().Show_Toast(getActivity(), view,
-                    "Your Email Id is Invalid.");
+            new CustomToast().Show_Toast(getActivity(), view, "Your Email Id is Invalid.");
 
             // Check if both password should be equal
         else if (!getConfirmPassword.equals(getPassword))
-            new CustomToast().Show_Toast(getActivity(), view,
-                    "Both password doesn't match.");
+            new CustomToast().Show_Toast(getActivity(), view, "Both password doesn't match.");
 
             // Make sure user should check Terms and Conditions checkbox
         else if (!terms_conditions.isChecked())
-            new CustomToast().Show_Toast(getActivity(), view,
-                    "Please select Terms and Conditions.");
+            new CustomToast().Show_Toast(getActivity(), view, "Please select Terms and Conditions.");
 
             // Else do signup or do your stuff
         else
-            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT)
-                    .show();
+            Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT).show();
 
     }
 }
