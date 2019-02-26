@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toast_root"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="#ffffff"
+    android:layout_height="80dp"
+    android:background="@color/white_greyish"
     android:padding="5dp">
 
     <TextView
@@ -14,7 +14,6 @@
         android:drawableLeft="@mipmap/error"
         android:drawableStart="@mipmap/error"
         android:drawablePadding="10dp"
-        android:gravity="center_vertical"
         android:padding="5dp"
         android:textColor="#c0392b"
         android:textSize="15sp" />

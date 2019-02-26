@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,7 +32,8 @@ public class ForgotPassword_Fragment extends Fragment {
         switch (view.getId()) {
             case R.id.backToLoginBtn:
                 // Replace Login Fragment on Back Presses
-                new MainActivity().replaceLoginFragment();
+               // new MainActivity().replaceLoginFragment();
+                getFragmentManager().popBackStack();
                 break;
 
             case R.id.forgot_button:
@@ -87,11 +89,16 @@ public class ForgotPassword_Fragment extends Fragment {
     }
 
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
     private void submitButtonTask() {
         String getEmailId = emailId.getText().toString();
         // Pattern for email id validation
-        Pattern p = Pattern.compile(Utils.regEx);
+        Pattern p = Pattern.compile(Utils.regExemail);
         // Match the pattern
         Matcher m = p.matcher(getEmailId);
         // First check if email id is not null else show error toast

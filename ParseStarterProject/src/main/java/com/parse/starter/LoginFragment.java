@@ -7,9 +7,13 @@ import android.app.FragmentTransaction;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,15 +26,22 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.jakewharton.rxbinding.widget.RxTextView;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Observable;
+import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
+import rx.functions.Func1;
+import rx.functions.Func2;
 
-public class LoginFragment extends android.support.v4.app.Fragment {
+public class LoginFragment extends BaseFragment{
 
     private  View view;
     private  Animation shakeAnimation;
@@ -50,22 +61,24 @@ public class LoginFragment extends android.support.v4.app.Fragment {
     CheckBox show_hide_password;
     @BindView(R.id.login_layout)
     LinearLayout loginLayout;
+    Pattern p_mail = Pattern.compile(Utils.regExemail);
+    Pattern p_pass = Pattern.compile(Utils.regExpass);
+    Matcher m_mail,m1_pass;
 
     @OnClick({R.id.loginBtn,R.id.forgot_password,R.id.createAccount,R.id.show_hide_password})
     public void onClick(View view) {
 
         switch (view.getId()) {
             case R.id.loginBtn:
-                checkValidation();
+
                 break;
 
             case R.id.forgot_password:
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
-                        .replace(R.id.frameContainer,
-                                new ForgotPassword_Fragment(),
-                                Utils.ForgotPassword_Fragment).commit();
+                        .addToBackStack(null)
+                        .add(R.id.frameContainer, new ForgotPassword_Fragment(), Utils.ForgotPassword_Fragment).commit();
                 break;
 
 
@@ -73,8 +86,8 @@ public class LoginFragment extends android.support.v4.app.Fragment {
                 getActivity().getSupportFragmentManager()
                         .beginTransaction()
                         .setCustomAnimations(R.anim.right_enter, R.anim.left_out)
-                        .replace(R.id.frameContainer, new SignUp_Fragment(),
-                                Utils.SignUp_Fragment).commit();
+                        .addToBackStack(null)
+                        .add(R.id.frameContainer, new SignUp_Fragment(), Utils.SignUp_Fragment).commit();
                 break;
 
 
@@ -85,7 +98,6 @@ public class LoginFragment extends android.support.v4.app.Fragment {
                         // If it is checked then show password else hide
                         // password
                         if (b){
-
                             show_hide_password.setText(R.string.hide_pwd);// change // checkbox // text
                             password.setInputType(InputType.TYPE_CLASS_TEXT);
                             password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());       // show password
@@ -122,7 +134,132 @@ public class LoginFragment extends android.support.v4.app.Fragment {
         return view;
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        Observable<CharSequence> emailobservable = RxTextView.textChanges(emailid);
+        Observable<CharSequence> passobservable = RxTextView.textChanges(password);
+
+
+        Subscription emailsubscription = emailobservable
+                .doOnNext(new Action1<CharSequence>() {
+                    @Override
+                    public void call(CharSequence charSequence)
+                    { }
+                })
+                .debounce(500,TimeUnit.MICROSECONDS)
+                .filter(new Func1<CharSequence, Boolean>() {
+                    @Override
+                    public Boolean call(CharSequence charSequence) {
+                        return !TextUtils.isEmpty(charSequence);
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<CharSequence>() {
+                    @Override
+                    public void onCompleted() { }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        }
+
+                    @Override
+                    public void onNext(CharSequence charSequence) {
+
+                        Boolean isEmailValid = validateEmail(charSequence.toString());
+                        if (!isEmailValid) {
+                            showmailtoast();
+
+                        }
+
+                    }
+                });
+    compositeSubscription.add(emailsubscription);
+
+        Subscription passsubscription = passobservable
+                .doOnNext(new Action1<CharSequence>() {
+                    @Override
+                    public void call(CharSequence charSequence) {
+
+                    }
+                })
+                .debounce(500,TimeUnit.MICROSECONDS)
+                .filter(new Func1<CharSequence, Boolean>() {
+                    @Override
+                    public Boolean call(CharSequence charSequence) {
+                        return !TextUtils.isEmpty(charSequence);
+                    }
+                })
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<CharSequence>() {
+                    @Override
+                    public void onCompleted() { }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        }
+
+                    @Override
+                    public void onNext(CharSequence charSequence) {
+
+                        Boolean isPasswordValid = validatePass(charSequence.toString());
+                        if (!isPasswordValid) {
+                            showpasstoast();
+                        }
+
+                    }
+                });
+
+        compositeSubscription.add(passsubscription);
+
+        Subscription SignInFieldsSubscription = Observable.combineLatest(emailobservable, passobservable, new Func2<CharSequence, CharSequence, Boolean>() {
+            @Override
+            public Boolean call(CharSequence email, CharSequence pass) {
+                boolean isEmailValid = validateEmail(email);
+                boolean isPasswordValid = validatePass(pass);
+
+                return isEmailValid && isPasswordValid;
+            }
+        })
+        .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<Boolean>() {
+                    @Override
+                    public void onCompleted()
+                            { }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+
+                    }
+
+                    @Override
+                    public void onNext(Boolean valid_fields) {
+                        if(!valid_fields) {
+                            disableSignIn();
+                        }
+                        else
+                        {
+                            enableSignIn();
+                        }
+
+                    }
+                });
+
+        compositeSubscription.add(SignInFieldsSubscription);
+
+    }
+
+        //Region Helper Methods
 
     private void initViews() {
         // Load ShakeAnimation
@@ -140,32 +277,44 @@ public class LoginFragment extends android.support.v4.app.Fragment {
 
     }
 
-    private void checkValidation() {
-        // Get email id and password
-        String getEmailId = emailid.getText().toString();
-        String getPassword = password.getText().toString();
 
-        // Check patter for email id
-        Pattern p = Pattern.compile(Utils.regEx);
 
-        Matcher m = p.matcher(getEmailId);
-
-        // Check for both field is empty or not
-        if (getEmailId.equals("") || getEmailId.length() == 0
-                || getPassword.equals("") || getPassword.length() == 0) {
-            loginLayout.startAnimation(shakeAnimation);
-            new CustomToast().Show_Toast(getActivity(), view,
-                    "Enter both credentials.");
-
-        }
-        // Check if email id is valid or not
-        else if (!m.find())
-            new CustomToast().Show_Toast(getActivity(), view,
-                    "Your Email Id is Invalid.");
-            // Else do login and do your stuff
-        else
-            Toast.makeText(getActivity(), "Do Login.", Toast.LENGTH_SHORT)
-                    .show();
-
+    private boolean validateEmail(CharSequence email)
+    {
+        if (TextUtils.isEmpty(email))
+            return false;
+        m_mail = p_mail.matcher(email);
+        return m_mail.matches();
     }
+
+    private boolean validatePass(CharSequence pass)
+    {
+        if (TextUtils.isEmpty(pass))
+            return false;
+        m1_pass = p_pass.matcher(pass);
+        return m1_pass.matches();
+    }
+
+    private void showmailtoast()
+    {
+        CustomToast.Show_Toast(getActivity(), view, getString(R.string.mail_error_toast));
+    }
+
+    private void showpasstoast()
+    {
+        CustomToast.Show_Toast(getActivity(), view, getString(R.string.pass_error_toast));
+    }
+
+    private void enableSignIn(){
+
+        loginButton.setEnabled(true);
+        loginButton.setTextColor(ContextCompat.getColor(getContext(), R.color.background_color));
+    }
+
+    private void disableSignIn(){
+
+        loginButton.setEnabled(false);
+        loginButton.setTextColor(ContextCompat.getColor(getContext(), android.R.color.darker_gray));
+    }
+
 }

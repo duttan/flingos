@@ -11,15 +11,13 @@ import android.widget.Toast;
 public class CustomToast {
 
     // Custom Toast Method
-    public void Show_Toast(Context context, View view, String error) {
+    public static void Show_Toast(Context context, View view, String error) {
 
         // Layout Inflater for inflating custom view
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         // inflate the layout over view
-        View layout = inflater.inflate(R.layout.custom_toast,
-                (ViewGroup) view.findViewById(R.id.toast_root));
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) view.findViewById(R.id.toast_root));
 
         // Get TextView id and set error
         TextView text = (TextView) layout.findViewById(R.id.toast_error);
