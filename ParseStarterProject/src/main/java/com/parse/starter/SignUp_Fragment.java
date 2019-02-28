@@ -15,6 +15,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,6 +48,9 @@ public class SignUp_Fragment extends Fragment {
     Button signUpButton;
     @BindView(R.id.terms_conditions)
     CheckBox terms_conditions;
+    private Boolean signup_flag;
+    static int accountno;
+
 
     @OnClick({R.id.signUpBtn,R.id.already_user})
     public void onClick(View view) {
@@ -50,6 +58,11 @@ public class SignUp_Fragment extends Fragment {
         {
             case R.id.signUpBtn:
                 checkValidation();
+                if(signup_flag)
+                {
+                    do_regrisration();
+                }
+
                 break;
 
             case R.id.already_user:
@@ -58,11 +71,8 @@ public class SignUp_Fragment extends Fragment {
         }
     }
 
-
     public SignUp_Fragment()
-    {
-
-    }
+    { }
     public static SignUp_Fragment newInstance() {
 
         Bundle args = new Bundle();
@@ -139,6 +149,40 @@ public class SignUp_Fragment extends Fragment {
             // Else do signup or do your stuff
         else
             Toast.makeText(getActivity(), "Do SignUp.", Toast.LENGTH_SHORT).show();
+            signup_flag = true;
 
     }
+
+    private void do_regrisration()
+    {
+        ParseObject object = new ParseObject("flingos"+accountno);
+        accountno++;
+        ParseUser user = new ParseUser();
+        user.setUsername(fullName.getText().toString());
+        user.setPassword(confirmPassword.getText().toString());
+        user.setEmail(emailId.getText().toString());
+
+        object.put(object.getClassName(),user);
+        object.put("location",location.getText().toString());
+        object.put("mobile_number",mobileNumber.getText().toString());
+
+        user.signUpInBackground(new SignUpCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e == null)
+                {
+                    Toast.makeText(getActivity(), "Signup successfull", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
+
+    }
+
+
 }

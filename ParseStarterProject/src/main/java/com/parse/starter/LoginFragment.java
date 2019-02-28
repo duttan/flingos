@@ -27,6 +27,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.jakewharton.rxbinding.widget.RxTextView;
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,9 +47,9 @@ import rx.functions.Func2;
 
 public class LoginFragment extends BaseFragment{
 
-    private  View view;
-    private  Animation shakeAnimation;
-
+    private View view;
+    private Animation shakeAnimation;
+    private Boolean signin_flag;
 
     @BindView(R.id.login_emailid)
     EditText emailid;
@@ -70,6 +74,11 @@ public class LoginFragment extends BaseFragment{
 
         switch (view.getId()) {
             case R.id.loginBtn:
+
+                if(signin_flag)
+                {
+                    do_login();
+                }
 
                 break;
 
@@ -250,6 +259,7 @@ public class LoginFragment extends BaseFragment{
                         else
                         {
                             enableSignIn();
+                            signin_flag = true;
                         }
 
                     }
@@ -315,6 +325,25 @@ public class LoginFragment extends BaseFragment{
 
         loginButton.setEnabled(false);
         loginButton.setTextColor(ContextCompat.getColor(getContext(), android.R.color.darker_gray));
+    }
+
+    private void do_login()
+    {
+        ParseUser.logInInBackground(emailid.getText().toString(), password.getText().toString(), new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+
+                if(user != null)
+                {
+                    Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
     }
 
 }

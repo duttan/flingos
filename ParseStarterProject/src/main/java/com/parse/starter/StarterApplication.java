@@ -41,6 +41,7 @@ public class StarterApplication extends Application {
     object.put("myNumber", "123");
     object.put("myString", "neetu");
 
+
     object.saveInBackground(new SaveCallback () {
       @Override
       public void done(ParseException ex) {
