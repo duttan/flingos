@@ -31,13 +31,10 @@ public class ForgotPassword_Fragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.backToLoginBtn:
-                // Replace Login Fragment on Back Presses
-               // new MainActivity().replaceLoginFragment();
                 getFragmentManager().popBackStack();
                 break;
 
             case R.id.forgot_button:
-                // Call Submit button task
                 submitButtonTask();
                 break;
 
@@ -63,7 +60,7 @@ public class ForgotPassword_Fragment extends Fragment {
                 false);
         ButterKnife.bind(this,view);
         initViews();
-        setListeners();
+
         return view;
     }
 
@@ -83,10 +80,7 @@ public class ForgotPassword_Fragment extends Fragment {
 
     }
 
-    private void setListeners() {
-       // back.setOnClickListener(this);
-        //submit.setOnClickListener(this);
-    }
+
 
 
     @Override

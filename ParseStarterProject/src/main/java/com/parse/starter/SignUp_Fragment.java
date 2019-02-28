@@ -49,13 +49,10 @@ public class SignUp_Fragment extends Fragment {
         switch (view.getId())
         {
             case R.id.signUpBtn:
-                // Call checkValidation method
                 checkValidation();
                 break;
 
             case R.id.already_user:
-                // Replace login fragment
-                //new MainActivity().replaceLoginFragment();
                 getFragmentManager().popBackStack();
                 break;
         }
@@ -81,7 +78,6 @@ public class SignUp_Fragment extends Fragment {
         view = inflater.inflate(R.layout.signup_layout, container, false);
         ButterKnife.bind(this,view);
         initViews();
-        setListeners();
         return view;
     }
 
@@ -96,12 +92,6 @@ public class SignUp_Fragment extends Fragment {
             terms_conditions.setTextColor(csl);
         } catch (Exception e) {
         }
-    }
-
-
-    private void setListeners() {
-       // signUpButton.setOnClickListener(this);
-        //login.setOnClickListener(this);
     }
 
 
