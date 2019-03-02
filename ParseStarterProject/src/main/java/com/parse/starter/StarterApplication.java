@@ -32,26 +32,25 @@ public class StarterApplication extends Application {
     Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
             .applicationId("7d7404f7b6393e56c488e617e0cdf3cd09a46f60")
             .clientKey("fd2ac272a2653d515b721c6572db12634e409c20")
-            .server("http://3.17.180.214:80/parse/")
+            .server("http://3.17.191.32:80/parse/")
             .build()
     );
 
 
-    ParseObject object = new ParseObject("ExampleObject1");
-    object.put("myNumber", "123");
-    object.put("myString", "neetu");
-
-
-    object.saveInBackground(new SaveCallback () {
-      @Override
-      public void done(ParseException ex) {
-        if (ex == null) {
-          Log.i("Parse Result", "Successful!");
-        } else {
-          Log.i("Parse Result", "Failed" + ex.toString());
-        }
-      }
-    });
+//test
+//    ParseObject object = new ParseObject("ExampleObject1");
+//    object.put("myNumber", "123");
+//    object.put("myString", "neetu");
+//    object.saveInBackground(new SaveCallback () {
+//      @Override
+//      public void done(ParseException ex) {
+//        if (ex == null) {
+//          Log.i("Parse Result", "Successful!");
+//        } else {
+//          Log.i("Parse Result", "Failed" + ex.toString());
+//        }
+//      }
+//    });
 
 
     ParseUser.enableAutomaticUser();

@@ -6,6 +6,7 @@ import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 import java.util.regex.Matcher;
@@ -109,6 +112,7 @@ public class SignUp_Fragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+
     }
 
     private void checkValidation() {
@@ -155,16 +159,15 @@ public class SignUp_Fragment extends Fragment {
 
     private void do_regrisration()
     {
-        ParseObject object = new ParseObject("flingos"+accountno);
         accountno++;
         ParseUser user = new ParseUser();
         user.setUsername(fullName.getText().toString());
         user.setPassword(confirmPassword.getText().toString());
         user.setEmail(emailId.getText().toString());
+        user.put("user_id",accountno);
+        user.put("phone_num",mobileNumber.getText().toString());
+        user.put("location",location.getText().toString());
 
-        object.put(object.getClassName(),user);
-        object.put("location",location.getText().toString());
-        object.put("mobile_number",mobileNumber.getText().toString());
 
         user.signUpInBackground(new SignUpCallback() {
             @Override
@@ -179,6 +182,10 @@ public class SignUp_Fragment extends Fragment {
                 }
             }
         });
+
+
+
+
 
 
 
