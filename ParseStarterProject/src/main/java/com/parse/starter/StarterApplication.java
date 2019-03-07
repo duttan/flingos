@@ -24,7 +24,7 @@ public class StarterApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-
+    Log.i("@@class:  ","StaterApplication");
     // Enable Local Datastore.
     Parse.enableLocalDatastore(this);
 
@@ -53,7 +53,7 @@ public class StarterApplication extends Application {
 //    });
 
 
-    ParseUser.enableAutomaticUser();
+    //ParseUser.enableAutomaticUser();
     ParseACL defaultACL = new ParseACL();
     defaultACL.setPublicReadAccess(true);
     defaultACL.setPublicWriteAccess(true);

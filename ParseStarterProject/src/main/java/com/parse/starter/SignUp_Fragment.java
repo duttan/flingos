@@ -1,6 +1,8 @@
 package com.parse.starter;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -30,7 +33,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class SignUp_Fragment extends Fragment {
+public class SignUp_Fragment extends BaseFragment {
 
     private  View view;
     @BindView(R.id.fullName)
@@ -53,6 +56,8 @@ public class SignUp_Fragment extends Fragment {
     CheckBox terms_conditions;
     private Boolean signup_flag;
     static int accountno;
+
+    UserSession session;
 
 
     @OnClick({R.id.signUpBtn,R.id.already_user})
@@ -112,6 +117,7 @@ public class SignUp_Fragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        session = new UserSession(getContext());
 
     }
 
@@ -157,6 +163,30 @@ public class SignUp_Fragment extends Fragment {
 
     }
 
+    private void do_instant_login()
+    {
+        showProgressDialog();
+        ParseUser.logInInBackground(emailId.getText().toString(), password.getText().toString(), new LogInCallback() {
+            @Override
+            public void done(ParseUser user, ParseException e) {
+                hideProgressDialog();
+                if(user != null)
+                {
+                    session.createUserLoginSession(emailId.getText().toString(),password.getText().toString());
+                    Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
+                    startActivity( new Intent(getActivity(),WelcomeActivity.class));
+                }
+                else
+                {
+                    Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+    }
+
+
+
     private void do_regrisration()
     {
         accountno++;
@@ -168,13 +198,16 @@ public class SignUp_Fragment extends Fragment {
         user.put("phone_num",mobileNumber.getText().toString());
         user.put("location",location.getText().toString());
 
-
+        showProgressDialog();
         user.signUpInBackground(new SignUpCallback() {
             @Override
             public void done(ParseException e) {
+                hideProgressDialog();
                 if(e == null)
                 {
                     Toast.makeText(getActivity(), "Signup successfull", Toast.LENGTH_SHORT).show();
+                    do_instant_login();
+
                 }
                 else
                 {

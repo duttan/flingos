@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;

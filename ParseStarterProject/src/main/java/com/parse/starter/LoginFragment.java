@@ -4,6 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
@@ -51,6 +55,9 @@ public class LoginFragment extends BaseFragment{
     private Animation shakeAnimation;
     private Boolean signin_flag;
 
+
+
+
     @BindView(R.id.login_emailid)
     EditText emailid;
     @BindView(R.id.login_password)
@@ -68,6 +75,8 @@ public class LoginFragment extends BaseFragment{
     Pattern p_mail = Pattern.compile(Utils.regExemail);
     Pattern p_pass = Pattern.compile(Utils.regExpass);
     Matcher m_mail,m1_pass;
+    UserSession session;
+
 
     @OnClick({R.id.loginBtn,R.id.forgot_password,R.id.createAccount,R.id.show_hide_password})
     public void onClick(View view) {
@@ -136,6 +145,13 @@ public class LoginFragment extends BaseFragment{
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+
+        hidekeyboard();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.login_layout, container, false);
         ButterKnife.bind(this,view);
@@ -147,6 +163,9 @@ public class LoginFragment extends BaseFragment{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
+        session = new UserSession(getContext());
+
+
     }
 
     @Override
@@ -260,6 +279,7 @@ public class LoginFragment extends BaseFragment{
                         {
                             enableSignIn();
                             signin_flag = true;
+
                         }
 
                     }
@@ -286,7 +306,6 @@ public class LoginFragment extends BaseFragment{
         }
 
     }
-
 
 
     private boolean validateEmail(CharSequence email)
@@ -327,18 +346,24 @@ public class LoginFragment extends BaseFragment{
         loginButton.setTextColor(ContextCompat.getColor(getContext(), android.R.color.darker_gray));
     }
 
-    private void do_login()
+    public void do_login()
     {
+
+        session.createUserLoginSession(emailid.getText().toString(),password.getText().toString());
+        showProgressDialog();
         ParseUser.logInInBackground(emailid.getText().toString(), password.getText().toString(), new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
-
+                hideProgressDialog();
                 if(user != null)
                 {
+
                     Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
+                    startActivity( new Intent(getActivity(),WelcomeActivity.class));
                 }
                 else
                 {
+                    session.logoutUser();
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
