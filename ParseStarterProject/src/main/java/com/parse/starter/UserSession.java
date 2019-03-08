@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.parse.ParseUser;
+
 import java.util.HashMap;
 
 public class UserSession {
@@ -17,14 +19,14 @@ public class UserSession {
     // All Shared Preferences Keys
     public static final String IS_USER_LOGIN = "IsUserLoggedIn";
 
-    // User name (make variable public to access from outside)
-    public static final String KEY_NAME = "Name";
-
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "Email";
 
     // password
     public static final String KEY_PASSWORD = "Password";
+
+    //session token
+    public static final String USER_SESSION_TOKEN = "SessionToken";
 
     public UserSession(Context context)
     {
@@ -33,18 +35,19 @@ public class UserSession {
         editor = pref.edit();
 
     }
-    public void createUserLoginSession(String uName, String uPassword){
+    public void createUserLoginSession(String uEmail, String uPassword){
 
         editor.putBoolean(IS_USER_LOGIN, true);
-        editor.putString(KEY_NAME, uName);
-        editor.putString(KEY_EMAIL, uPassword);
+        editor.putString(KEY_EMAIL, uEmail);
+        editor.putString(KEY_PASSWORD, uPassword);
+        editor.putString(USER_SESSION_TOKEN, ParseUser.getCurrentUser().getSessionToken());
 
         editor.commit();
     }
 
     public boolean checkLogin(){
         // Check login status
-        if(this.isUserLoggedIn()){
+        if(this.isUserLoggedIn() && this.Check_sessiontoken()){
 
             // user is not logged in redirect him to Login Activity
             Intent i = new Intent(context, WelcomeActivity.class);
@@ -69,11 +72,14 @@ public class UserSession {
         //Use hashmap to store user credentials
         HashMap<String, String> user = new HashMap<String, String>();
 
-        // user name
-        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
-
         // user email id
         user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
+
+        // user name
+        user.put(KEY_PASSWORD, pref.getString(KEY_PASSWORD, null));
+
+        // user name
+        user.put(USER_SESSION_TOKEN, pref.getString(USER_SESSION_TOKEN, null));
 
         // return user
         return user;
@@ -102,5 +108,14 @@ public class UserSession {
 
     public boolean isUserLoggedIn(){
         return pref.getBoolean(IS_USER_LOGIN, false);
+    }
+
+    public boolean Check_sessiontoken(){
+        if(pref.getString(USER_SESSION_TOKEN,"0").equals(ParseUser.getCurrentUser().getSessionToken()))
+        {
+            return true;
+        }
+
+        return false;
     }
 }

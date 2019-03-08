@@ -40,5 +40,5 @@
     <string name="mail_error_toast">\nYour Email-id is Invalid. Please enter a valid Email-id and try again. \n</string>
     <string name="pass_error_toast">Your Password should contain 6 to 20 characters string with at least one digit, one upper case letter, one lower case letter and one special symbol (“@#$%”)</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="section_format">I Am section: %1$d</string>
 </resources>

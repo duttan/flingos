@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -96,6 +97,12 @@ public class SignUp_Fragment extends BaseFragment {
         view = inflater.inflate(R.layout.signup_layout, container, false);
         ButterKnife.bind(this,view);
         initViews();
+
+        if(!checkconnection())
+        {
+            AlertDialog alert = build_Network_Error_Dialog(getContext()).create();
+            alert.show();
+        }
         return view;
     }
 
@@ -120,6 +127,7 @@ public class SignUp_Fragment extends BaseFragment {
         session = new UserSession(getContext());
 
     }
+
 
     private void checkValidation() {
         String getFullName = fullName.getText().toString();
@@ -175,6 +183,7 @@ public class SignUp_Fragment extends BaseFragment {
                     session.createUserLoginSession(emailId.getText().toString(),password.getText().toString());
                     Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
                     startActivity( new Intent(getActivity(),WelcomeActivity.class));
+                    getActivity().finish();
                 }
                 else
                 {

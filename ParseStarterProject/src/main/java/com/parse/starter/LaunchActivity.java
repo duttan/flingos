@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
+import com.parse.ParseUser;
+
 
 public class LaunchActivity extends AppCompatActivity
 {
@@ -46,7 +48,8 @@ public class LaunchActivity extends AppCompatActivity
         timer.start();
 
         Toast.makeText(getApplicationContext(), "User Login Status: " + session.isUserLoggedIn(), Toast.LENGTH_LONG).show();
-        Toast.makeText(getApplicationContext(), "User Login Status: " + session.getUserDetails(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "User Login Details: " + session.getUserDetails(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "User Session token: " + ParseUser.getCurrentUser().getSessionToken(), Toast.LENGTH_LONG).show();
 
 
 

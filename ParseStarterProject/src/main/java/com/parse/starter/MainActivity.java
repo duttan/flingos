@@ -12,7 +12,7 @@ import android.view.View;
 import com.parse.ParseAnalytics;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
   private static android.support.v4.app.FragmentManager fragmentManager;
   LoginFragment loginFragment = LoginFragment.newInstance();

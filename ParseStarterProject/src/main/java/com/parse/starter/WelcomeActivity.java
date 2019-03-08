@@ -3,6 +3,7 @@ package com.parse.starter;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -19,12 +20,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.parse.LogOutCallback;
+import com.parse.ParseException;
 import com.parse.ParseUser;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
 
-public class WelcomeActivity extends AppCompatActivity {
+public class WelcomeActivity extends BaseActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -69,8 +73,26 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(!checkconnection())
+        {
+            android.app.AlertDialog alert =  build_Network_Error_Dialog(this).create();
+            alert.show();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,8 +114,23 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
             if (id == R.id.action_logout) {
-            ParseUser.logOut();
-            session.logoutUser();
+            showProgressDialog();
+            ParseUser.logOutInBackground(new LogOutCallback() {
+                @Override
+                public void done(ParseException e) {
+                    hideProgressDialog();
+                    if(e == null)
+                    {
+                        finish();
+                        session.logoutUser(); }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+
+                }
+            });
+
             return true;
 
             }
@@ -134,6 +171,7 @@ public class WelcomeActivity extends AppCompatActivity {
             View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+
             return rootView;
         }
     }

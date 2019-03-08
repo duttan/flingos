@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -149,6 +150,7 @@ public class LoginFragment extends BaseFragment{
         super.onStart();
 
         hidekeyboard();
+
     }
 
     @Override
@@ -156,7 +158,15 @@ public class LoginFragment extends BaseFragment{
         view = inflater.inflate(R.layout.login_layout, container, false);
         ButterKnife.bind(this,view);
         initViews();
+        if(!checkconnection())
+        {
+            AlertDialog alert = build_Network_Error_Dialog(getContext()).create();
+            alert.show();
+        }
+
         return view;
+
+
     }
 
     @Override
@@ -165,8 +175,7 @@ public class LoginFragment extends BaseFragment{
         setRetainInstance(true);
         session = new UserSession(getContext());
 
-
-    }
+        }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -349,7 +358,7 @@ public class LoginFragment extends BaseFragment{
     public void do_login()
     {
 
-        session.createUserLoginSession(emailid.getText().toString(),password.getText().toString());
+
         showProgressDialog();
         ParseUser.logInInBackground(emailid.getText().toString(), password.getText().toString(), new LogInCallback() {
             @Override
@@ -357,13 +366,13 @@ public class LoginFragment extends BaseFragment{
                 hideProgressDialog();
                 if(user != null)
                 {
-
+                    session.createUserLoginSession(emailid.getText().toString(),password.getText().toString());
                     Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
                     startActivity( new Intent(getActivity(),WelcomeActivity.class));
+                    getActivity().finish();
                 }
                 else
                 {
-                    session.logoutUser();
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 

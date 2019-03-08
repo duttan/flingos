@@ -1,6 +1,7 @@
 package com.parse.starter;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
@@ -21,7 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ForgotPassword_Fragment extends Fragment {
+public class ForgotPassword_Fragment extends BaseFragment {
 
     private View view;
     @BindView(R.id.registered_emailid) EditText emailId;
@@ -61,6 +62,12 @@ public class ForgotPassword_Fragment extends Fragment {
                 false);
         ButterKnife.bind(this,view);
         initViews();
+
+        if(!checkconnection())
+        {
+            AlertDialog alert = build_Network_Error_Dialog(getContext()).create();
+            alert.show();
+        }
 
         return view;
     }
