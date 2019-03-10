@@ -1,155 +1,155 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:17:1-27:12
-MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:2:1-7:12
-MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:2:1-8:12
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:15:1-21:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c2dc3abacf1944493fc7ce5d69a5a60d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+MERGED from [com.android.support:design:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\8a0a499290472833f7db0e03f62ac625\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\6e63152d5b2fafc966f9f18d78852916\AndroidManifest.xml:17:1-27:12
+MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\97fb0b8d5e820e41423469bf80779806\AndroidManifest.xml:2:1-7:12
+MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\931c46c171b7ea4c0899bea6e6cf32fc\AndroidManifest.xml:2:1-8:12
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\f134bc853cd9af6ea9e61c8f963e2282\AndroidManifest.xml:15:1-21:12
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\232a9bfa43938776b7ccd066878f014b\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\7ab8f677d84917de2d1e93f5a89cd315\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\e9f873e7dc4ebd753a8aed975e1de934\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\5c175a2eb8592f58435f6b34ae6830da\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8cc06ee83b36188261f7899fd2429fd2\AndroidManifest.xml:2:1-11:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
 	package
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:10:5-32
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:10:5-32
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-57:12
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:12:5-67
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:12:22-64
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:12:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:13:5-79
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:14:5-76
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:14:5-76
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:14:22-73
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:14:22-73
 application
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:17:5-55:19
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:22:5-20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:17:5-55:19
+MERGED from [com.android.support:design:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\8a0a499290472833f7db0e03f62ac625\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\8a0a499290472833f7db0e03f62ac625\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\6e63152d5b2fafc966f9f18d78852916\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\6e63152d5b2fafc966f9f18d78852916\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\232a9bfa43938776b7ccd066878f014b\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\232a9bfa43938776b7ccd066878f014b\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\7ab8f677d84917de2d1e93f5a89cd315\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\7ab8f677d84917de2d1e93f5a89cd315\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\5c175a2eb8592f58435f6b34ae6830da\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\5c175a2eb8592f58435f6b34ae6830da\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8cc06ee83b36188261f7899fd2429fd2\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8cc06ee83b36188261f7899fd2429fd2\AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:21:9-41
 	android:icon
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:20:9-43
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:20:9-48
 	android:allowBackup
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:22:9-40
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:22:9-40
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:18:9-43
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:18:9-43
 meta-data#com.parse.APPLICATION_ID
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:23:9-25:52
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:23:9-25:52
 	android:value
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:25:13-49
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:25:13-49
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:24:13-52
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:24:13-52
 meta-data#com.parse.CLIENT_KEY
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:26:9-28:56
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:26:9-28:56
 	android:value
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:28:13-53
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:28:13-53
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:27:13-48
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:27:13-48
 activity#com.parse.starter.MainActivity
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:30:9-37:20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:30:9-37:20
 	android:label
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:32:13-45
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:32:13-45
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:31:13-41
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:31:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:33:13-36:29
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:33:13-36:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:34:17-69
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:34:25-66
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:35:17-76
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:35:17-76
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:35:27-73
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:35:27-73
 activity#com.parse.starter.WelcomeActivity
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:39:9-43:20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:39:9-43:20
 	android:label
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:41:13-59
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:41:13-59
 	android:theme
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:42:13-56
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:42:13-56
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:40:13-44
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:40:13-44
 activity#com.parse.starter.LaunchActivity
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:45:9-54:20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:45:9-54:20
 	android:noHistory
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:47:13-37
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:47:13-37
 	android:theme
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:48:13-56
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:48:13-56
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:46:13-43
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:46:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:49:13-52:29
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:49:13-52:29
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:51:17-77
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:51:17-77
 	android:name
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:51:27-74
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:51:27-74
 uses-sdk
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:21:5-23:78
-MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:6:5-44
-MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:6:5-44
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c2dc3abacf1944493fc7ce5d69a5a60d\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c2dc3abacf1944493fc7ce5d69a5a60d\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:20:5-43
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\8a0a499290472833f7db0e03f62ac625\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\8a0a499290472833f7db0e03f62ac625\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\6e63152d5b2fafc966f9f18d78852916\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\6e63152d5b2fafc966f9f18d78852916\AndroidManifest.xml:21:5-23:78
+MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\97fb0b8d5e820e41423469bf80779806\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\97fb0b8d5e820e41423469bf80779806\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\931c46c171b7ea4c0899bea6e6cf32fc\AndroidManifest.xml:6:5-44
+MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\931c46c171b7ea4c0899bea6e6cf32fc\AndroidManifest.xml:6:5-44
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\f134bc853cd9af6ea9e61c8f963e2282\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\f134bc853cd9af6ea9e61c8f963e2282\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\232a9bfa43938776b7ccd066878f014b\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\232a9bfa43938776b7ccd066878f014b\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\7ab8f677d84917de2d1e93f5a89cd315\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\7ab8f677d84917de2d1e93f5a89cd315\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\e9f873e7dc4ebd753a8aed975e1de934\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\e9f873e7dc4ebd753a8aed975e1de934\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\5c175a2eb8592f58435f6b34ae6830da\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\5c175a2eb8592f58435f6b34ae6830da\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8cc06ee83b36188261f7899fd2429fd2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\8cc06ee83b36188261f7899fd2429fd2\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\dutta\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\6e63152d5b2fafc966f9f18d78852916\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml

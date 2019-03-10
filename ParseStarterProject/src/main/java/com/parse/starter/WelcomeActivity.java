@@ -54,15 +54,17 @@ public class WelcomeActivity extends BaseActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.background));
-       // getSupportActionBar().setTitle(ParseUser.getCurrentUser().getUsername().toString());
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
+
         session = new UserSession(this);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(1);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -190,7 +192,25 @@ public class WelcomeActivity extends BaseActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1,session.getUserDetails().toString());
+
+            switch (position)
+            {
+                case 0:
+                    return LeftFragment.newInstance("Hey","Left");
+
+                case 1:
+                    return CenterFragment.newInstance("Hey","center");
+
+                case 2:
+                    return RightFragment.newInstance("Hey","Right");
+
+                default:
+                    return CenterFragment.newInstance("Hey","center");
+            }
+
+
+
+          //  return PlaceholderFragment.newInstance(position + 1,session.getUserDetails().toString());
         }
 
         @Override
