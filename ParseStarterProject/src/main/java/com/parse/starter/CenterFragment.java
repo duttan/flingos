@@ -105,7 +105,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
         return mRootview;
     }
-
+//commit code
     private void init() {
 
         mflingosrecycler = (RecyclerView) mRootview.findViewById(R.id.contactsrecycler);
