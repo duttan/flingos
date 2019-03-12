@@ -1,12 +1,25 @@
 package com.parse.starter;
 
-import android.content.Context;
+import android.Manifest;
+import android.content.CursorLoader;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.parse.starter.Adapters.ContactAdapter;
 
 
 /**
@@ -17,17 +30,29 @@ import android.view.ViewGroup;
  * Use the {@link CenterFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CenterFragment extends Fragment {
+public class CenterFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<Cursor> {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    public static final int REQUEST_PERMISSION = 2001 ;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final int LOADER_ID = 1;
+    private RecyclerView mflingosrecycler;
+    private ContactAdapter mContactsAdapter;
+    private View mRootview;
+
+    private static final String[] FROM_COLOUMNS = {
+            ContactsContract.Data.CONTACT_ID,
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.Data.DISPLAY_NAME_PRIMARY : ContactsContract.Data.DISPLAY_NAME,
+            ContactsContract.Data.PHOTO_ID
+    };
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private Bundle mbundle;
     private OnFragmentInteractionListener mListener;
+
 
     public CenterFragment() {
         // Required empty public constructor
@@ -61,10 +86,36 @@ public class CenterFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_center, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        mRootview = inflater.inflate(R.layout.fragment_center,container,false);
+        mbundle = savedInstanceState;
+        if(ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(getActivity(),new String[]{
+                    Manifest.permission.READ_CONTACTS
+            },REQUEST_PERMISSION);
+        }
+        else
+        {
+            getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
+        }
+        init();
+
+
+        return mRootview;
+    }
+
+    private void init() {
+
+        mflingosrecycler = (RecyclerView) mRootview.findViewById(R.id.contactsrecycler);
+        mflingosrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        mflingosrecycler.setHasFixedSize(true);
+
+        mContactsAdapter = new ContactAdapter(getContext(), null, ContactsContract.Data.CONTACT_ID);
+        mflingosrecycler.setAdapter(mContactsAdapter);
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -84,11 +135,66 @@ public class CenterFragment extends Fragment {
 //        }
 //    }
 
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+
+        if(requestCode == REQUEST_PERMISSION)
+        {
+            if(grantResults.length != 0)
+            {
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
+                    getLoaderManager().initLoader(LOADER_ID, mbundle,this);
+
+                }
+                else {
+                    getActivity().finish();
+                }
+            }
+        }
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
+
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        switch (id)
+        {
+            case LOADER_ID:
+                return new android.support.v4.content.CursorLoader(getContext(),
+                        ContactsContract.Data.CONTENT_URI,FROM_COLOUMNS,
+                        null,
+                        null,
+                        ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.Data.DISPLAY_NAME_PRIMARY : ContactsContract.Data.DISPLAY_NAME)
+                        );
+                default:
+                    if(BuildConfig.DEBUG)
+                    {
+                        throw new IllegalArgumentException("No id handled");
+                    }
+                    return null;
+        }
+    }
+
+    @Override
+    public void onLoadFinished(android.support.v4.content.Loader<Cursor> loader, Cursor data) {
+        mContactsAdapter.swapCursor(data);
+    }
+
+    @Override
+    public void onLoaderReset(android.support.v4.content.Loader<Cursor> loader) {
+        mContactsAdapter.swapCursor(null);
+
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this
