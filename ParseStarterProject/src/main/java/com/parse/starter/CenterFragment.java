@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -82,12 +83,36 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+            setRetainInstance(true);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if(requestCode == REQUEST_PERMISSION)
+        {
+            if(grantResults.length != 0)
+            {
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
+                    setinitAdapter();
+
+                }
+                else
+                    {
+                    getFragmentManager().popBackStack();
+                }
+            }
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        setRetainInstance(true);
         mRootview = inflater.inflate(R.layout.fragment_center,container,false);
         mbundle = savedInstanceState;
         if(ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
@@ -95,19 +120,22 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
             ActivityCompat.requestPermissions(getActivity(),new String[]{
                     Manifest.permission.READ_CONTACTS
             },REQUEST_PERMISSION);
+
+             getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
         }
         else
         {
+            setinitAdapter();
             getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
+
         }
-        init();
 
 
         return mRootview;
     }
-//commit code
-    private void init() {
 
+    void setinitAdapter()
+    {
         mflingosrecycler = (RecyclerView) mRootview.findViewById(R.id.contactsrecycler);
         mflingosrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         mflingosrecycler.setHasFixedSize(true);
@@ -137,24 +165,25 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    public void onResume() {
+        super.onResume();
 
-
-        if(requestCode == REQUEST_PERMISSION)
+        if(ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
         {
-            if(grantResults.length != 0)
-            {
-                if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                {
-                    getLoaderManager().initLoader(LOADER_ID, mbundle,this);
+            ActivityCompat.requestPermissions(getActivity(),new String[]{
+                    Manifest.permission.READ_CONTACTS
+            },REQUEST_PERMISSION);
 
-                }
-                else {
-                    getActivity().finish();
-                }
-            }
+            //getLoaderManager().initLoader(LOADER_ID,null,this);
         }
+        else
+        {
+            setinitAdapter();
+            getLoaderManager().initLoader(LOADER_ID,null,this);
+
+        }
+
+
     }
 
     @Override

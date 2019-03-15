@@ -4,15 +4,16 @@ ADDED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\A
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:17:1-27:12
 MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:2:1-7:12
 MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:2:1-8:12
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:15:1-21:12
+MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c2dc3abacf1944493fc7ce5d69a5a60d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:17:1-24:12
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:15:1-21:12
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d8660b9d829a90a78f03ccb01fb8fb42\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:2:1-11:12
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
@@ -67,6 +68,8 @@ MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d8660b9d829a90a78f03ccb01fb8fb42\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d8660b9d829a90a78f03ccb01fb8fb42\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:9:5-20
 	android:label
@@ -133,16 +136,14 @@ uses-sdk
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:21:5-23:78
 MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:5:5-43
 MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:6:5-44
 MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:6:5-44
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\ade73095ae1d2a8301769a055c67a5ec\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\777e7d213aa77e860db2c15829e6194c\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\a4ef0b45b82a08b432322aaed4998efc\AndroidManifest.xml:5:5-44
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0d4f3e9acfeb1675016b85e975a0e023\AndroidManifest.xml:5:5-43
@@ -151,6 +152,10 @@ MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle
 MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\c2dc3abacf1944493fc7ce5d69a5a60d\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\ff8f2bf1fb400a69d2f3722fe964a252\AndroidManifest.xml:20:5-43
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d8660b9d829a90a78f03ccb01fb8fb42\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d8660b9d829a90a78f03ccb01fb8fb42\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:5:5-7:41
 INJECTED from C:\Users\666299\AS projects\flingosnew\ParseStarterProject\src\main\AndroidManifest.xml

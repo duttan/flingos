@@ -53,6 +53,7 @@ public class WelcomeActivity extends BaseActivity {
      */
     private ViewPager mViewPager;
     private UserSession session;
+    public static final int REQUEST_PERMISSION = 2001 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,27 +62,36 @@ public class WelcomeActivity extends BaseActivity {
         Log.i("@@class:  ","WelcomeActivity");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        mViewPager = (ViewPager) findViewById(R.id.container);
         //getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.background));
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
 
         session = new UserSession(this);
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
+            {
+            ActivityCompat.requestPermissions(this,new String[]{
+                    Manifest.permission.READ_CONTACTS
+            },REQUEST_PERMISSION);
+
+            }
+        else
+        {
+            setAdapter();
+
+        }
+
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setCurrentItem(1);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
@@ -90,8 +100,33 @@ public class WelcomeActivity extends BaseActivity {
             window.setStatusBarColor(getResources().getColor(R.color.background_color));
         }
 
+        }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
+
+        if(requestCode == REQUEST_PERMISSION)
+        {
+            if(grantResults.length != 0)
+            {
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
+                    setAdapter();
+                    }
+                else
+                    {
+                   finish();
+                }
+            }
+        }
     }
+
+    private void setAdapter() {
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setCurrentItem(1);
+        }
 
     @Override
     public void onBackPressed() {
