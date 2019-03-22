@@ -11,6 +11,8 @@ import android.view.View;
 
 import com.parse.ParseAnalytics;
 
+import java.security.NoSuchAlgorithmException;
+
 
 public class MainActivity extends BaseActivity {
 
@@ -36,6 +38,12 @@ public class MainActivity extends BaseActivity {
 
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
+
+    try {
+      SHAExample.encrypt();
+    } catch (NoSuchAlgorithmException e) {
+      e.printStackTrace();
+    }
   }
 
 

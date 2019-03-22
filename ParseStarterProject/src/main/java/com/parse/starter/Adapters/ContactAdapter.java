@@ -41,6 +41,8 @@ public class ContactAdapter extends CursorRecyclerViewAdapter<ContactAdapter.Con
         long contact_id = getItemId(cursor.getPosition());
         long photo_id = cursor.getLong(cursor.getColumnIndex(ContactsContract.Data.PHOTO_ID));
 
+
+
         if(photo_id !=0)
         {
             Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI,contact_id);

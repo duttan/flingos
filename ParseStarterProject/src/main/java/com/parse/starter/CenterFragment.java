@@ -16,6 +16,7 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.Data.DISPLAY_NAME_PRIMARY : ContactsContract.Data.DISPLAY_NAME,
             ContactsContract.Data.PHOTO_ID
     };
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -85,6 +87,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
             mParam2 = getArguments().getString(ARG_PARAM2);
 
             setRetainInstance(true);
+
         }
     }
 
@@ -128,8 +131,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
             setinitAdapter();
             getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
 
-        }
-
+            }
 
         return mRootview;
     }
@@ -170,9 +172,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
         if(ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(getActivity(),new String[]{
-                    Manifest.permission.READ_CONTACTS
-            },REQUEST_PERMISSION);
+            ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.READ_CONTACTS},REQUEST_PERMISSION);
 
             //getLoaderManager().initLoader(LOADER_ID,null,this);
         }
@@ -192,6 +192,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
         mListener = null;
     }
 
+//ContactsContract.CommonDataKinds.Phone.CONTACT_ID
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
