@@ -1,5 +1,6 @@
 package com.parse.starter.Adapters;
 
+import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 import com.parse.starter.R;
 
 public class ContactAdapter extends CursorRecyclerViewAdapter<ContactAdapter.ContactsViewHolder> {
+
 
 
     public ContactAdapter(Context context, Cursor cursor, String id) {
@@ -35,14 +38,19 @@ public class ContactAdapter extends CursorRecyclerViewAdapter<ContactAdapter.Con
     public void onBindViewHolder(ContactsViewHolder viewHolder, Cursor cursor) {
 
 
-
         String username = cursor.getString(cursor.getColumnIndex(Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.Data.DISPLAY_NAME_PRIMARY : ContactsContract.Data.DISPLAY_NAME));
-        viewHolder.setContact_username(username);
+        // String phone_num = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+
+
         long contact_id = getItemId(cursor.getPosition());
+        viewHolder.setContact_username(username);
+        // Uri cUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI,contact_id);
+        // Uri phoneuri = Uri.withAppendedPath(cUri,ContactsContract.CommonDataKinds.Phone.CONTACT_ID);
+        // viewHolder.setContact_username(phone_num);
+
+
+
         long photo_id = cursor.getLong(cursor.getColumnIndex(ContactsContract.Data.PHOTO_ID));
-
-
-
         if(photo_id !=0)
         {
             Uri contactUri = ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI,contact_id);
@@ -72,7 +80,9 @@ public class ContactAdapter extends CursorRecyclerViewAdapter<ContactAdapter.Con
         }
         public void setContact_username(String username)
         {
-            contact_username.setText(username); }
+            contact_username.setText(username);
+            
+        }
 
 
     }

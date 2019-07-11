@@ -73,9 +73,7 @@ public class WelcomeActivity extends BaseActivity {
         session = new UserSession(this);
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
             {
-            ActivityCompat.requestPermissions(this,new String[]{
-                    Manifest.permission.READ_CONTACTS
-            },REQUEST_PERMISSION);
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS},REQUEST_PERMISSION);
 
             }
         else

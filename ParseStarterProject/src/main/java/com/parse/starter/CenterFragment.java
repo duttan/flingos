@@ -1,10 +1,14 @@
 package com.parse.starter;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.CursorLoader;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -20,8 +24,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.parse.starter.Adapters.ContactAdapter;
+import com.parse.starter.Adapters.Contact_adapter;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 
 /**
@@ -41,12 +51,37 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
     private static final int LOADER_ID = 1;
     private RecyclerView mflingosrecycler;
     private ContactAdapter mContactsAdapter;
+    private Contact_adapter contact_adapter;
     private View mRootview;
+    private ArrayList<Contact_model> contactarrayList;
+    private static ProgressDialog pd;
+
+    // Strings to get all details
+    String displayName = "";
+    String nickName = "";
+    String homePhone = "";
+    String mobilePhone = "";
+    String workPhone = "";
+    String photoPath = "" + R.mipmap.user; // Photo path
+    byte[] photoByte = null;// Byte to get photo since it will come in BLOB
+    String homeEmail = "";
+    String workEmail = "";
+    String companyName = "";
+    String title = "";
+
+    // This strings stores all contact numbers, email and other
+    // details like nick name, company etc.
+    String contactNumbers = "";
+    String contactEmailAddresses = "";
+    String contactOtherDetails = "";
 
     private static final String[] FROM_COLOUMNS = {
             ContactsContract.Data.CONTACT_ID,
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.Data.DISPLAY_NAME_PRIMARY : ContactsContract.Data.DISPLAY_NAME,
-            ContactsContract.Data.PHOTO_ID
+            ContactsContract.Data.PHOTO_ID,
+
+
+
     };
 
 
@@ -88,6 +123,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
             setRetainInstance(true);
 
+
         }
     }
 
@@ -118,35 +154,196 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
         setRetainInstance(true);
         mRootview = inflater.inflate(R.layout.fragment_center,container,false);
         mbundle = savedInstanceState;
+        mflingosrecycler = (RecyclerView) mRootview.findViewById(R.id.contactsrecycler);
+        mflingosrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        mflingosrecycler.setHasFixedSize(true);
         if(ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
         {
-            ActivityCompat.requestPermissions(getActivity(),new String[]{
-                    Manifest.permission.READ_CONTACTS
-            },REQUEST_PERMISSION);
-
-             getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
+            ActivityCompat.requestPermissions(getActivity(),new String[]{Manifest.permission.READ_CONTACTS},REQUEST_PERMISSION);
+            setinitAdapter();
+           // getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
+            new LoadContacts().execute();
         }
         else
         {
             setinitAdapter();
-            getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
+            //getLoaderManager().initLoader(LOADER_ID,savedInstanceState,this);
+            new LoadContacts().execute();
 
             }
 
         return mRootview;
     }
 
-    void setinitAdapter()
-    {
-        mflingosrecycler = (RecyclerView) mRootview.findViewById(R.id.contactsrecycler);
-        mflingosrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        mflingosrecycler.setHasFixedSize(true);
+    //TODO change this Async to Rxjava
+    private class LoadContacts extends AsyncTask<Void, Void, Void> {
 
-        mContactsAdapter = new ContactAdapter(getContext(), null, ContactsContract.Data.CONTACT_ID);
-        mflingosrecycler.setAdapter(mContactsAdapter);
+        @Override
+        protected Void doInBackground(Void... params) {
+            contactarrayList = readContacts();// Get contacts array list from this
+            return null;
+        }
 
+        @Override
+        protected void onPostExecute(Void result) {
+
+            super.onPostExecute(result);
+
+            // If array list is not null and is contains value
+            if (contactarrayList != null && contactarrayList.size() > 0) {
+
+                // then set total contacts to subtitle
+                //getSupportActionBar().setSubtitle(contactarrayList.size() + " Contacts");
+                contact_adapter = null;
+                if (contact_adapter == null) {
+                    contact_adapter = new Contact_adapter(getContext(), contactarrayList);
+                    mflingosrecycler.setAdapter(contact_adapter);// set adapter
+                }
+                contact_adapter.notifyDataSetChanged();
+            } else {
+
+                // If adapter is null then show toast
+                Toast.makeText(getContext(), "There are no contacts.", Toast.LENGTH_LONG).show();
+            }
+
+            // Hide dialog if showing
+            if (pd.isShowing())
+                pd.dismiss();
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+
+            super.onPreExecute();
+            // Show Dialog
+            pd = ProgressDialog.show(getContext(), "Loading Contacts", "Please Wait...");
+        }
 
     }
+
+    private ArrayList<Contact_model> readContacts() {
+        ArrayList<Contact_model> contactList = new ArrayList<Contact_model>();
+
+        Uri uri = ContactsContract.Contacts.CONTENT_URI;
+
+        Cursor contactsCursor = getActivity().getContentResolver().query(uri, null, null, null, ContactsContract.Contacts.DISPLAY_NAME + " ASC ");
+
+        if (contactsCursor.moveToFirst()) {
+            do {
+                long contctId = contactsCursor.getLong(contactsCursor.getColumnIndex("_ID"));  // Get contact ID
+
+                Uri dataUri = ContactsContract.Data.CONTENT_URI; // URI to get data of contacts
+
+                Cursor dataCursor = getActivity().getContentResolver().query(dataUri, null, ContactsContract.Data.CONTACT_ID + " = " + contctId, null, null);// Retrun data cusror represntative to contact ID
+
+                // starting the cusrsor
+                if (dataCursor.moveToFirst()) {
+                    displayName = dataCursor.getString(dataCursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)); // get contact name
+
+                    do {
+                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Nickname.CONTENT_ITEM_TYPE)) {
+                            nickName = dataCursor.getString(dataCursor.getColumnIndex("data1")); // Get Nick Name
+                            contactOtherDetails += "NickName : " + nickName + "n";    // Add the nick name to string
+                        }
+
+                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)) {
+
+                            // In this get All contact numbers like home,mobile, work, etc and add them to numbers string
+
+                            switch (dataCursor.getInt(dataCursor.getColumnIndex("data2"))) {
+                                case ContactsContract.CommonDataKinds.Phone.TYPE_HOME:
+                                    homePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+                                    contactNumbers += "Home Phone : " + homePhone + "n";
+                                    break;
+
+                                case ContactsContract.CommonDataKinds.Phone.TYPE_WORK:
+                                    workPhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+                                    contactNumbers += "Work Phone : " + workPhone + "n";
+                                    break;
+
+                                case ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE:
+                                    mobilePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+                                    contactNumbers += "Mobile Phone : " + mobilePhone + "n";
+                                    break;
+
+                            }
+                        }
+                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Email.CONTENT_ITEM_TYPE)) {
+
+                            // In this get all Emails like home, work etc and
+                            // add them to email string
+
+                            switch (dataCursor.getInt(dataCursor.getColumnIndex("data2"))) {
+                                case ContactsContract.CommonDataKinds.Email.TYPE_HOME:
+                                    homeEmail = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+                                    contactEmailAddresses += "Home Email : " + homeEmail + "n";
+                                    break;
+
+                                case ContactsContract.CommonDataKinds.Email.TYPE_WORK:
+                                    workEmail = dataCursor.getString(dataCursor.getColumnIndex("data1"));
+                                    contactEmailAddresses += "Work Email : " + workEmail + "n";
+                                    break;
+                            }
+                        }
+
+                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Organization.CONTENT_ITEM_TYPE)) {
+
+                            companyName = dataCursor.getString(dataCursor.getColumnIndex("data1"));// get company name
+                            contactOtherDetails += "Coompany Name : " + companyName + "n";
+                            title = dataCursor.getString(dataCursor.getColumnIndex("data4"));// get Company title
+                            contactOtherDetails += "Title : " + title + "n";
+
+                        }
+
+                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE)) {
+                            photoByte = dataCursor.getBlob(dataCursor.getColumnIndex("data15")); // get photo in byte
+
+                            if (photoByte != null) {
+
+                                // Now make a cache folder in file manager to
+                                // make cache of contacts images and save them
+                                // in .png
+
+                                Bitmap bitmap = BitmapFactory.decodeByteArray(photoByte, 0, photoByte.length);
+                                File cacheDirectory = getActivity().getBaseContext().getCacheDir();
+                                File tmp = new File(cacheDirectory.getPath() + "/_androhub" + contctId + ".png");
+
+                                try {
+                                    FileOutputStream fileOutputStream = new FileOutputStream(tmp);
+                                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
+                                    fileOutputStream.flush();
+                                    fileOutputStream.close();
+                                } catch (Exception e) {
+                                    // TODO: handle exception
+                                    e.printStackTrace();
+                                }
+                                photoPath = tmp.getPath();// finally get the saved path of image
+
+                            }
+
+                        }
+
+                    } while (dataCursor.moveToNext()); // Now move to next cursor
+
+                    contactList.add(new Contact_model(Long.toString(contctId), displayName, contactNumbers, contactEmailAddresses, photoPath, contactOtherDetails));
+
+                }
+            } while (contactsCursor.moveToNext());
+        }
+        return contactList;
+    }
+
+    void setinitAdapter()
+    {
+//        mflingosrecycler = (RecyclerView) mRootview.findViewById(R.id.contactsrecycler);
+//        mflingosrecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+//        mflingosrecycler.setHasFixedSize(true);
+//
+//        mContactsAdapter = new ContactAdapter(getContext(), null, ContactsContract.Data.CONTACT_ID);
+//        mflingosrecycler.setAdapter(mContactsAdapter);
+
+        }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -179,7 +376,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
         else
         {
             setinitAdapter();
-            getLoaderManager().initLoader(LOADER_ID,null,this);
+           // getLoaderManager().initLoader(LOADER_ID,null,this);
 
         }
 
@@ -200,11 +397,11 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
         {
             case LOADER_ID:
                 return new android.support.v4.content.CursorLoader(getContext(),
-                        ContactsContract.Data.CONTENT_URI,FROM_COLOUMNS,
+                        ContactsContract.Data.CONTENT_URI,
+                        FROM_COLOUMNS,
                         null,
                         null,
-                        ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ? ContactsContract.Data.DISPLAY_NAME_PRIMARY : ContactsContract.Data.DISPLAY_NAME)
-                        );
+                        ContactsContract.Data.DISPLAY_NAME_PRIMARY);
                 default:
                     if(BuildConfig.DEBUG)
                     {
@@ -236,8 +433,10 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }
+
