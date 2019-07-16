@@ -1,11 +1,16 @@
 package com.parse.starter;
 
+import java.util.List;
+import java.util.Objects;
+
 public class Contact_model {
 
-    private String contactId, contactName, contactNumber, contactEmail, contactPhoto, contactOtherDetails;
+    private String contactId, contactName,contactEmail, contactPhoto, contactOtherDetails;
+
+    private List<String> contactNumber;
 
 
-    public  Contact_model(String contactId, String contactName, String contactNumber, String contactEmail, String contactPhoto, String contactOtherDetails)
+    public  Contact_model(String contactId, String contactName, List<String> contactNumber, String contactEmail, String contactPhoto, String contactOtherDetails)
     {
         this.contactId = contactId;
         this.contactName = contactName;
@@ -24,7 +29,7 @@ public class Contact_model {
         return contactName;
     }
 
-    public String getContactNumber() {
+    public List<String> getContactNumber() {
         return contactNumber;
     }
 
@@ -41,6 +46,20 @@ public class Contact_model {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Contact_model that = (Contact_model) o;
+        return Objects.equals(contactName, that.contactName);
 
+    }
 
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(contactId, contactName, contactEmail, contactPhoto, contactOtherDetails, contactNumber);
+    }
 }

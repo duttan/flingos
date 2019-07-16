@@ -93,11 +93,11 @@ public class Contact_adapter extends RecyclerView.Adapter<Contact_adapter.Contac
 //                contact_email.setText("EMAIL ID - n" + "No EmailId");
 //            }
 //
-//            //Contact number
+            //Contact number
 //            if (!model.getContactNumber().equals("") && model.getContactNumber() != null) {
-//                contact_number.setText("CONTACT NUMBER - n" + model.getContactNumber());
+//                contact_number.setText( model.getContactNumber());
 //            } else {
-//                contact_number.setText("CONTACT NUMBER - n" + "No Contact Number");
+//                contact_number.setText( "No Contact Number");
 //            }
 //
 //            //Other details

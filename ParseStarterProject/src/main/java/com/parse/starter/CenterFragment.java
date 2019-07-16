@@ -32,6 +32,12 @@ import com.parse.starter.Adapters.Contact_adapter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 
 /**
@@ -56,24 +62,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
     private ArrayList<Contact_model> contactarrayList;
     private static ProgressDialog pd;
 
-    // Strings to get all details
-    String displayName = "";
-    String nickName = "";
-    String homePhone = "";
-    String mobilePhone = "";
-    String workPhone = "";
-    String photoPath = "" + R.mipmap.user; // Photo path
-    byte[] photoByte = null;// Byte to get photo since it will come in BLOB
-    String homeEmail = "";
-    String workEmail = "";
-    String companyName = "";
-    String title = "";
 
-    // This strings stores all contact numbers, email and other
-    // details like nick name, company etc.
-    String contactNumbers = "";
-    String contactEmailAddresses = "";
-    String contactOtherDetails = "";
 
     private static final String[] FROM_COLOUMNS = {
             ContactsContract.Data.CONTACT_ID,
@@ -180,7 +169,8 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
         @Override
         protected Void doInBackground(Void... params) {
-            contactarrayList = readContacts();// Get contacts array list from this
+            contactarrayList = readContacts();
+            contactarrayList = intelligent_Sort(contactarrayList);/// Get contacts array list from this
             return null;
         }
 
@@ -231,6 +221,32 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
         if (contactsCursor.moveToFirst()) {
             do {
+                // Strings to get all details
+                String displayName = "";
+                String nickName = "";
+                String homePhone = "";
+                String mobilePhone = "";
+                String workPhone = "";
+                String photoPath = "" + R.mipmap.user; // Photo path
+                byte[] photoByte = null;// Byte to get photo since it will come in BLOB
+                String homeEmail = "";
+                String workEmail = "";
+                String companyName = "";
+                String title = "";
+
+                // This strings stores all contact numbers, email and other
+                // details like nick name, company etc.
+                List<String> contactNumbers = new ArrayList<String>();
+                String contactEmailAddresses = "";
+                String contactOtherDetails = "";
+
+
+
+
+
+
+
+
                 long contctId = contactsCursor.getLong(contactsCursor.getColumnIndex("_ID"));  // Get contact ID
 
                 Uri dataUri = ContactsContract.Data.CONTENT_URI; // URI to get data of contacts
@@ -254,17 +270,19 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
                             switch (dataCursor.getInt(dataCursor.getColumnIndex("data2"))) {
                                 case ContactsContract.CommonDataKinds.Phone.TYPE_HOME:
                                     homePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
-                                    contactNumbers += "Home Phone : " + homePhone + "n";
+                                   // contactNumbers += "Home Phone : " + homePhone + "n";
+                                   // contactNumbers.add(homePhone);
                                     break;
 
                                 case ContactsContract.CommonDataKinds.Phone.TYPE_WORK:
                                     workPhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
-                                    contactNumbers += "Work Phone : " + workPhone + "n";
+                                   // contactNumbers += "Work Phone : " + workPhone + "n";
                                     break;
 
                                 case ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE:
                                     mobilePhone = dataCursor.getString(dataCursor.getColumnIndex("data1"));
-                                    contactNumbers += "Mobile Phone : " + mobilePhone + "n";
+                                  //  contactNumbers += "Mobile Phone : " + mobilePhone + "n";
+                                    contactNumbers.add(mobilePhone);
                                     break;
 
                             }
@@ -296,7 +314,8 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
                         }
 
-                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE)) {
+                        if (dataCursor.getString(dataCursor.getColumnIndex("mimetype")).equals(ContactsContract.CommonDataKinds.Photo.CONTENT_ITEM_TYPE))
+                        {
                             photoByte = dataCursor.getBlob(dataCursor.getColumnIndex("data15")); // get photo in byte
 
                             if (photoByte != null) {
@@ -326,13 +345,52 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
                     } while (dataCursor.moveToNext()); // Now move to next cursor
 
+
+                    contactNumbers =  removeDuplicate(contactNumbers);
                     contactList.add(new Contact_model(Long.toString(contctId), displayName, contactNumbers, contactEmailAddresses, photoPath, contactOtherDetails));
+                    photoPath = "";
 
                 }
             } while (contactsCursor.moveToNext());
         }
         return contactList;
     }
+
+
+    public ArrayList<Contact_model> intelligent_Sort(ArrayList<Contact_model> contactlist)
+    {
+        ArrayList<Contact_model> contact_list = new ArrayList<>();
+
+        for(Contact_model contact : contactlist)
+        {
+            if((contact.getContactName()!= "") && (contact.getContactNumber().size() > 0) && (isValidName(contact.getContactName())))
+            {
+                contact_list.add(contact);
+
+            }
+
+        }
+
+//        HashSet<Contact_model> set = new HashSet();
+//        List<Contact_model> newList = new ArrayList();
+//        for (Iterator iter = contact_list.iterator(); iter.hasNext();)
+//        {
+//            Contact_model contact = (Contact_model) iter.next();
+//            if (set.add(contact))
+//                newList.add(contact);
+//        }
+//        contact_list.clear();
+//        contact_list.addAll(newList);
+
+//        HashSet<Contact_model> contacthash = new HashSet<Contact_model>(contact_list);
+//        contact_list.clear();
+//        contact_list.addAll(contacthash);
+
+
+
+        return contact_list;
+    }
+
 
     void setinitAdapter()
     {
@@ -343,7 +401,22 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 //        mContactsAdapter = new ContactAdapter(getContext(), null, ContactsContract.Data.CONTACT_ID);
 //        mflingosrecycler.setAdapter(mContactsAdapter);
 
-        }
+    }
+
+    public static List<String> removeDuplicate(List<String> arlList)
+    {
+        HashSet h = new HashSet(arlList);
+        arlList.clear();
+        arlList.addAll(h);
+
+        return arlList;
+    }
+
+    public boolean isValidName(String name)
+    {
+        boolean bool = Pattern.compile("[a-z A-Z]*").matcher(name).matches();
+        return bool;
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
