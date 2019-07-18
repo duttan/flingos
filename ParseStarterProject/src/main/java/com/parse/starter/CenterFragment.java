@@ -348,7 +348,7 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
                     contactNumbers =  removeDuplicate(contactNumbers);
                     contactList.add(new Contact_model(Long.toString(contctId), displayName, contactNumbers, contactEmailAddresses, photoPath, contactOtherDetails));
-                    photoPath = "";
+
 
                 }
             } while (contactsCursor.moveToNext());
@@ -371,16 +371,18 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
         }
 
-//        HashSet<Contact_model> set = new HashSet();
-//        List<Contact_model> newList = new ArrayList();
-//        for (Iterator iter = contact_list.iterator(); iter.hasNext();)
-//        {
-//            Contact_model contact = (Contact_model) iter.next();
-//            if (set.add(contact))
-//                newList.add(contact);
-//        }
-//        contact_list.clear();
-//        contact_list.addAll(newList);
+        HashSet<Contact_model> set = new HashSet();
+        List<Contact_model> newList = new ArrayList();
+        for (Iterator iter = contact_list.iterator(); iter.hasNext();)
+        {
+            Contact_model contact = (Contact_model) iter.next();
+
+
+            if (set.add(contact))
+                newList.add(contact);
+        }
+        contact_list.clear();
+        contact_list.addAll(newList);
 
 //        HashSet<Contact_model> contacthash = new HashSet<Contact_model>(contact_list);
 //        contact_list.clear();
@@ -414,7 +416,8 @@ public class CenterFragment extends BaseFragment implements LoaderManager.Loader
 
     public boolean isValidName(String name)
     {
-        boolean bool = Pattern.compile("[a-z A-Z]*").matcher(name).matches();
+       // boolean bool = Pattern.compile("^(?!AL).+").matcher(name).matches();
+        boolean bool = Pattern.compile("^((?!AL).+)([^0-9]+).$").matcher(name).matches(); //^((?!AL).+)([^0-9]+).$
         return bool;
     }
 

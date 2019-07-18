@@ -3,7 +3,10 @@ package com.parse.starter.Adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,14 +68,20 @@ public class Contact_adapter extends RecyclerView.Adapter<Contact_adapter.Contac
         TextView contact_otherdetails;
 
 
+
         public Contacts_ViewHolder(View itemView) {
             super(itemView);
 
             contact_image = (ImageView) itemView.findViewById(R.id.imageView_contact_display);
             contact_username = (TextView) itemView.findViewById(R.id.contact_username);
-//            contact_email = (TextView) itemView.findViewById(R.id.contact_username);
-//            contact_number = (TextView) itemView.findViewById(R.id.contact_username);
-//            contact_otherdetails = (TextView) itemView.findViewById(R.id.contact_username);
+//          contact_email = (TextView) itemView.findViewById(R.id.contact_username);
+//          contact_number = (TextView) itemView.findViewById(R.id.contact_username);
+//          contact_otherdetails = (TextView) itemView.findViewById(R.id.contact_username);
+            StackTraceElement[] trace = new Exception().getStackTrace();
+            Log.d("@@myapp", trace.toString());
+
+            //Typeface face= Typeface.createFromAsset(context.getAssets(), "assets/Pacifico.ttf");
+            // contact_username.setTypeface(face);
 
 
         }

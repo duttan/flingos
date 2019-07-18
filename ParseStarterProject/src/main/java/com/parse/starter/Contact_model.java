@@ -53,13 +53,13 @@ public class Contact_model {
         if (o == null || getClass() != o.getClass())
             return false;
         Contact_model that = (Contact_model) o;
-        return Objects.equals(contactName, that.contactName);
+        return !(this.contactName == that.contactName);
 
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(contactId, contactName, contactEmail, contactPhoto, contactOtherDetails, contactNumber);
+        return Objects.hash(contactName);
     }
 }
