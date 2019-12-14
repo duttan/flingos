@@ -73,8 +73,8 @@ public class BioFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         Bioview = inflater.inflate(R.layout.fragment_bio, container, false);
         expandableTextView = (ExpandableTextView) Bioview.findViewById(R.id.bio_content);

@@ -39,11 +39,11 @@ public class MainActivity extends BaseActivity {
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
-    try {
-      SHAExample.encrypt();
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-    }
+//    try {
+//      //SHAExample.encrypt();
+//    } catch (NoSuchAlgorithmException e) {
+//      e.printStackTrace();
+//    }
   }
 
 

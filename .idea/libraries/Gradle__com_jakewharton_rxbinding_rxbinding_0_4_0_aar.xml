@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: com.jakewharton.rxbinding:rxbinding-0.4.0">
+  <library name="Gradle: com.jakewharton.rxbinding:rxbinding:0.4.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rxbinding-0.4.0.aar/348352f892988f0eaf11cd0f7ffb0699/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/rxbinding-0.4.0.aar/348352f892988f0eaf11cd0f7ffb0699/res" />

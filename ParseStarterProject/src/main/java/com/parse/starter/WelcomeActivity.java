@@ -249,10 +249,10 @@ public class WelcomeActivity extends BaseActivity {
 
             switch (position)
             {
-                case 0:
+                case 1:
                     return LeftFragment.newInstance("Hey","Left");
 
-                case 1:
+                case 0:
                     return CenterFragment.newInstance("Hey","center");
 
                 case 2:

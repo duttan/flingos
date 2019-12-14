@@ -4,9 +4,16 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
+
+import com.lorentzos.flingswipe.SwipeFlingAdapterView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +33,12 @@ public class LeftFragment extends BaseFragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ArrayList<String> al;
+    private ArrayAdapter<String> arrayAdapter;
+    SwipeFlingAdapterView flingContainer;
+    //private int i;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -57,15 +70,101 @@ public class LeftFragment extends BaseFragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_left, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View view =  inflater.inflate(R.layout.fragment_left, container, false);
+        flingContainer = (SwipeFlingAdapterView) view.findViewById(R.id.swipecardframe);
+        bindviews();
+        setupswipecards();
+
+        return view;
+
     }
+
+    private void setupswipecards() {
+
+
+        flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
+            @Override
+            public void removeFirstObjectInAdapter() {
+                Log.d("LIST", "removed object!");
+                al.remove(0);
+                arrayAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onLeftCardExit(Object o) {
+
+                //Do something on the left!
+                //You also have access to the original object.
+                //If you want to use it just cast it (String) dataObject
+                Toast.makeText(getActivity().getApplicationContext(),"swipeleft",Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onRightCardExit(Object o) {
+
+                Toast.makeText(getActivity().getApplicationContext(),"swiperight",Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onAdapterAboutToEmpty(int i) {
+
+                al.add("XML ".concat(String.valueOf(++i)));
+                arrayAdapter.notifyDataSetChanged();
+                Log.d("LIST", "notified");
+               // i++;
+
+            }
+
+            @Override
+            public void onScroll(float scrollProgressPercent) {
+
+                View view = flingContainer.getSelectedView();
+                view.findViewById(R.id.item_swipe_right_indicator).setAlpha(scrollProgressPercent < 0 ? -scrollProgressPercent : 0);
+                view.findViewById(R.id.item_swipe_left_indicator).setAlpha(scrollProgressPercent > 0 ? scrollProgressPercent : 0);
+
+            }
+        });
+
+        flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClicked(int i, Object o) {
+
+                Toast.makeText(getActivity().getApplicationContext(),"Clicked!",Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+
+    private void bindviews()
+    {
+
+        al = new ArrayList<>();
+        al.add("php");
+        al.add("c");
+        al.add("python");
+        al.add("java");
+        al.add("html");
+        al.add("c++");
+        al.add("css");
+        al.add("javascript");
+
+        arrayAdapter = new ArrayAdapter<> (getActivity(), R.layout.card_item, R.id.helloText, al );
+        flingContainer.setAdapter(arrayAdapter);
+    }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
