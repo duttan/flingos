@@ -1,177 +1,366 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:2:1-7:12
-MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:2:1-8:12
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\439fd808a881b09dccaa925cecbad9ea\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\8ad41ea8c2d25cd48609a9d9c32b34eb\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\dddcfef96223f735fb758bc46184aff4\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0284932efc9d8de3d43ac6c3e30da1dc\AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\2362a759834a251b7e56157e8daec864\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\aa9e9adb22092c9b5dd6483a91a86527\AndroidManifest.xml:17:1-24:12
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:15:1-21:12
-MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d7cead8a4140779a0c9fe57be53a54c8\AndroidManifest.xml:17:1-24:12
-MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\library-1.0.9.aar\c57b9a1350ebae2dc7fa10a30a9789be\AndroidManifest.xml:2:1-14:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+MERGED from [com.yahoo.mobile.client.android.util.rangeseekbar:rangeseekbar-library:0.1.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\51b855aa1789cab824516d666d9bbfae\rangeseekbar-library-0.1.0\AndroidManifest.xml:2:1-11:12
+MERGED from [com.chabbal:slidingdotsplash:1.0.2] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1b2759c8a93b46353a5b6aba5f5d25e6\jetified-slidingdotsplash-1.0.2\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\7df26908078c74ff4eeaf46e7b6b476c\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\b48cdf10054c509e1dec4521d3e5a8c2\jetified-butterknife-8.0.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6c54b8b342ac76d970618ed215e56e2c\jetified-rxbinding-0.4.0\AndroidManifest.xml:2:1-8:12
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4fe44ae24daa7cfa2dd483a5d3b65a2f\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\062eb74c1a6fe650432564db4113c6b5\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\767612e54049c1347a891905a7e9d5e4\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\088df2da946cb4ca3cb17d0af61a56e5\jetified-glide-4.7.1\AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4f680f5cab482b7966fa9c805ac0cb70\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\61965e5c06bda9445c13760f9d9ef779\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ceb81553a8d4d1147c847656f2ca2121\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ec593f8d91037f6ef1bbcd6a177afa1c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4f8b5527496d67480951cc322460db7f\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fb64895045b937c99805be897a2a6961\vectordrawable-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5276819c062a92c029464122749254f1\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4932f7e67b26f042b51fa62f1aa4816d\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\8849109129fcb2f39779166fb64480b1\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\00bc847ce5b9e3ce7b40d465bffbf9e9\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5ad830c9e1047f79e3f0f7e9e42ab8ab\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\a3c457ded457b98b207b4f227d629399\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3d4a3c67e39fa8d6d0c0f126c28b81d8\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\82b148795609bbbaf8e825fc2ff2a6bf\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\d2cae29ea156ecc28d8f5099dc624ed2\transition-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\246153fc0686d4ff78c8961ca91329b7\core-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c70a8bef3ed62675d42960780f476d6e\versionedparcelable-1.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fb2fbe77879a57ea0c5dfd6fe59ba874\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\664f4ae009672f8d49f9e02edae5cc02\exifinterface-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5122ca05bdeb1012fe6c79dfa57f2fa5\jetified-gifdecoder-4.7.1\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4c7e5b6d46acfb24c04b3a473c53b419\lifecycle-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\f582580d3eb247a74d915a27810a4674\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c75155371656c04dff3a027cdeb13e8a\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\53b4a4cf87c0ff501a8c414cec884555\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3a992d8307f21a8f15eb649383ba6a6a\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\94d1bdd9d3f5e77b2c2deb76d0ecef77\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\63647da4654da12a6f2785cfbbad8123\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\55f1e77ae750c7a464c8eeab963223d4\rxandroid-1.1.0\AndroidManifest.xml:15:1-21:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\e7fbe19d888e1bac1bbb15e0043fe42e\library-1.0.9\AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.ittianyu:BottomNavigationViewEx:1.2.4] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ef1156f1edaaa960f84facd8e5f40139\jetified-BottomNavigationViewEx-1.2.4\AndroidManifest.xml:2:1-14:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1442c3aebde90af1632e512624faf9f5\jetified-circleimageview-2.2.0\AndroidManifest.xml:2:1-11:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
 	package
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:10:5-32
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:10:5-32
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-60:12
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:1-83:12
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:12:5-67
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:12:5-67
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:12:22-64
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:12:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:13:5-79
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:13:5-79
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:14:5-76
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:14:5-76
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:14:22-73
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:14:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:15:5-75
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:15:5-75
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:15:22-72
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:15:22-72
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:16:5-71
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:16:5-71
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:16:22-69
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:16:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:17:5-73
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:17:5-73
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:17:22-70
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:17:22-70
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:18:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:19:5-80
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:19:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:20:5-81
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:20:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:21:5-81
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:21:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:22:22-76
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:23:5-65
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:23:22-62
+uses-feature#android.hardware.camera
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:25:5-60
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:25:19-57
+uses-feature#android.hardware.camera2
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:26:5-61
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:26:19-58
+uses-feature#android.hardware.camera.autofocus
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:27:5-70
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:27:19-67
+uses-feature#android.hardware.camera.flash
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:28:5-30:36
+	android:required
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:30:9-33
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:29:9-53
 application
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:20:5-58:19
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\439fd808a881b09dccaa925cecbad9ea\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\439fd808a881b09dccaa925cecbad9ea\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\8ad41ea8c2d25cd48609a9d9c32b34eb\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\8ad41ea8c2d25cd48609a9d9c32b34eb\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\dddcfef96223f735fb758bc46184aff4\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\dddcfef96223f735fb758bc46184aff4\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0284932efc9d8de3d43ac6c3e30da1dc\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0284932efc9d8de3d43ac6c3e30da1dc\AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\aa9e9adb22092c9b5dd6483a91a86527\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\aa9e9adb22092c9b5dd6483a91a86527\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d7cead8a4140779a0c9fe57be53a54c8\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d7cead8a4140779a0c9fe57be53a54c8\AndroidManifest.xml:22:5-20
-MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\library-1.0.9.aar\c57b9a1350ebae2dc7fa10a30a9789be\AndroidManifest.xml:12:5-20
-MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\library-1.0.9.aar\c57b9a1350ebae2dc7fa10a30a9789be\AndroidManifest.xml:12:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:9:5-20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:33:5-81:19
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:7:5-12:19
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\088df2da946cb4ca3cb17d0af61a56e5\jetified-glide-4.7.1\AndroidManifest.xml:11:5-20
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\088df2da946cb4ca3cb17d0af61a56e5\jetified-glide-4.7.1\AndroidManifest.xml:11:5-20
+MERGED from [androidx.core:core:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\246153fc0686d4ff78c8961ca91329b7\core-1.0.0\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\246153fc0686d4ff78c8961ca91329b7\core-1.0.0\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c70a8bef3ed62675d42960780f476d6e\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c70a8bef3ed62675d42960780f476d6e\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5122ca05bdeb1012fe6c79dfa57f2fa5\jetified-gifdecoder-4.7.1\AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5122ca05bdeb1012fe6c79dfa57f2fa5\jetified-gifdecoder-4.7.1\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\e7fbe19d888e1bac1bbb15e0043fe42e\library-1.0.9\AndroidManifest.xml:12:5-20
+MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\e7fbe19d888e1bac1bbb15e0043fe42e\library-1.0.9\AndroidManifest.xml:12:5-20
+MERGED from [com.github.ittianyu:BottomNavigationViewEx:1.2.4] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ef1156f1edaaa960f84facd8e5f40139\jetified-BottomNavigationViewEx-1.2.4\AndroidManifest.xml:11:5-12:19
+MERGED from [com.github.ittianyu:BottomNavigationViewEx:1.2.4] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ef1156f1edaaa960f84facd8e5f40139\jetified-BottomNavigationViewEx-1.2.4\AndroidManifest.xml:11:5-12:19
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1442c3aebde90af1632e512624faf9f5\jetified-circleimageview-2.2.0\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1442c3aebde90af1632e512624faf9f5\jetified-circleimageview-2.2.0\AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\246153fc0686d4ff78c8961ca91329b7\core-1.0.0\AndroidManifest.xml:22:18-86
 	android:label
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:24:9-41
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:37:9-41
 	android:icon
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:23:9-48
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:36:9-48
 	android:allowBackup
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:35:9-35
 	android:theme
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:25:9-40
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:38:9-40
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:21:9-43
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:34:9-43
 meta-data#com.parse.APPLICATION_ID
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:26:9-28:52
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:39:9-41:52
 	android:value
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:28:13-49
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:41:13-49
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:27:13-52
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:40:13-52
 meta-data#com.parse.CLIENT_KEY
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:29:9-31:56
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:42:9-44:56
 	android:value
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:31:13-53
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:44:13-53
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:30:13-48
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:43:13-48
 activity#com.parse.starter.MainActivity
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:33:9-40:20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:46:9-53:20
 	android:label
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:35:13-45
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:48:13-45
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:34:13-41
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:47:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:36:13-39:29
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:49:13-52:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:37:17-69
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:37:25-66
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:38:17-76
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:51:17-76
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:38:27-73
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:51:27-73
 activity#com.parse.starter.WelcomeActivity
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:42:9-46:20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:55:9-59:20
 	android:label
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:44:13-59
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:57:13-59
 	android:theme
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:45:13-56
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:58:13-56
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:43:13-44
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:56:13-44
 activity#com.parse.starter.LaunchActivity
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:48:9-57:20
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:61:9-70:20
 	android:noHistory
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:50:13-37
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:63:13-37
 	android:theme
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:51:13-56
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:64:13-56
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:49:13-43
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:62:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:52:13-55:29
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:65:13-68:29
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:54:17-77
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:67:17-77
 	android:name
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:54:27-74
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:67:27-74
+activity#com.parse.starter.Matched.Matched_Activity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:72:9-62
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:72:19-59
+activity#com.parse.starter.Profile.Profile_Activity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:73:9-62
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:73:19-59
+activity#com.parse.starter.Main.ProfileCheckinMain
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:74:9-61
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:74:19-58
+activity#com.parse.starter.Matched.ProfileCheckinMatched
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:75:9-67
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:75:19-64
+activity#com.parse.starter.Profile.EditProfileActivity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:76:9-65
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:76:19-62
+activity#com.parse.starter.Main.MainActivity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:77:9-55
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:77:19-52
+activity#com.parse.starter.Profile.SettingsActivity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:78:9-62
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:78:19-59
+activity#com.parse.starter.Main.BtnLikeActivity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:79:9-58
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:79:19-55
+activity#com.parse.starter.Main.BtnDislikeActivity
+ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:80:9-70
+	android:name
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:80:19-58
 uses-sdk
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\butterknife-8.0.1.aar\47c3db033fafe41d48bc64b38f458f68\AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:6:5-44
-MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxbinding-0.4.0.aar\348352f892988f0eaf11cd0f7ffb0699\AndroidManifest.xml:6:5-44
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\439fd808a881b09dccaa925cecbad9ea\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\design-23.4.0.aar\439fd808a881b09dccaa925cecbad9ea\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\8ad41ea8c2d25cd48609a9d9c32b34eb\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\8ad41ea8c2d25cd48609a9d9c32b34eb\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\dddcfef96223f735fb758bc46184aff4\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\dddcfef96223f735fb758bc46184aff4\AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0284932efc9d8de3d43ac6c3e30da1dc\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\0284932efc9d8de3d43ac6c3e30da1dc\AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\2362a759834a251b7e56157e8daec864\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.4.0.aar\2362a759834a251b7e56157e8daec864\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\aa9e9adb22092c9b5dd6483a91a86527\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\aa9e9adb22092c9b5dd6483a91a86527\AndroidManifest.xml:20:5-43
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
-MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\rxandroid-1.1.0.aar\82434d7a9109f8915ab270ba11356980\AndroidManifest.xml:19:5-43
-MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d7cead8a4140779a0c9fe57be53a54c8\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:cardview-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.4.0.aar\d7cead8a4140779a0c9fe57be53a54c8\AndroidManifest.xml:20:5-43
-MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\library-1.0.9.aar\c57b9a1350ebae2dc7fa10a30a9789be\AndroidManifest.xml:8:5-10:41
-MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\library-1.0.9.aar\c57b9a1350ebae2dc7fa10a30a9789be\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\a5bf64bb03e494537fda61f1100ff83d\AndroidManifest.xml:5:5-7:41
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\666299\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\8ad41ea8c2d25cd48609a9d9c32b34eb\AndroidManifest.xml:23:9-75
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+MERGED from [com.yahoo.mobile.client.android.util.rangeseekbar:rangeseekbar-library:0.1.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\51b855aa1789cab824516d666d9bbfae\rangeseekbar-library-0.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.yahoo.mobile.client.android.util.rangeseekbar:rangeseekbar-library:0.1.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\51b855aa1789cab824516d666d9bbfae\rangeseekbar-library-0.1.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.chabbal:slidingdotsplash:1.0.2] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1b2759c8a93b46353a5b6aba5f5d25e6\jetified-slidingdotsplash-1.0.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.chabbal:slidingdotsplash:1.0.2] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1b2759c8a93b46353a5b6aba5f5d25e6\jetified-slidingdotsplash-1.0.2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c7eb9cd3508ac3959447c14fd76c9fb9\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\7df26908078c74ff4eeaf46e7b6b476c\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\7df26908078c74ff4eeaf46e7b6b476c\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\b48cdf10054c509e1dec4521d3e5a8c2\jetified-butterknife-8.0.1\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.0.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\b48cdf10054c509e1dec4521d3e5a8c2\jetified-butterknife-8.0.1\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6c54b8b342ac76d970618ed215e56e2c\jetified-rxbinding-0.4.0\AndroidManifest.xml:6:5-44
+MERGED from [com.jakewharton.rxbinding:rxbinding:0.4.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6c54b8b342ac76d970618ed215e56e2c\jetified-rxbinding-0.4.0\AndroidManifest.xml:6:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:5:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4fe44ae24daa7cfa2dd483a5d3b65a2f\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4fe44ae24daa7cfa2dd483a5d3b65a2f\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\062eb74c1a6fe650432564db4113c6b5\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\062eb74c1a6fe650432564db4113c6b5\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\767612e54049c1347a891905a7e9d5e4\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\767612e54049c1347a891905a7e9d5e4\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\088df2da946cb4ca3cb17d0af61a56e5\jetified-glide-4.7.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\088df2da946cb4ca3cb17d0af61a56e5\jetified-glide-4.7.1\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4f680f5cab482b7966fa9c805ac0cb70\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4f680f5cab482b7966fa9c805ac0cb70\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\61965e5c06bda9445c13760f9d9ef779\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\61965e5c06bda9445c13760f9d9ef779\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ceb81553a8d4d1147c847656f2ca2121\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ceb81553a8d4d1147c847656f2ca2121\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ec593f8d91037f6ef1bbcd6a177afa1c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ec593f8d91037f6ef1bbcd6a177afa1c\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4f8b5527496d67480951cc322460db7f\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4f8b5527496d67480951cc322460db7f\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fb64895045b937c99805be897a2a6961\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fb64895045b937c99805be897a2a6961\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5276819c062a92c029464122749254f1\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5276819c062a92c029464122749254f1\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4932f7e67b26f042b51fa62f1aa4816d\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4932f7e67b26f042b51fa62f1aa4816d\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\8849109129fcb2f39779166fb64480b1\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\8849109129fcb2f39779166fb64480b1\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\00bc847ce5b9e3ce7b40d465bffbf9e9\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\00bc847ce5b9e3ce7b40d465bffbf9e9\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5ad830c9e1047f79e3f0f7e9e42ab8ab\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5ad830c9e1047f79e3f0f7e9e42ab8ab\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\a3c457ded457b98b207b4f227d629399\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\a3c457ded457b98b207b4f227d629399\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3d4a3c67e39fa8d6d0c0f126c28b81d8\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3d4a3c67e39fa8d6d0c0f126c28b81d8\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\82b148795609bbbaf8e825fc2ff2a6bf\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\82b148795609bbbaf8e825fc2ff2a6bf\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\d2cae29ea156ecc28d8f5099dc624ed2\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\d2cae29ea156ecc28d8f5099dc624ed2\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\246153fc0686d4ff78c8961ca91329b7\core-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\246153fc0686d4ff78c8961ca91329b7\core-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c70a8bef3ed62675d42960780f476d6e\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c70a8bef3ed62675d42960780f476d6e\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fb2fbe77879a57ea0c5dfd6fe59ba874\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fb2fbe77879a57ea0c5dfd6fe59ba874\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\664f4ae009672f8d49f9e02edae5cc02\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\664f4ae009672f8d49f9e02edae5cc02\exifinterface-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5122ca05bdeb1012fe6c79dfa57f2fa5\jetified-gifdecoder-4.7.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.7.1] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\5122ca05bdeb1012fe6c79dfa57f2fa5\jetified-gifdecoder-4.7.1\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4c7e5b6d46acfb24c04b3a473c53b419\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\4c7e5b6d46acfb24c04b3a473c53b419\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\f582580d3eb247a74d915a27810a4674\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\f582580d3eb247a74d915a27810a4674\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c75155371656c04dff3a027cdeb13e8a\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\c75155371656c04dff3a027cdeb13e8a\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\53b4a4cf87c0ff501a8c414cec884555\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\53b4a4cf87c0ff501a8c414cec884555\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3a992d8307f21a8f15eb649383ba6a6a\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3a992d8307f21a8f15eb649383ba6a6a\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\94d1bdd9d3f5e77b2c2deb76d0ecef77\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\94d1bdd9d3f5e77b2c2deb76d0ecef77\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\63647da4654da12a6f2785cfbbad8123\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\63647da4654da12a6f2785cfbbad8123\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\55f1e77ae750c7a464c8eeab963223d4\rxandroid-1.1.0\AndroidManifest.xml:19:5-43
+MERGED from [io.reactivex:rxandroid:1.1.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\55f1e77ae750c7a464c8eeab963223d4\rxandroid-1.1.0\AndroidManifest.xml:19:5-43
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\3ec6fa8458ddbe732478393a9f9e6c77\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\e7fbe19d888e1bac1bbb15e0043fe42e\library-1.0.9\AndroidManifest.xml:8:5-10:41
+MERGED from [com.lorentzos.swipecards:library:1.0.9] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\e7fbe19d888e1bac1bbb15e0043fe42e\library-1.0.9\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.ittianyu:BottomNavigationViewEx:1.2.4] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ef1156f1edaaa960f84facd8e5f40139\jetified-BottomNavigationViewEx-1.2.4\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.ittianyu:BottomNavigationViewEx:1.2.4] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\ef1156f1edaaa960f84facd8e5f40139\jetified-BottomNavigationViewEx-1.2.4\AndroidManifest.xml:7:5-9:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1442c3aebde90af1632e512624faf9f5\jetified-circleimageview-2.2.0\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\1442c3aebde90af1632e512624faf9f5\jetified-circleimageview-2.2.0\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\dutta\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml
+provider#com.squareup.picasso.PicassoProvider
+ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+	android:authorities
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+	android:exported
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\dutta\.gradle\caches\transforms-2\files-2.1\6bdab042a5b3d6d70d7eaeead205f045\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64

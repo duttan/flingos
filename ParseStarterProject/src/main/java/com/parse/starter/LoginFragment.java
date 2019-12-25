@@ -2,23 +2,16 @@ package com.parse.starter;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,6 +28,7 @@ import com.jakewharton.rxbinding.widget.RxTextView;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.starter.Main.MainActivity;
 
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -368,7 +362,7 @@ public class LoginFragment extends BaseFragment{
                 {
                     session.createUserLoginSession(emailid.getText().toString(),password.getText().toString());
                     Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
-                    startActivity( new Intent(getActivity(),WelcomeActivity.class));
+                    startActivity( new Intent(getActivity(), MainActivity.class));
                     getActivity().finish();
                 }
                 else

@@ -3,15 +3,13 @@ package com.parse.starter.Adapters;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
-import android.support.v4.content.res.ResourcesCompat;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.core.content.res.ResourcesCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +17,6 @@ import com.parse.starter.Contact_model;
 import com.parse.starter.R;
 
 import java.util.ArrayList;
-import java.util.zip.Inflater;
 
 public class Contact_adapter extends RecyclerView.Adapter<Contact_adapter.Contacts_ViewHolder> {
 

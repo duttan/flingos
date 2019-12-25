@@ -1,52 +1,41 @@
 package com.parse.starter;
 
 import android.Manifest;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.widget.Toolbar;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
-import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
-
 public class WelcomeActivity extends BaseActivity {
 
 
     /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * The {@link PagerAdapter} that will provide
      * fragments for each of the sections. We use a
      * {@link FragmentPagerAdapter} derivative, which will keep every
      * loaded fragment in memory. If this becomes too memory intensive, it
      * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     * {@link FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -57,6 +46,7 @@ public class WelcomeActivity extends BaseActivity {
     private UserSession session;
     public static final int REQUEST_PERMISSION = 2001 ;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,38 +54,32 @@ public class WelcomeActivity extends BaseActivity {
         Log.i("@@class:  ","WelcomeActivity");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mViewPager = (ViewPager) findViewById(R.id.container);
+//        mViewPager = (ViewPager) findViewById(R.id.container);
         //getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.background));
-
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-
         session = new UserSession(this);
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED)
             {
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS},REQUEST_PERMISSION);
-
             }
         else
         {
-            setAdapter();
-
+//          setAdapter();
         }
 
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.centerframe, BioFragment.newInstance());
-                ft.addToBackStack(null);
-                ft.commit();
-                getFragmentManager().popBackStack();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+//                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                ft.replace(R.id.centerframe, BioFragment.newInstance());
+//                ft.addToBackStack(null);
+//                ft.commit();
+//                getFragmentManager().popBackStack();
+//            }
+//        });
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
         {
@@ -116,11 +100,11 @@ public class WelcomeActivity extends BaseActivity {
             {
                 if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 {
-                    setAdapter();
+ //                   setAdapter();
                     }
                 else
                     {
-                   finish();
+ //                  finish();
                 }
             }
         }

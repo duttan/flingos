@@ -3,13 +3,10 @@ package com.parse.starter;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,12 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
+import com.parse.starter.Main.MainActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -182,7 +177,7 @@ public class SignUp_Fragment extends BaseFragment {
                 {
                     session.createUserLoginSession(emailId.getText().toString(),password.getText().toString());
                     Toast.makeText(getActivity(), "Hi"+user.getUsername(), Toast.LENGTH_SHORT).show();
-                    startActivity( new Intent(getActivity(),WelcomeActivity.class));
+                    startActivity( new Intent(getActivity(), MainActivity.class));
                     getActivity().finish();
                 }
                 else

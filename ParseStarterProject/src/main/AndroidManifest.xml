@@ -15,6 +15,19 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera2" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
 
 
     <application
@@ -55,6 +68,16 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".Matched.Matched_Activity" />
+        <activity android:name=".Profile.Profile_Activity" />
+        <activity android:name=".Main.ProfileCheckinMain" />
+        <activity android:name=".Matched.ProfileCheckinMatched" />
+        <activity android:name=".Profile.EditProfileActivity" />
+        <activity android:name=".Main.MainActivity" />
+        <activity android:name=".Profile.SettingsActivity" />
+        <activity android:name=".Main.BtnLikeActivity" />
+        <activity android:name=".Main.BtnDislikeActivity"></activity>
     </application>
 
 </manifest>

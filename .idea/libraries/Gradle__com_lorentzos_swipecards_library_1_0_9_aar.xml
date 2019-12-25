@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.lorentzos.swipecards:library:1.0.9@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.0.9.aar/c57b9a1350ebae2dc7fa10a30a9789be/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/library-1.0.9.aar/c57b9a1350ebae2dc7fa10a30a9789be/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7fbe19d888e1bac1bbb15e0043fe42e/library-1.0.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7fbe19d888e1bac1bbb15e0043fe42e/library-1.0.9/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

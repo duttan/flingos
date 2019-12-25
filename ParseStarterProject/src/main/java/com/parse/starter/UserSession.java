@@ -41,7 +41,6 @@ public class UserSession {
         editor.putString(KEY_EMAIL, uEmail);
         editor.putString(KEY_PASSWORD, uPassword);
         editor.putString(USER_SESSION_TOKEN, ParseUser.getCurrentUser().getSessionToken());
-
         editor.commit();
     }
 
@@ -50,7 +49,7 @@ public class UserSession {
         if(this.isUserLoggedIn() && this.Check_sessiontoken()){
 
             // user is not logged in redirect him to Login Activity
-            Intent i = new Intent(context, WelcomeActivity.class);
+            Intent i = new Intent(context, com.parse.starter.Main.MainActivity.class);
 
             // Closing all the Activities from stack
             i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

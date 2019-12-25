@@ -1,22 +1,18 @@
 
 package com.parse.starter;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
+
+import androidx.fragment.app.FragmentManager;
 
 import com.parse.ParseAnalytics;
-
-import java.security.NoSuchAlgorithmException;
 
 
 public class MainActivity extends BaseActivity {
 
-  private static android.support.v4.app.FragmentManager fragmentManager;
+  private static FragmentManager fragmentManager;
   LoginFragment loginFragment = LoginFragment.newInstance();
 
   @Override

@@ -1,11 +1,9 @@
 package com.parse.starter;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.parse.ParseUser;
@@ -13,7 +11,7 @@ import com.parse.ParseUser;
 
 public class LaunchActivity extends AppCompatActivity
 {
-    private int SPLASH_TIME = 1000;
+    private int SPLASH_TIME = 5000;
     UserSession session;
 
     @Override
@@ -37,7 +35,11 @@ public class LaunchActivity extends AppCompatActivity
 
                     if(!check)
                     {
-                        startActivity(new Intent(LaunchActivity.this,MainActivity.class));
+                        startActivity(new Intent(LaunchActivity.this, MainActivity.class));
+                    }
+                    else
+                    {
+                        startActivity(new Intent(LaunchActivity.this, com.parse.starter.Main.MainActivity.class));
                     }
 
 
