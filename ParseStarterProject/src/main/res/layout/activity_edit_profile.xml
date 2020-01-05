@@ -313,7 +313,7 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp">
 
-                    <com.parse.starter.customfonts.MyTextView_Roboto_Bold
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -334,7 +334,7 @@
                         android:layout_marginTop="2dp"
                         android:background="@color/colorAccent" />
 
-                    <com.parse.starter.customfonts.EditText_Roboto_Bold
+                    <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -356,7 +356,7 @@
                         android:layout_marginTop="2dp"
                         android:background="@color/colorAccent" />
 
-                    <com.parse.starter.customfonts.MyTextView_Roboto_Bold
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -378,7 +378,7 @@
                         android:layout_marginTop="2dp"
                         android:background="@color/colorAccent" />
 
-                    <com.parse.starter.customfonts.MyTextView_Roboto_Bold
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -400,7 +400,7 @@
                         android:layout_marginTop="2dp"
                         android:background="@color/colorAccent" />
 
-                    <com.parse.starter.customfonts.MyTextView_Roboto_Bold
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
@@ -456,7 +456,7 @@
                             android:visibility="visible" />
                     </RelativeLayout>
 
-                    <com.parse.starter.customfonts.MyTextView_Roboto_Bold
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="@dimen/_5dp"

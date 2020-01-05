@@ -59,8 +59,10 @@ public class MainActivity extends Activity {
         setupTopNavigationView();
 
 
+        //https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg
+
         rowItems = new ArrayList<Cards>();
-        Cards cards = new Cards("1", "Swati Tripathy", 21, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "Simple and beautiful Girl", "Acting", 200);
+        Cards cards = new Cards("1", "Tom Chris", 21, "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200);
         rowItems.add(cards);
         cards = new Cards("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
         rowItems.add(cards);
