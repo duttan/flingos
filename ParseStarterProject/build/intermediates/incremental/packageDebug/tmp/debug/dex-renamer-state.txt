@@ -1,4 +1,4 @@
-#Sun Jan 05 13:41:46 IST 2020
-base.0=C\:\\Users\\dutta\\AndroidStudioProjects\\flingos\\ParseStarterProject\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Mon Jan 06 21:47:58 IST 2020
+base.0=C\:\\Users\\666299\\AndroidStudioProjects\\flingos\\ParseStarterProject\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

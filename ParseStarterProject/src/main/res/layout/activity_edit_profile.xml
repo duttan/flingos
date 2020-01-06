@@ -322,11 +322,14 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/user_bio"
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:background="@android:color/transparent"
                         android:gravity="bottom"
-                        android:hint="Write something about you" />
+                        android:hint="Write something about you"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -343,6 +346,7 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/user_job"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
@@ -365,6 +369,7 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/user_company"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
@@ -387,6 +392,7 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/user_school"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@android:color/transparent"
@@ -514,6 +520,30 @@
                             android:checked="false"
                             android:thumb="@null"
                             app:track="@null" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10dp"
+                        android:layout_marginBottom="@dimen/_10dp"
+                        android:gravity="center">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="@dimen/_5dp"
+                            android:elevation="@dimen/_5dp">
+
+                            <Button
+                                android:id="@+id/update_details"
+                                android:backgroundTint="@color/pink"
+                                android:text="Update Details"
+                                android:textColor="@color/white"
+                                android:layout_width="160dp"
+                                android:layout_height="45dp">
+                            </Button>
+                        </androidx.cardview.widget.CardView>
 
                     </RelativeLayout>
 

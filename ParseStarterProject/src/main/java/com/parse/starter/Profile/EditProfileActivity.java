@@ -17,6 +17,8 @@ import android.provider.Settings;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -27,6 +29,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.starter.R;
 
 import java.io.ByteArrayOutputStream;
@@ -42,7 +50,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private static final int PERMISSION_CALLBACK_CONSTANT = 100;
     //firebase
     private static final int REQUEST_PERMISSION_SETTING = 101;
-    Button man, woman;
+    Button man, woman, update;
     ImageButton back;
     TextView man_text, women_text;
     ImageView imageView1, imageView2, imageView3, imageView4, imageView5, imageView6, imageView;
@@ -56,7 +64,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private String userId, profileImageUri;
     private Uri resultUri;
     private String userSex;
-    private EditText phoneNumber, aboutMe;
+    private EditText phoneNumber, aboutMe, job, company, school;
     private CheckBox sportsCheckBox, travelCheckBox, musicCheckBox, fishingCheckBox;
     private boolean isSportsClicked = false;
     private boolean isTravelClicked = false;
@@ -67,6 +75,11 @@ public class EditProfileActivity extends AppCompatActivity {
     private boolean sentToSettings = false;
     private int REQUEST_CAMERA = 0, SELECT_FILE = 1;
     private String userChoosenTask;
+
+    //parse
+    private ParseUser currentuser = ParseUser.getCurrentUser();
+    private ParseObject flingcard = new ParseObject("Card");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +99,12 @@ public class EditProfileActivity extends AppCompatActivity {
         man_text = findViewById(R.id.man_text);
         women_text = findViewById(R.id.woman_text);
         back = findViewById(R.id.back);
+        update = findViewById(R.id.update_details);
+        aboutMe = findViewById(R.id.user_bio);
+        job = findViewById(R.id.user_job);
+        company = findViewById(R.id.user_company);
+        school = findViewById(R.id.user_school);
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,6 +186,96 @@ public class EditProfileActivity extends AppCompatActivity {
 
             }
         });
+
+        fill_userdetails();
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // TODO code
+                updatedetails();
+
+            }
+        });
+
+
+    }
+
+    private void fill_userdetails() {
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+        query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
+        try {
+            if(query.getFirst().isDataAvailable()) {
+                flingcard = query.getFirst();
+                Log.i("@@update_status:","old_user");
+                aboutMe.setText(flingcard.get("bio").toString());
+                job.setText(flingcard.get("job").toString());
+                company.setText(flingcard.get("company").toString());
+                school.setText(flingcard.get("school").toString());
+            }
+            else
+            {
+                Log.i("@@update_status:","new_user");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    private void updatedetails() {
+
+        if(!aboutMe.getText().toString().equals("") && !job.getText().toString().equals("") && !company.getText().toString().equals("") && !school.getText().toString().equals(""))
+        {
+
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+            query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
+            try {
+               if(query.getFirst().isDataAvailable()) {
+                   flingcard = query.getFirst();
+                   Log.i("@@update_status:","old_user");
+               }
+               else
+               {
+                   Log.i("@@update_status:","new_user");
+               }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+
+            flingcard.put("userobject_id_fk",currentuser.getObjectId());
+            flingcard.put("bio",aboutMe.getText().toString());
+            flingcard.put("company",company.getText().toString());
+            flingcard.put("school",school.getText().toString());
+            flingcard.put("job",job.getText().toString());
+            flingcard.saveInBackground(new SaveCallback() {
+                @Override
+                public void done(ParseException e) {
+                    if(e == null)
+                    {
+                        Log.i("@@update_status:","success");
+                        onBackPressed();
+                    }
+                    else
+                    {
+                        Log.i("@@update_status:",e.getMessage());
+                    }
+
+
+                }
+            });
+
+        }
+        else
+        {
+            Toast.makeText(this,"Fill all your details! Help us get you a better match",Toast.LENGTH_SHORT).show();
+        }
 
 
     }
