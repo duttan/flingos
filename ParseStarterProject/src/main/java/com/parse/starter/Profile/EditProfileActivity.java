@@ -31,10 +31,12 @@ import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.starter.BaseActivity;
 import com.parse.starter.R;
 
 import java.io.ByteArrayOutputStream;
@@ -45,7 +47,7 @@ import java.io.IOException;
 
 
 
-public class EditProfileActivity extends AppCompatActivity {
+public class EditProfileActivity extends BaseActivity {
     private static final String TAG = "EditProfileActivity";
     private static final int PERMISSION_CALLBACK_CONSTANT = 100;
     //firebase
@@ -85,7 +87,7 @@ public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
-
+        hidekeyboard();
         permissionStatus = getSharedPreferences("permissionStatus", MODE_PRIVATE);
         requestMultiplePermissions();
         imageView1 = findViewById(R.id.image_view_1);
@@ -421,12 +423,12 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void onCaptureImageResult(Intent data) {
+
         Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
 
-        File destination = new File(Environment.getExternalStorageDirectory(),
-                System.currentTimeMillis() + ".jpg");
+        File destination = new File(Environment.getExternalStorageDirectory(), System.currentTimeMillis() + ".jpg");
 
         FileOutputStream fo;
         try {
@@ -440,7 +442,30 @@ public class EditProfileActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        byte[] byteArray = bytes.toByteArray();
+        ParseFile img_file = new ParseFile("dp.png", byteArray);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+        query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
+        try {
+            if(query.getFirst().isDataAvailable()) {
+                flingcard = query.getFirst();
+                flingcard.put("profile_picture",img_file);
+                flingcard.saveInBackground();
+                Log.i("@@Pic update_status:","success");
+            }
+            else
+            {
+                Log.i("@@Pic update_status:","no_user");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
         imageView.setImageBitmap(thumbnail);
+
+
     }
 
     @SuppressWarnings("deprecation")
@@ -453,6 +478,29 @@ public class EditProfileActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+
+        byte[] byteArray = bytes.toByteArray();
+        ParseFile img_file = new ParseFile("dp.png", byteArray);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+        query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
+        try {
+            if(query.getFirst().isDataAvailable()) {
+                flingcard = query.getFirst();
+                flingcard.put("profile_picture",img_file);
+                flingcard.saveInBackground();
+                Log.i("@@Pic update_status:","success");
+            }
+            else
+            {
+                Log.i("@@Pic update_status:","no_user");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
         imageView.setImageBitmap(bm);

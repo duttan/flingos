@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.inputmethod.InputMethodManager;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class BaseActivity extends AppCompatActivity {
@@ -46,6 +48,16 @@ public class BaseActivity extends AppCompatActivity {
             return false;
 
 
+    }
+
+    protected void hidekeyboard()
+    {
+        if(this.getCurrentFocus()!= null)
+        {
+            InputMethodManager inputMethodManager = (InputMethodManager) this.getSystemService(Context.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(),InputMethodManager.HIDE_NOT_ALWAYS);
+
+        }
     }
 
     protected AlertDialog.Builder build_Network_Error_Dialog(Context context) {
