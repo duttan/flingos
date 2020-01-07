@@ -80,4 +80,6 @@
         <item>@drawable/img3</item>
         <item>@drawable/img4</item>
     </integer-array>
+
+    <string name="title_activity_maps">Map</string>
 </resources>

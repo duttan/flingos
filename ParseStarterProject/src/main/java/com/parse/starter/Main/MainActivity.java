@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -21,6 +24,7 @@ import android.widget.Toast;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import com.parse.starter.R;
+import com.parse.starter.Utilss.GPS;
 import com.parse.starter.Utilss.PulsatorLayout;
 import com.parse.starter.Utilss.TopNavigationViewHelper;
 
@@ -39,6 +43,10 @@ public class MainActivity extends Activity {
     private NotificationHelper mNotificationHelper;
     private Cards cards_data[];
     private PhotoAdapter arrayAdapter;
+    private LocationListener locationListener;
+    private LocationManager locationManager;
+    private GPS gps;
+    private Location current_loc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +72,7 @@ public class MainActivity extends Activity {
         rowItems = new ArrayList<Cards>();
         Cards cards = new Cards("1", "Tom Chris", 21, "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200);
         rowItems.add(cards);
-        cards = new Cards("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
+        cards = new Cards("2", "Ananaya Panday", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
         rowItems.add(cards);
         cards = new Cards("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
         rowItems.add(cards);
@@ -92,16 +100,16 @@ public class MainActivity extends Activity {
 
     private void updateLocation() {
 
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_LOCATION);
-        } else {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_LOCATION); }
+        else {
+              gps = new GPS(this);
+              current_loc = gps.getLocation();
 
         }
+
+
     }
 
     @Override
@@ -110,13 +118,11 @@ public class MainActivity extends Activity {
             case MY_PERMISSIONS_REQUEST_LOCATION: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED) {
-
+                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                         updateLocation();
+
                     } else {
-                        Toast.makeText(MainActivity.this, "Location Permission Denied. You have to give permission inorder to know the user range ", Toast.LENGTH_SHORT)
-                                .show();
+                        Toast.makeText(MainActivity.this, "Location Permission Denied. You have to give permission inorder to know the user range ", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

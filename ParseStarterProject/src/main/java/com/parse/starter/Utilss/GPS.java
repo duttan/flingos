@@ -21,13 +21,14 @@ public class GPS implements LocationListener {
         this.mContext = mContext;
         mLocationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
 
-        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED &&
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
                         != PackageManager.PERMISSION_GRANTED) {
 
             return;
         }
+
+        // locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
         mlocation = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         onLocationChanged(mlocation);
