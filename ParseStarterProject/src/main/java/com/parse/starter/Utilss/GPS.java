@@ -16,10 +16,12 @@ public class GPS implements LocationListener {
     Location mlocation;
     LocationManager mLocationManager;
     String mProvider = LocationManager.GPS_PROVIDER;
+    LocationListener mLocationListener;
 
     public GPS(Context mContext) {
         this.mContext = mContext;
         mLocationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+
 
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -27,17 +29,22 @@ public class GPS implements LocationListener {
 
             return;
         }
+        else {
 
-        // locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            mlocation = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
-        mlocation = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        onLocationChanged(mlocation);
+            if (mlocation == null) {
+                mLocationManager.requestLocationUpdates(mProvider, 0, 0, mLocationListener);
+            } else {
+                onLocationChanged(mlocation);
+            }
+        }
+
     }
-
 
     @Override
     public void onLocationChanged(Location location) {
-        this.mlocation = mlocation;
+        this.mlocation = location;
     }
 
     @Override

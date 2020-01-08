@@ -6,10 +6,10 @@ package com.parse.starter.Main;
 public class Cards {
     private String userId;
     private String name, profileImageUrl, bio, interest;
-    private int age;
+    private String age;
     private int distance;
 
-    public Cards(String userId, String name, int age, String profileImageUrl, String bio, String interest, int distance) {
+    public Cards(String userId, String name, String age, String profileImageUrl, String bio, String interest, int distance) {
         this.userId = userId;
         this.name = name;
         this.age = age;
@@ -35,11 +35,11 @@ public class Cards {
         return interest;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

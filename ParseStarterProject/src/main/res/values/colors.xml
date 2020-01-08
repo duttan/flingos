@@ -11,6 +11,8 @@
     <color name="transparentPink">#99FF4081</color>
 
     <color name="grey">#bfbfbf</color>
+    <color name="matt_grey">#898989</color>
+    <color name="back_grey">#a1a1a1</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="link_blue">#1781DB</color>

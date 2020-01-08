@@ -80,6 +80,7 @@ public class EditProfileActivity extends BaseActivity {
 
     //parse
     private ParseUser currentuser = ParseUser.getCurrentUser();
+
     private ParseObject flingcard = new ParseObject("Card");
 
 
@@ -451,8 +452,20 @@ public class EditProfileActivity extends BaseActivity {
             if(query.getFirst().isDataAvailable()) {
                 flingcard = query.getFirst();
                 flingcard.put("profile_picture",img_file);
-                flingcard.saveInBackground();
-                Log.i("@@Pic update_status:","success");
+                flingcard.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+
+                        if(e == null)
+                        {
+                            Log.i("@@Pic update_status:","success");
+                        }
+                        else
+                        {
+                            Log.i("@@Pic update_status:","failure:"+e.getMessage());                        }
+                    }
+                });
+
             }
             else
             {

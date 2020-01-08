@@ -22,11 +22,13 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.ProgressCallback;
+import com.parse.starter.BaseActivity;
 import com.parse.starter.R;
 import com.parse.starter.Utilss.PulsatorLayout;
 import com.parse.starter.Utilss.TopNavigationViewHelper;
 
-public class Profile_Activity extends AppCompatActivity {
+public class Profile_Activity extends BaseActivity {
     private static final String TAG = "Profile_Activity";
     private static final int ACTIVITY_NUM = 0;
     static boolean active = false;
@@ -39,6 +41,7 @@ public class Profile_Activity extends AppCompatActivity {
 
     ParseUser currentuser = ParseUser.getCurrentUser();
     ParseObject flingcard = new ParseObject("Card");
+    ParseFile img_file;
 
 
     @Override
@@ -88,17 +91,35 @@ public class Profile_Activity extends AppCompatActivity {
         try {
             if(query.getFirst().isDataAvailable()) {
                 flingcard = query.getFirst();
-                ParseFile img_file = (ParseFile) flingcard.get("profile_picture");
-                img_file.getDataInBackground(new GetDataCallback() {
-                    @Override
-                    public void done(byte[] data, ParseException e) {
-                        if(e == null && data!= null)
-                        {
-                            Bitmap bitmap = BitmapFactory.decodeByteArray(data,0,data.length);
-                            imagePerson.setImageBitmap(bitmap);
+                if(flingcard.get("profile_picture")!= null) {
+                    img_file = (ParseFile) flingcard.get("profile_picture");
+
+
+                    img_file.getDataInBackground(new ProgressCallback() {
+                        @Override
+                        public void done(Integer percentDone) {
+                            showProgressDialog();
+                            if (percentDone >= 100) {
+                                hideProgressDialog();
+                            }
                         }
-                    }
-                });
+                    });
+
+                    img_file.getDataInBackground(new GetDataCallback() {
+                        @Override
+                        public void done(byte[] data, ParseException e) {
+                            if (e == null && data != null) {
+                                Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                                imagePerson.setImageBitmap(bitmap);
+                            } else {
+                                Log.i("@@Error-msg", e.getMessage());
+                            }
+                        }
+                    });
+                }
+                else {
+                    //do nothing
+                }
 
             }
             else

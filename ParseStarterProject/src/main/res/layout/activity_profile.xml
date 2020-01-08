@@ -45,7 +45,7 @@
                     android:layout_height="161dp"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="59dp"
-                    android:src="@drawable/monkey"
+                    android:src="@drawable/default_man"
                     app:civ_border_color="@color/transparentPink"
                     app:civ_border_width="2dp" />
             </com.parse.starter.Utilss.PulsatorLayout>

@@ -23,6 +23,14 @@ import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.parse.starter.R;
 import com.parse.starter.Utilss.GPS;
 import com.parse.starter.Utilss.PulsatorLayout;
@@ -37,7 +45,7 @@ public class MainActivity extends Activity {
     private static final int ACTIVITY_NUM = 1;
     final private int MY_PERMISSIONS_REQUEST_LOCATION = 123;
     ListView listView;
-    List<Cards> rowItems;
+    List<Cards> rowItems = new ArrayList<Cards>();
     FrameLayout cardFrame, moreFrame;
     private Context mContext = MainActivity.this;
     private NotificationHelper mNotificationHelper;
@@ -47,6 +55,10 @@ public class MainActivity extends Activity {
     private LocationManager locationManager;
     private GPS gps;
     private Location current_loc;
+    private ParseGeoPoint currentUserLocationParse;
+    private ParseUser currentUser = ParseUser.getCurrentUser();
+    private List<String> potential_matches = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +70,12 @@ public class MainActivity extends Activity {
         moreFrame = findViewById(R.id.more_frame);
 
         // start pulsator
-
+        gps = new GPS(this);
+        current_loc = gps.getLocation();
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
         mPulsator.start();
+        updateLocation();
+        updateDeck();
         mNotificationHelper = new NotificationHelper(this);
 
 
@@ -69,26 +84,88 @@ public class MainActivity extends Activity {
 
         //https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg
 
-        rowItems = new ArrayList<Cards>();
-        Cards cards = new Cards("1", "Tom Chris", 21, "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200);
-        rowItems.add(cards);
-        cards = new Cards("2", "Ananaya Panday", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
-        rowItems.add(cards);
-        cards = new Cards("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
-        rowItems.add(cards);
-        cards = new Cards("4", "Preety Deshmukh", 19, "http://profilepicturesdp.com/wp-content/uploads/2018/07/fb-real-girls-dp-3.jpg", "dashing girl", "swiming", 1308);
-        rowItems.add(cards);
-        cards = new Cards("5", "Srutimayee Sen", 20, "https://dp.profilepics.in/profile_pictures/selfie-girls-profile-pics-dp/selfie-pics-dp-for-whatsapp-facebook-profile-25.jpg", "chulbuli nautankibaj ", "Drawing", 1200);
-        rowItems.add(cards);
-        cards = new Cards("6", "Dikshya Agarawal", 21, "https://pbs.twimg.com/profile_images/485824669732200448/Wy__CJwU.jpeg", "Simple and beautiful Girl", "Sleeping", 700);
-        rowItems.add(cards);
-        cards = new Cards("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
-        rowItems.add(cards);
+//        Cards cards = new Cards("1", "Tom Chris", 21, "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200);
+//        rowItems.add(cards);
+//        cards = new Cards("2", "Ananaya Panday", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
+//        rowItems.add(cards);
+//        cards = new Cards("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
+//        rowItems.add(cards);
+//        cards = new Cards("4", "Preety Deshmukh", 19, "http://profilepicturesdp.com/wp-content/uploads/2018/07/fb-real-girls-dp-3.jpg", "dashing girl", "swiming", 1308);
+//        rowItems.add(cards);
+//        cards = new Cards("5", "Srutimayee Sen", 20, "https://dp.profilepics.in/profile_pictures/selfie-girls-profile-pics-dp/selfie-pics-dp-for-whatsapp-facebook-profile-25.jpg", "chulbuli nautankibaj ", "Drawing", 1200);
+//        rowItems.add(cards);
+//        cards = new Cards("6", "Dikshya Agarawal", 21, "https://pbs.twimg.com/profile_images/485824669732200448/Wy__CJwU.jpeg", "Simple and beautiful Girl", "Sleeping", 700);
+//        rowItems.add(cards);
+//        cards = new Cards("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
+//        rowItems.add(cards);
 
-        arrayAdapter = new PhotoAdapter(this, R.layout.item, rowItems);
 
-        checkRowItem();
-        updateSwipeCard();
+    }
+
+    private void updateDeck() {
+
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereNear("currentloc",currentUser.getParseGeoPoint("currentloc") );
+
+        query.findInBackground(new FindCallback<ParseUser>() {
+            @Override
+            public void done(List<ParseUser> objects, ParseException e) {
+
+
+                if(e == null)
+                {
+                    for (ParseUser user: objects)
+                    {
+                        potential_matches.add(user.getObjectId());
+
+                    }
+                    prepare_stack(potential_matches);
+                }
+                else {
+                    Log.i("@@Error:",e.getMessage());
+                }
+            }
+        });
+
+    }
+
+
+    private void prepare_stack(List<String> matches) {
+
+        if(matches.size() > 0)
+        {
+            final ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+
+            query.whereContainedIn("userobject_id_fk", matches);
+
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if(e == null)
+                    {
+                        int i = 0;
+                        for(ParseObject card: objects)
+                        {
+
+                            Cards newcard = new Cards(i+"",card.get("cardname").toString(),card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50);
+                            rowItems.add(newcard);
+                            i++;
+                        }
+                        arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+                        checkRowItem();
+                        updateSwipeCard();
+                    }
+                    else
+                    {
+                        Log.i("@@Error:",e.getMessage());
+                    }
+                }
+            });
+        }
+        else
+        {
+         Log.i("@@","No one is available rightnow");
+        }
     }
 
     private void checkRowItem() {
@@ -104,8 +181,30 @@ public class MainActivity extends Activity {
 
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_LOCATION); }
         else {
-              gps = new GPS(this);
-              current_loc = gps.getLocation();
+
+             // current_loc = gps.getLocation();
+              currentUserLocationParse = new ParseGeoPoint(current_loc.getLatitude(), current_loc.getLongitude());
+
+              if (currentUser != null) {
+                  currentUser.put("currentloc", currentUserLocationParse);
+                  currentUser.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if(e == null)
+                        {
+                            Log.i("@@userloc",current_loc.toString());
+                        }
+                        else
+                        {
+                            Log.i("@@userloc",e.getMessage());
+                        }
+
+                    }
+                });
+            } else {
+
+                Toast.makeText(mContext,"Please login to proceed",Toast.LENGTH_SHORT).show();
+            }
 
         }
 
