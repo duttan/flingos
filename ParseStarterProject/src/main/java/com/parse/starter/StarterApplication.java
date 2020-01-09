@@ -33,6 +33,7 @@ public class StarterApplication extends Application {
             .applicationId("7d7404f7b6393e56c488e617e0cdf3cd09a46f60")
             .clientKey("fd2ac272a2653d515b721c6572db12634e409c20")
             .server("http://3.14.27.27:80/parse/")
+            .enableLocalDataStore()
             .build()
     );
 

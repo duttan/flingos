@@ -31,6 +31,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.starter.LaunchActivity;
 import com.parse.starter.R;
 import com.parse.starter.Utilss.GPS;
 import com.parse.starter.Utilss.PulsatorLayout;
@@ -46,6 +47,8 @@ public class MainActivity extends Activity {
     final private int MY_PERMISSIONS_REQUEST_LOCATION = 123;
     ListView listView;
     List<Cards> rowItems = new ArrayList<Cards>();
+    List<Cards> temp_items = new ArrayList<Cards>();
+    List<Cards> final_stack = new ArrayList<Cards>();
     FrameLayout cardFrame, moreFrame;
     private Context mContext = MainActivity.this;
     private NotificationHelper mNotificationHelper;
@@ -58,6 +61,8 @@ public class MainActivity extends Activity {
     private ParseGeoPoint currentUserLocationParse;
     private ParseUser currentUser = ParseUser.getCurrentUser();
     private List<String> potential_matches = new ArrayList<String>();
+
+
 
 
     @Override
@@ -75,10 +80,30 @@ public class MainActivity extends Activity {
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
         mPulsator.start();
         updateLocation();
-        updateDeck();
+        final_stack = updateDeck();
+//
+//        Thread timer = new Thread()
+//        {
+//            public void run()
+//            {
+//                try {
+//                    final_stack = updateDeck();
+//                    sleep(5000);
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                } finally {
+//
+//                }
+//            }
+//
+//        };
+//        timer.start();
+
+
         mNotificationHelper = new NotificationHelper(this);
 
-
+        arrayAdapter = new PhotoAdapter(mContext, R.layout.item, final_stack);
         setupTopNavigationView();
 
 
@@ -102,7 +127,8 @@ public class MainActivity extends Activity {
 
     }
 
-    private void updateDeck() {
+    private List<Cards> updateDeck() {
+
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
         query.whereNear("currentloc",currentUser.getParseGeoPoint("currentloc") );
@@ -111,32 +137,33 @@ public class MainActivity extends Activity {
             @Override
             public void done(List<ParseUser> objects, ParseException e) {
 
-
                 if(e == null)
                 {
                     for (ParseUser user: objects)
                     {
-                        potential_matches.add(user.getObjectId());
+                        if(user.getObjectId() != currentUser.getObjectId()){
+                        potential_matches.add(user.getObjectId());}
 
                     }
-                    prepare_stack(potential_matches);
+                    temp_items = prepare_stack(potential_matches);
                 }
                 else {
                     Log.i("@@Error:",e.getMessage());
                 }
             }
         });
-
+            return temp_items;
     }
 
 
-    private void prepare_stack(List<String> matches) {
+    private List<Cards> prepare_stack(List<String> matches) {
 
         if(matches.size() > 0)
         {
             final ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
 
             query.whereContainedIn("userobject_id_fk", matches);
+
 
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
@@ -151,13 +178,16 @@ public class MainActivity extends Activity {
                             rowItems.add(newcard);
                             i++;
                         }
-                        arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+
+
                         checkRowItem();
                         updateSwipeCard();
                     }
                     else
                     {
                         Log.i("@@Error:",e.getMessage());
+
+                        rowItems.add(new Cards("1", "Tom Chris", "21", "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200));
                     }
                 }
             });
@@ -166,6 +196,8 @@ public class MainActivity extends Activity {
         {
          Log.i("@@","No one is available rightnow");
         }
+
+        return rowItems;
     }
 
     private void checkRowItem() {

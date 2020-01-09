@@ -207,7 +207,9 @@ public class EditProfileActivity extends BaseActivity {
 
     private void fill_userdetails() {
 
+
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+        query.fromLocalDatastore();
         query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
         try {
             if(query.getFirst().isDataAvailable()) {
@@ -257,6 +259,9 @@ public class EditProfileActivity extends BaseActivity {
             flingcard.put("company",company.getText().toString());
             flingcard.put("school",school.getText().toString());
             flingcard.put("job",job.getText().toString());
+            flingcard.pinInBackground();
+
+
             flingcard.saveInBackground(new SaveCallback() {
                 @Override
                 public void done(ParseException e) {

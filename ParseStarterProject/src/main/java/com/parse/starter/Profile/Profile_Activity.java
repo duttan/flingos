@@ -87,24 +87,14 @@ public class Profile_Activity extends BaseActivity {
         Log.d(TAG, "onResume: resume to the page");
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+        query.fromLocalDatastore();
         query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
         try {
             if(query.getFirst().isDataAvailable()) {
                 flingcard = query.getFirst();
+                flingcard.pinInBackground();
                 if(flingcard.get("profile_picture")!= null) {
                     img_file = (ParseFile) flingcard.get("profile_picture");
-
-
-                    img_file.getDataInBackground(new ProgressCallback() {
-                        @Override
-                        public void done(Integer percentDone) {
-                            showProgressDialog();
-                            if (percentDone >= 100) {
-                                hideProgressDialog();
-                            }
-                        }
-                    });
-
                     img_file.getDataInBackground(new GetDataCallback() {
                         @Override
                         public void done(byte[] data, ParseException e) {
