@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -31,6 +32,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.starter.BaseActivity;
 import com.parse.starter.LaunchActivity;
 import com.parse.starter.R;
 import com.parse.starter.Utilss.GPS;
@@ -40,8 +42,10 @@ import com.parse.starter.Utilss.TopNavigationViewHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends Activity {
+
+public class MainActivity extends BaseActivity {
     private static final String TAG = "MainActivity";
     private static final int ACTIVITY_NUM = 1;
     final private int MY_PERMISSIONS_REQUEST_LOCATION = 123;
@@ -50,6 +54,7 @@ public class MainActivity extends Activity {
     List<Cards> temp_items = new ArrayList<Cards>();
     List<Cards> final_stack = new ArrayList<Cards>();
     FrameLayout cardFrame, moreFrame;
+    CircleImageView dpimageView;
     private Context mContext = MainActivity.this;
     private NotificationHelper mNotificationHelper;
     private Cards cards_data[];
@@ -61,6 +66,9 @@ public class MainActivity extends Activity {
     private ParseGeoPoint currentUserLocationParse;
     private ParseUser currentUser = ParseUser.getCurrentUser();
     private List<String> potential_matches = new ArrayList<String>();
+    Bitmap bt = null;
+
+
 
 
 
@@ -69,10 +77,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_flingos);
-
+        Bundle bu = getIntent().getBundleExtra("finalbundle");
 
         cardFrame = findViewById(R.id.card_frame);
         moreFrame = findViewById(R.id.more_frame);
+        dpimageView = findViewById(R.id.post);
 
         // start pulsator
         gps = new GPS(this);
@@ -80,37 +89,54 @@ public class MainActivity extends Activity {
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
         mPulsator.start();
         updateLocation();
+
+
+        if(bu!=null)
+        {
+            bt = bu.getParcelable("finalbundle");
+            dpimageView.setImageBitmap(bt);
+        }
+        else {
+            dpimageView.setImageResource(R.drawable.circle_background);
+        }
+
         final_stack = updateDeck();
-//
+
+        arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+        arrayAdapter.notifyDataSetChanged();
 //        Thread timer = new Thread()
 //        {
 //            public void run()
 //            {
 //                try {
-//                    final_stack = updateDeck();
 //                    sleep(5000);
 //
 //                } catch (Exception e) {
 //                    e.printStackTrace();
 //                } finally {
 //
+//                    arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+//                    arrayAdapter.notifyDataSetChanged();
 //                }
 //            }
 //
 //        };
 //        timer.start();
 
-
         mNotificationHelper = new NotificationHelper(this);
 
-        arrayAdapter = new PhotoAdapter(mContext, R.layout.item, final_stack);
+
         setupTopNavigationView();
+
+        checkRowItem();
+
 
 
         //https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg
 
-//        Cards cards = new Cards("1", "Tom Chris", 21, "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200);
-//        rowItems.add(cards);
+
+//        Cards cards = new Cards("1", "Tom Chris", "21", "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200);
+//        final_stack.add((Cards) rowItems);
 //        cards = new Cards("2", "Ananaya Panday", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
 //        rowItems.add(cards);
 //        cards = new Cards("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
@@ -146,6 +172,8 @@ public class MainActivity extends Activity {
 
                     }
                     temp_items = prepare_stack(potential_matches);
+                    final_stack = temp_items;
+
                 }
                 else {
                     Log.i("@@Error:",e.getMessage());
@@ -176,12 +204,10 @@ public class MainActivity extends Activity {
 
                             Cards newcard = new Cards(i+"",card.get("cardname").toString(),card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50);
                             rowItems.add(newcard);
+                            Log.i("@@card"+ i,"added");
                             i++;
                         }
 
-
-                        checkRowItem();
-                        updateSwipeCard();
                     }
                     else
                     {
@@ -189,6 +215,13 @@ public class MainActivity extends Activity {
 
                         rowItems.add(new Cards("1", "Tom Chris", "21", "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200));
                     }
+
+                    arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+                    arrayAdapter.notifyDataSetChanged();
+                    checkRowItem();
+                    updateSwipeCard();
+                    final_stack = rowItems;
+
                 }
             });
         }
@@ -204,6 +237,11 @@ public class MainActivity extends Activity {
         if (rowItems.isEmpty()) {
             moreFrame.setVisibility(View.VISIBLE);
             cardFrame.setVisibility(View.GONE);
+        }
+        else
+        {
+            moreFrame.setVisibility(View.GONE);
+            cardFrame.setVisibility(View.VISIBLE);
         }
     }
 
@@ -264,14 +302,15 @@ public class MainActivity extends Activity {
     }
 
     private void updateSwipeCard() {
+
         final SwipeFlingAdapterView flingContainer = findViewById(R.id.frame);
         flingContainer.setAdapter(arrayAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
-                Log.d("LIST", "removed object!");
-                rowItems.remove(0);
+                Log.d("@@LIST", "removed object!");
+                final_stack.remove(0);
                 arrayAdapter.notifyDataSetChanged();
             }
 
