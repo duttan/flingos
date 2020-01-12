@@ -6,22 +6,40 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="I/@" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da5c1f57-1040-46e4-a6e6-b9650584a6e8" name="Default" comment="Query results cached">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_chabbal_slidingdotsplash_1_0_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_chabbal_slidingdotsplash_1_0_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_7_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_7_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_ittianyu_BottomNavigationViewEx_1_2_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_ittianyu_BottomNavigationViewEx_1_2_4_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_butterknife_8_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_rxbinding_rxbinding_0_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_jakewharton_rxbinding_rxbinding_0_4_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_2_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/LaunchActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/LaunchActivity$1.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/LaunchActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/LaunchActivity.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/BtnDislikeActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/BtnDislikeActivity$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/BtnDislikeActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/BtnDislikeActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/MainActivity$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/MainActivity$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/MainActivity$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/MainActivity$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/MainActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Main/MainActivity.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/LaunchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/LaunchActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Utilss/GPS.dex" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/0/com/parse/starter/Utilss/GPS.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_main_flingos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_main_flingos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/GPS.java" beforeDir="false" afterPath="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/GPS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +50,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="ce01182173f828ed0c" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="HuggiesRewards" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -84,153 +102,76 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1567">
-              <caret line="226" column="9" lean-forward="true" selection-start-line="226" selection-start-column="9" selection-end-line="226" selection-end-column="9" />
+            <state relative-caret-position="7290">
+              <caret line="411" column="27" selection-start-line="411" selection-start-column="27" selection-end-line="411" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1535#1542#0" expanded="true" />
-                <element signature="e#1607#1614#0" expanded="true" />
-                <element signature="e#1662#1669#0" expanded="true" />
-                <element signature="e#2059#2067#0" expanded="true" />
-                <element signature="e#5736#6356#0" expanded="true" />
-                <element signature="e#6355#6356#0" expanded="true" />
-                <element signature="e#6684#7742#0" expanded="true" />
-                <element signature="e#7741#7742#0" expanded="true" />
-                <element signature="e#8718#9171#0" expanded="true" />
-                <element signature="e#9170#9171#0" expanded="true" />
-                <element signature="e#6870#7136#0" expanded="true" />
-                <element signature="e#7135#7136#0" expanded="true" />
+                <element signature="e#7225#7226#0" expanded="true" />
+                <element signature="e#7257#7258#0" expanded="true" />
+                <element signature="e#11001#11421#0" expanded="true" />
+                <element signature="e#11420#11421#0" expanded="true" />
+                <element signature="e#12554#12820#0" expanded="true" />
+                <element signature="e#12819#12820#0" expanded="true" />
+                <element signature="e#12952#12989#0" expanded="true" />
+                <element signature="e#12991#13038#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_main_flingos.xml">
+        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/ActiveUserAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="70" lean-forward="true" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+            <state relative-caret-position="-178">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/MatchUserAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/ProfileAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/ProfileCheckinMatched.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
               <folding>
-                <element signature="e#2200#2214#0" expanded="true" />
-                <element signature="e#2256#2269#0" expanded="true" />
+                <element signature="e#3608#3757#0" expanded="true" />
+                <element signature="e#3756#3757#0" expanded="true" />
+                <element signature="e#3801#3986#0" expanded="true" />
+                <element signature="e#3985#3986#0" expanded="true" />
+                <element signature="e#4033#4213#0" expanded="true" />
+                <element signature="e#4212#4213#0" expanded="true" />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/EditProfileActivity.java">
+        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="451" column="60" lean-forward="true" selection-start-line="451" selection-start-column="60" selection-end-line="451" selection-end-column="60" />
+            <state relative-caret-position="254">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#16787#17259#0" expanded="true" />
-                <element signature="e#17258#17259#0" expanded="true" />
+                <element signature="e#1526#1930#0" expanded="true" />
+                <element signature="e#1929#1930#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/Profile_Activity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3293#3839#0" expanded="true" />
-                <element signature="e#3838#3839#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/TopNavigationViewHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-              <folding>
-                <element signature="e#913#1832#0" expanded="true" />
-                <element signature="e#1831#1832#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/LaunchActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-              <folding>
-                <element signature="e#758#1455#0" expanded="true" />
-                <element signature="e#1454#1455#0" expanded="true" />
-                <element signature="e#2847#3438#0" expanded="true" />
-                <element signature="e#3437#3438#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/UserSession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/Cards.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-              <folding>
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#666#667#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#727#728#0" expanded="true" />
-                <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#788#789#0" expanded="true" />
-                <element signature="e#819#820#0" expanded="true" />
-                <element signature="e#846#847#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#907#908#0" expanded="true" />
-                <element signature="e#937#938#0" expanded="true" />
-                <element signature="e#979#980#0" expanded="true" />
-                <element signature="e#1017#1018#0" expanded="true" />
-                <element signature="e#1166#1167#0" expanded="true" />
-                <element signature="e#1195#1196#0" expanded="true" />
-                <element signature="e#1239#1240#0" expanded="true" />
-                <element signature="e#1275#1276#0" expanded="true" />
-                <element signature="e#1306#1307#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1373#1374#0" expanded="true" />
-                <element signature="e#1405#1406#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/StarterApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -289,7 +230,6 @@
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/TopNavigationViewHelper.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/NotificationHelper.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnLikeActivity.java" />
-        <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Introduction/IntroductionMain.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/LoginFragment.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/SignUp_Fragment.java" />
@@ -326,7 +266,6 @@
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/MapsActivity.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/GPS.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_profile.xml" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/Cards.java" />
@@ -335,14 +274,16 @@
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/Profile_Activity.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/LaunchActivity.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_main_flingos.xml" />
+        <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/GPS.java" />
+        <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java" />
         <option value="$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="697" />
+    <option name="width" value="1680" />
+    <option name="height" value="947" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -351,7 +292,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -384,11 +324,6 @@
             <path>
               <item name="flingos" type="1abcf292:AndroidViewProjectNode" />
               <item name="ParseStarterProject" type="feadf853:AndroidModuleNode" />
-              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
-            </path>
-            <path>
-              <item name="flingos" type="1abcf292:AndroidViewProjectNode" />
-              <item name="ParseStarterProject" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
@@ -409,25 +344,14 @@
               <item name="ParseStarterProject" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="starter" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Profile" type="462c0819:PsiDirectoryNode" />
+              <item name="Matched" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flingos" type="1abcf292:AndroidViewProjectNode" />
               <item name="ParseStarterProject" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="starter" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Utilss" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flingos" type="1abcf292:AndroidViewProjectNode" />
-              <item name="ParseStarterProject" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="flingos" type="1abcf292:AndroidViewProjectNode" />
-              <item name="ParseStarterProject" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="Profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flingos" type="1abcf292:AndroidViewProjectNode" />
@@ -437,10 +361,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_g950f-ce01182173f828ed0c" />
+    <property name="DEBUGGABLE_DEVICE" value="HuggiesRewards [emulator-5554]" />
     <property name="DEBUGGABLE_PROCESS" value="com.parse.starter" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="ce01182173f828ed0c" />
@@ -741,9 +666,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8912429" visible="true" weight="0.14925373" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8912429" visible="true" weight="0.15873016" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.10921986" side_tool="true" weight="0.16684435" />
@@ -755,14 +681,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.09968847" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4278297" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.0913811" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.20818713" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32894737" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.46832815" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.42105263" />
       <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.58047765" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.1879543" />
+      <window_info anchor="bottom" id="Logcat" order="10" visible="true" weight="0.16023391" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.15368639" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3625192" />
@@ -778,7 +704,7 @@
       <window_info anchor="right" id="Gradle" order="8" weight="0.15279879" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="Preview" order="11" weight="0.28464818" />
+      <window_info anchor="right" id="Preview" order="11" weight="0.2844933" />
       <window_info anchor="right" id="Assistant" order="12" weight="0.32980332" />
     </layout>
     <layout-to-restore>
@@ -927,117 +853,99 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>205</line>
+          <line>253</line>
           <properties />
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>192</line>
+          <line>240</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>90</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>264</line>
+          <line>312</line>
           <properties />
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>201</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>207</line>
+          <line>255</line>
           <properties />
           <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>305</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>306</line>
+          <line>361</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>307</line>
+          <line>362</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>312</line>
+          <line>367</line>
           <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>237</line>
+          <line>285</line>
           <properties />
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>238</line>
+          <line>286</line>
           <properties />
           <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>209</line>
+          <line>257</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>213</line>
+          <line>261</line>
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>268</line>
+          <line>314</line>
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>204</line>
+          <line>252</line>
           <properties />
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>125</line>
+          <line>169</line>
           <properties />
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>101</line>
+          <line>145</line>
           <properties />
           <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/LaunchActivity.java</url>
@@ -1047,63 +955,109 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>95</line>
+          <line>139</line>
           <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>243</line>
+          <line>291</line>
           <properties />
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>244</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>127</line>
+          <line>171</line>
           <properties />
           <option name="timeStamp" value="89" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>130</line>
+          <line>174</line>
           <properties />
           <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>131</line>
+          <line>175</line>
           <properties />
           <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>220</line>
+          <line>268</line>
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
-          <line>117</line>
+          <line>161</line>
           <properties />
           <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>304</line>
+          <properties />
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>116</line>
+          <properties />
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>118</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>122</line>
+          <properties />
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>125</line>
+          <properties />
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>302</line>
+          <properties />
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>338</line>
+          <properties />
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java</url>
+          <line>342</line>
+          <properties />
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>current_loc</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>mlocation</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>bu.getParcelable(&quot;finalbundle&quot;)</expression-string>
         <language-id>JAVA</language-id>
@@ -1139,78 +1093,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>newcard</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>card.getParseFile(&quot;profile_picure&quot;).getUrl()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/MyTextView_Roboto_Medium.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/MyTextView_Roboto_Italic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/MyTextView_Roboto_Bold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/EditText_Roboto_Light.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/Button_Roboto_Medium.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/EditText_Roboto_Bold.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/EditText_Roboto_Italic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/EditText_Roboto_Meidum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/customfonts/MyTextView_Roboto_Black.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1299,13 +1184,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/location/Location.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/location/Location.class" />
     <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="633">
@@ -1377,41 +1256,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.0/f43cc29ff26f12c25bcc55eed39e9c7633cb2982/parse-android-1.13.0-sources.jar!/com/parse/ParseObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="3312" column="23" selection-start-line="3312" selection-start-column="23" selection-end-line="3312" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/GPS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-            <element signature="e#1825#1826#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2497#2498#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/app/Application.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/StarterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.0/f43cc29ff26f12c25bcc55eed39e9c7633cb2982/parse-android-1.13.0-sources.jar!/com/parse/ParseObject.java" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/app/Application.class" />
     <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/PhotoAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1430,108 +1276,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/Cards.java">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/app/Activity.class" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/os/Bundle.class" />
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_main_flingos.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        <state relative-caret-position="1062">
+          <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/EditProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7236">
+          <caret line="451" column="60" selection-start-line="451" selection-start-column="60" selection-end-line="451" selection-end-column="60" />
           <folding>
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#727#728#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#907#908#0" expanded="true" />
-            <element signature="e#937#938#0" expanded="true" />
-            <element signature="e#979#980#0" expanded="true" />
-            <element signature="e#1017#1018#0" expanded="true" />
-            <element signature="e#1166#1167#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1239#1240#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-            <element signature="e#1306#1307#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1373#1374#0" expanded="true" />
-            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/Profile_Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/TopNavigationViewHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="288">
           <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding>
-            <element signature="e#913#1832#0" expanded="true" />
-            <element signature="e#1831#1832#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/EditProfileActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="451" column="60" lean-forward="true" selection-start-line="451" selection-start-column="60" selection-end-line="451" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#16787#17259#0" expanded="true" />
-            <element signature="e#17258#17259#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/app/Activity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2907">
-          <caret line="59" column="13" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-28/android.jar!/android/os/Bundle.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="216" column="36" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/UserSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
+        <state relative-caret-position="972">
           <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Profile/Profile_Activity.java">
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/StarterApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3293#3839#0" expanded="true" />
-            <element signature="e#3838#3839#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="108">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="e#1526#1930#0" expanded="true" />
-            <element signature="e#1929#1930#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1539,45 +1338,119 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="58" selection-start-line="58" selection-end-line="58" />
-          <folding>
-            <element signature="e#758#1455#0" expanded="true" />
-            <element signature="e#1454#1455#0" expanded="true" />
-            <element signature="e#2847#3438#0" expanded="true" />
-            <element signature="e#3437#3438#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_main_flingos.xml">
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_btn_dislike.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="70" lean-forward="true" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
-          <folding>
-            <element signature="e#2200#2214#0" expanded="true" />
-            <element signature="e#2256#2269#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e7fbe19d888e1bac1bbb15e0043fe42e/library-1.0.9/jars/classes.jar!/com/lorentzos/flingswipe/FlingCardListener.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1567">
-          <caret line="226" column="9" lean-forward="true" selection-start-line="226" selection-start-column="9" selection-end-line="226" selection-end-column="9" />
+        <state relative-caret-position="230">
+          <caret line="221" column="16" selection-start-line="221" selection-start-column="16" selection-end-line="221" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/ActiveUserAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-178">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/ProfileAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/res/layout/activity_profile_checkin_matched.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/ProfileCheckinMatched.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+          <folding>
+            <element signature="e#3608#3757#0" expanded="true" />
+            <element signature="e#3756#3757#0" expanded="true" />
+            <element signature="e#3801#3986#0" expanded="true" />
+            <element signature="e#3985#3986#0" expanded="true" />
+            <element signature="e#4033#4213#0" expanded="true" />
+            <element signature="e#4212#4213#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/Cards.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1045" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Utilss/GPS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1535#1542#0" expanded="true" />
-            <element signature="e#1607#1614#0" expanded="true" />
-            <element signature="e#1662#1669#0" expanded="true" />
-            <element signature="e#2059#2067#0" expanded="true" />
-            <element signature="e#5736#6356#0" expanded="true" />
-            <element signature="e#6355#6356#0" expanded="true" />
-            <element signature="e#6684#7742#0" expanded="true" />
-            <element signature="e#7741#7742#0" expanded="true" />
-            <element signature="e#8718#9171#0" expanded="true" />
-            <element signature="e#9170#9171#0" expanded="true" />
-            <element signature="e#6870#7136#0" expanded="true" />
-            <element signature="e#7135#7136#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+            <element signature="e#1825#1826#0" expanded="true" />
+            <element signature="e#2365#2366#0" expanded="true" />
+            <element signature="e#2411#2412#0" expanded="true" />
+            <element signature="e#2453#2454#0" expanded="true" />
+            <element signature="e#2497#2498#0" expanded="true" />
+            <element signature="e#2236#2237#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/BtnDislikeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+          <folding>
+            <element signature="e#1526#1930#0" expanded="true" />
+            <element signature="e#1929#1930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Matched/MatchUserAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ParseStarterProject/src/main/java/com/parse/starter/Main/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7290">
+          <caret line="411" column="27" selection-start-line="411" selection-start-column="27" selection-end-line="411" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7225#7226#0" expanded="true" />
+            <element signature="e#7257#7258#0" expanded="true" />
+            <element signature="e#11001#11421#0" expanded="true" />
+            <element signature="e#11420#11421#0" expanded="true" />
+            <element signature="e#12554#12820#0" expanded="true" />
+            <element signature="e#12819#12820#0" expanded="true" />
+            <element signature="e#12952#12989#0" expanded="true" />
+            <element signature="e#12991#13038#0" expanded="true" />
           </folding>
         </state>
       </provider>

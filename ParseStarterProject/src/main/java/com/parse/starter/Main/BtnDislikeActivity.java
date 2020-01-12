@@ -55,8 +55,9 @@ public class BtnDislikeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                Intent mainIntent = new Intent(BtnDislikeActivity.this, MainActivity.class);
-                startActivity(mainIntent);
+
+//                Intent mainIntent = new Intent(BtnDislikeActivity.this, MainActivity.class);
+//                startActivity(mainIntent);
             }
         }).start();
     }

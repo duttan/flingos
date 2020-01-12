@@ -67,7 +67,10 @@ public class MainActivity extends BaseActivity {
     private ParseUser currentUser = ParseUser.getCurrentUser();
     private List<String> potential_matches = new ArrayList<String>();
     Bitmap bt = null;
-
+    LocationManager mLocationManager;
+    String mProvider = LocationManager.GPS_PROVIDER;
+    LocationListener mLocationListener;
+    SwipeFlingAdapterView flingContainer;
 
 
 
@@ -83,12 +86,53 @@ public class MainActivity extends BaseActivity {
         moreFrame = findViewById(R.id.more_frame);
         dpimageView = findViewById(R.id.post);
 
+        flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
         // start pulsator
-        gps = new GPS(this);
-        current_loc = gps.getLocation();
+        mLocationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+        mLocationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                current_loc = location;
+                updateLocation();
+            }
+
+            @Override
+            public void onStatusChanged(String s, int i, Bundle bundle) {
+
+            }
+
+            @Override
+            public void onProviderEnabled(String s) {
+
+            }
+
+            @Override
+            public void onProviderDisabled(String s) {
+
+            }
+        };
+
+
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_LOCATION);
+        }
+        else {
+            final_stack = updateDeck();
+             current_loc = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if (current_loc == null) {
+                mLocationManager.requestLocationUpdates(mProvider, 0, 0, mLocationListener);
+
+            }
+        }
+
+
+        //current_loc = gps.getLocation();
         PulsatorLayout mPulsator = findViewById(R.id.pulsator);
         mPulsator.start();
-        updateLocation();
+
 
 
         if(bu!=null)
@@ -100,7 +144,7 @@ public class MainActivity extends BaseActivity {
             dpimageView.setImageResource(R.drawable.circle_background);
         }
 
-        final_stack = updateDeck();
+
 
         arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
         arrayAdapter.notifyDataSetChanged();
@@ -151,6 +195,10 @@ public class MainActivity extends BaseActivity {
 //        rowItems.add(cards);
 
 
+    }
+
+    public Location getLocation() {
+        return current_loc;
     }
 
     private List<Cards> updateDeck() {
@@ -251,29 +299,28 @@ public class MainActivity extends BaseActivity {
 
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_LOCATION); }
         else {
+            mLocationManager.requestLocationUpdates(mProvider, 0, 0, mLocationListener);
+            current_loc = getLocation();
+            if(current_loc!=null) {
+                currentUserLocationParse = new ParseGeoPoint(current_loc.getLatitude(), current_loc.getLongitude());
 
-             // current_loc = gps.getLocation();
-              currentUserLocationParse = new ParseGeoPoint(current_loc.getLatitude(), current_loc.getLongitude());
+                if (currentUser != null) {
+                    currentUser.put("currentloc", currentUserLocationParse);
+                    currentUser.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Log.i("@@userloc", current_loc.toString());
+                            } else {
+                                Log.i("@@userloc", e.getMessage());
+                            }
 
-              if (currentUser != null) {
-                  currentUser.put("currentloc", currentUserLocationParse);
-                  currentUser.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if(e == null)
-                        {
-                            Log.i("@@userloc",current_loc.toString());
                         }
-                        else
-                        {
-                            Log.i("@@userloc",e.getMessage());
-                        }
+                    });
+                } else {
 
-                    }
-                });
-            } else {
-
-                Toast.makeText(mContext,"Please login to proceed",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Please login to proceed", Toast.LENGTH_SHORT).show();
+                }
             }
 
         }
@@ -288,12 +335,20 @@ public class MainActivity extends BaseActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                     if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                        updateLocation();
+                        mLocationManager.requestLocationUpdates(mProvider, 0, 0, mLocationListener);
+                        //updateLocation();
+                        final_stack = updateDeck();
 
                     } else {
                         Toast.makeText(MainActivity.this, "Location Permission Denied. You have to give permission inorder to know the user range ", Toast.LENGTH_SHORT).show();
                     }
                 }
+                else
+                {
+                    Toast.makeText(MainActivity.this, "Location Permission Denied. You have to give permission inorder to know the user range ", Toast.LENGTH_SHORT).show();
+                    cardFrame.setVisibility(View.GONE);
+                }
+
             }
 
             default:
@@ -367,12 +422,14 @@ public class MainActivity extends BaseActivity {
 
             String userId = card_item.getUserId();
 
-            rowItems.remove(0);
+            flingContainer.getTopCardListener().selectLeft();
+            //rowItems.remove(0);
             arrayAdapter.notifyDataSetChanged();
 
-            Intent btnClick = new Intent(mContext, BtnDislikeActivity.class);
-            btnClick.putExtra("url", card_item.getProfileImageUrl());
-            startActivity(btnClick);
+            Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
+           // Intent btnClick = new Intent(mContext, BtnDislikeActivity.class);
+           // btnClick.putExtra("url", card_item.getProfileImageUrl());
+           // startActivity(btnClick);
         }
     }
 
@@ -384,12 +441,16 @@ public class MainActivity extends BaseActivity {
 
             //check matches
 
-            rowItems.remove(0);
+            //rowItems.remove(0);
+
+
+            flingContainer.getTopCardListener().selectRight();
             arrayAdapter.notifyDataSetChanged();
 
-            Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
-            btnClick.putExtra("url", card_item.getProfileImageUrl());
-            startActivity(btnClick);
+            Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
+//            Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
+//            btnClick.putExtra("url", card_item.getProfileImageUrl());
+//            startActivity(btnClick);
         }
     }
 
