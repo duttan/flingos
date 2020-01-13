@@ -53,6 +53,8 @@ public class MainActivity extends BaseActivity {
     List<Cards> rowItems = new ArrayList<Cards>();
     List<Cards> temp_items = new ArrayList<Cards>();
     List<Cards> final_stack = new ArrayList<Cards>();
+    List<String> likes = new ArrayList<String>();
+    List<String> dislikes = new ArrayList<String>();
     FrameLayout cardFrame, moreFrame;
     CircleImageView dpimageView;
     private Context mContext = MainActivity.this;
@@ -63,6 +65,7 @@ public class MainActivity extends BaseActivity {
     private LocationManager locationManager;
     private GPS gps;
     private Location current_loc;
+    ParseObject match;
     private ParseGeoPoint currentUserLocationParse;
     private ParseUser currentUser = ParseUser.getCurrentUser();
     private List<String> potential_matches = new ArrayList<String>();
@@ -250,9 +253,9 @@ public class MainActivity extends BaseActivity {
                         for(ParseObject card: objects)
                         {
 
-                            Cards newcard = new Cards(i+"",card.get("cardname").toString(),card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50);
+                            Cards newcard = new Cards(card.getObjectId()+"",card.get("cardname").toString(),card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50);
                             rowItems.add(newcard);
-                            Log.i("@@card"+ i,"added");
+                            Log.i("@@card"+ card.getObjectId(),"added");
                             i++;
                         }
 
@@ -270,15 +273,30 @@ public class MainActivity extends BaseActivity {
                     updateSwipeCard();
                     final_stack = rowItems;
 
+
                 }
             });
+
+
         }
         else
         {
          Log.i("@@","No one is available rightnow");
         }
 
+
         return rowItems;
+    }
+
+    private void card_init() {
+
+        if(final_stack.size() > 0) {
+            for (Cards card : final_stack) {
+                match = new ParseObject("Match");
+                match.put("card_id_fk", card.getUserId());
+                match.saveInBackground();
+            }
+        }
     }
 
     private void checkRowItem() {
@@ -365,21 +383,26 @@ public class MainActivity extends BaseActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("@@LIST", "removed object!");
-                final_stack.remove(0);
-                arrayAdapter.notifyDataSetChanged();
+
             }
 
             @Override
-            public void onLeftCardExit(Object dataObject) {
+            public void onLeftCardExit(Object dataObject)  {
                 Cards obj = (Cards) dataObject;
+                dislikedmatch(obj);
+                final_stack.remove(0);
+                arrayAdapter.notifyDataSetChanged();
                 checkRowItem();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
                 Cards obj = (Cards) dataObject;
+                likedmatch(obj);
 
                 //check matches
+                final_stack.remove(0);
+                arrayAdapter.notifyDataSetChanged();
                 checkRowItem();
 
             }
@@ -399,13 +422,121 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        // Optionally add an OnItemClickListener
+        //Optionally add an OnItemClickListener
         flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
             @Override
             public void onItemClicked(int itemPosition, Object dataObject) {
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void dislikedmatch(final Cards current_card)  {
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Match");
+
+        try {
+        query.whereEqualTo("card_id_fk",current_card.getUserId());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(objects.size() > 0 && e == null) {
+                    match = objects.get(0);
+                    if (match.getList("dislike") == null) {
+                        dislikes.add(currentUser.getObjectId());
+                        match.put("dislike", dislikes);
+                    } else if(!dislikes.contains(currentUser.getObjectId()))
+                    {
+                        dislikes = match.getList("dislike");
+
+                        if(!dislikes.contains(currentUser.getObjectId())){
+                        dislikes.add(currentUser.getObjectId());
+                        match.put("dislike", dislikes);}
+                    }
+                    else {}
+
+                    save_eventually();
+                }
+                else {
+
+                    match = new ParseObject("Match");
+                    match.put("card_id_fk", current_card.getUserId());
+                    dislikes.add(currentUser.getObjectId());
+                    match.put("dislike", dislikes);
+                    match.saveEventually();
+
+                }
+
+            }
+        });
+        }catch (Exception e)
+        {
+            Log.i("@@EXP",e.getMessage());
+        }
+
+    }
+
+    private void save_eventually() {
+        match.saveEventually(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e == null)
+                {
+                    Log.i("@@Dislike",dislikes.toString());
+                }
+                else {
+                    Log.i("@@Error:Dislike",e.getMessage());
+                }
+            }
+        });
+    }
+
+    private void likedmatch(final Cards current_card) {
+
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Match");
+
+        try {
+            query.whereEqualTo("card_id_fk",current_card.getUserId());
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if(objects.size() > 0 && e == null) {
+                        match = objects.get(0);
+                        if (match.getList("like") == null) {
+                            likes.add(currentUser.getObjectId());
+                            match.put("like", likes);
+                        } else if(!likes.contains(currentUser.getObjectId()))
+                        {
+                            likes = match.getList("like");
+                            if(!likes.contains(currentUser.getObjectId())){
+                            likes.add(currentUser.getObjectId());
+                            match.put("like", likes);}
+                        }
+                        else {}
+
+                        //save_eventually();
+                        match.saveInBackground();
+                    }
+                    else {
+
+                        match = new ParseObject("Match");
+                        match.put("card_id_fk", current_card.getUserId());
+                        likes.add(currentUser.getObjectId());
+                        match.put("like", likes);
+                        //match.saveEventually();
+                        match.saveInBackground();
+
+                    }
+
+                }
+            });
+        }catch (Exception e)
+        {
+            Log.i("@@EXP",e.getMessage());
+        }
+
+
     }
 
 
@@ -422,9 +553,13 @@ public class MainActivity extends BaseActivity {
 
             String userId = card_item.getUserId();
 
+
+
             flingContainer.getTopCardListener().selectLeft();
-            //rowItems.remove(0);
+          //  rowItems.remove(0);
             arrayAdapter.notifyDataSetChanged();
+            dislikedmatch(card_item);
+
 
             Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
            // Intent btnClick = new Intent(mContext, BtnDislikeActivity.class);
@@ -441,11 +576,13 @@ public class MainActivity extends BaseActivity {
 
             //check matches
 
-            //rowItems.remove(0);
+          //  rowItems.remove(0);
 
 
             flingContainer.getTopCardListener().selectRight();
             arrayAdapter.notifyDataSetChanged();
+            likedmatch(card_item);
+
 
             Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
 //            Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
