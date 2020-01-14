@@ -56,7 +56,9 @@ public class LaunchActivity extends AppCompatActivity
                     else
                     {
 
-                        startActivity(new Intent(LaunchActivity.this, com.parse.starter.Main.MainActivity.class).putExtra("finalbundle",args));
+                        startActivity(new Intent(LaunchActivity.this, com.parse.starter.Main.MainActivity.class));
+                        //putExtra("finalbundle",args));
+
                     }
 
 

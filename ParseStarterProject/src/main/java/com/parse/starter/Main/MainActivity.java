@@ -53,8 +53,6 @@ public class MainActivity extends BaseActivity {
     List<Cards> rowItems = new ArrayList<Cards>();
     List<Cards> temp_items = new ArrayList<Cards>();
     List<Cards> final_stack = new ArrayList<Cards>();
-    List<String> likes = new ArrayList<String>();
-    List<String> dislikes = new ArrayList<String>();
     FrameLayout cardFrame, moreFrame;
     CircleImageView dpimageView;
     private Context mContext = MainActivity.this;
@@ -69,6 +67,8 @@ public class MainActivity extends BaseActivity {
     private ParseGeoPoint currentUserLocationParse;
     private ParseUser currentUser = ParseUser.getCurrentUser();
     private List<String> potential_matches = new ArrayList<String>();
+    private List<String> likedme_users = new ArrayList<String>();
+    Cards mycard;
     Bitmap bt = null;
     LocationManager mLocationManager;
     String mProvider = LocationManager.GPS_PROVIDER;
@@ -125,7 +125,7 @@ public class MainActivity extends BaseActivity {
             final_stack = updateDeck();
              current_loc = mLocationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 
-            if (current_loc == null) {
+            if (current_loc.equals(null)) {
                 mLocationManager.requestLocationUpdates(mProvider, 0, 0, mLocationListener);
 
             }
@@ -196,6 +196,8 @@ public class MainActivity extends BaseActivity {
 //        rowItems.add(cards);
 //        cards = new Cards("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
 //        rowItems.add(cards);
+            updateLocation();
+
 
 
     }
@@ -218,10 +220,7 @@ public class MainActivity extends BaseActivity {
                 {
                     for (ParseUser user: objects)
                     {
-                        if(user.getObjectId() != currentUser.getObjectId()){
-                        potential_matches.add(user.getObjectId());}
-
-                    }
+                        potential_matches.add(user.getObjectId()); }
                     temp_items = prepare_stack(potential_matches);
                     final_stack = temp_items;
 
@@ -235,7 +234,15 @@ public class MainActivity extends BaseActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+       // updateLocation();
+    }
+
     private List<Cards> prepare_stack(List<String> matches) {
+
 
         if(matches.size() > 0)
         {
@@ -252,19 +259,26 @@ public class MainActivity extends BaseActivity {
                         int i = 0;
                         for(ParseObject card: objects)
                         {
+                            if(!((card.get("userobject_id_fk").toString()).equals(currentUser.getObjectId()))){
 
-                            Cards newcard = new Cards(card.getObjectId()+"",card.get("cardname").toString(),card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50);
+                            Cards newcard = new Cards(card.get("userobject_id_fk").toString(),card.getObjectId()+"",card.get("cardname").toString(),card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50,false);
                             rowItems.add(newcard);
                             Log.i("@@card"+ card.getObjectId(),"added");
                             i++;
                         }
+                        else
+                            {
+                                mycard = new Cards(card.get("userobject_id_fk")+"",card.getObjectId()+"",card.get("cardname")+"",card.get("age").toString(),card.getParseFile("profile_picture").getUrl(),card.get("bio").toString(),card.get("interest").toString(),50,false);
+                            }
+                        }
 
+                        updateMatches(rowItems);
                     }
                     else
                     {
                         Log.i("@@Error:",e.getMessage());
 
-                        rowItems.add(new Cards("1", "Tom Chris", "21", "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200));
+                        rowItems.add(new Cards("1", "Tom Chris","" ,"21", "https://coverfiles.alphacoders.com/848/84877.jpg", "Simple and beautiful Girl", "Acting", 200,false));
                     }
 
                     arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
@@ -274,30 +288,53 @@ public class MainActivity extends BaseActivity {
                     final_stack = rowItems;
 
 
+
+
                 }
             });
 
-
+//            if(mycard != null) {
+//                updateMatches(rowItems);
+//            }
         }
         else
         {
          Log.i("@@","No one is available rightnow");
         }
 
-
-        return rowItems;
+            return rowItems;
+       // return updateMatches(rowItems);
     }
 
-    private void card_init() {
+    private List<Cards> updateMatches(final List<Cards> row_items) {
 
-        if(final_stack.size() > 0) {
-            for (Cards card : final_stack) {
-                match = new ParseObject("Match");
-                match.put("card_id_fk", card.getUserId());
-                match.saveInBackground();
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Match");
+        query.whereEqualTo("card_id_fk",mycard.getCardId());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(e == null && objects.size() > 0 ){
+                likedme_users = objects.get(0).getList("like");}
+
+                for(Cards card: row_items)
+                {
+                    if(likedme_users.contains(card.getUserId()))
+                    {
+                        card.setLikeStatus(true);
+                    }
+
+                }
+
+                final_stack = row_items;
             }
-        }
+        });
+
+
+        return final_stack;
+
+
     }
+
 
     private void checkRowItem() {
         if (rowItems.isEmpty()) {
@@ -399,7 +436,10 @@ public class MainActivity extends BaseActivity {
             public void onRightCardExit(Object dataObject) {
                 Cards obj = (Cards) dataObject;
                 likedmatch(obj);
-
+                if(obj.getLikeStatus())
+                {
+                    Toast.makeText(mContext,"Its a Match",Toast.LENGTH_SHORT).show();
+                }
                 //check matches
                 final_stack.remove(0);
                 arrayAdapter.notifyDataSetChanged();
@@ -434,12 +474,14 @@ public class MainActivity extends BaseActivity {
     private void dislikedmatch(final Cards current_card)  {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Match");
+        match = new ParseObject("Match");
 
         try {
-        query.whereEqualTo("card_id_fk",current_card.getUserId());
+        query.whereEqualTo("card_id_fk",current_card.getCardId());
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
+                List<String> dislikes = new ArrayList<String>();
                 if(objects.size() > 0 && e == null) {
                     match = objects.get(0);
                     if (match.getList("dislike") == null) {
@@ -453,17 +495,22 @@ public class MainActivity extends BaseActivity {
                         dislikes.add(currentUser.getObjectId());
                         match.put("dislike", dislikes);}
                     }
-                    else {}
+                    else {
+                        Log.i("@@","im here");
 
-                    save_eventually();
+                    }
+                    Log.i("Dislike:Array:NEW",match.getList("dislike").toString());
+                   // save_eventually();
+                    match.saveInBackground();
                 }
                 else {
 
                     match = new ParseObject("Match");
-                    match.put("card_id_fk", current_card.getUserId());
+                    match.put("card_id_fk", current_card.getCardId());
                     dislikes.add(currentUser.getObjectId());
                     match.put("dislike", dislikes);
-                    match.saveEventually();
+                    match.saveInBackground();
+                    //match.saveEventually();
 
                 }
 
@@ -482,10 +529,10 @@ public class MainActivity extends BaseActivity {
             public void done(ParseException e) {
                 if(e == null)
                 {
-                    Log.i("@@Dislike",dislikes.toString());
+                    //Log.i("@@Dislike",dislikes.toString());
                 }
                 else {
-                    Log.i("@@Error:Dislike",e.getMessage());
+                   // Log.i("@@Error:Dislike",e.getMessage());
                 }
             }
         });
@@ -497,10 +544,11 @@ public class MainActivity extends BaseActivity {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Match");
 
         try {
-            query.whereEqualTo("card_id_fk",current_card.getUserId());
+            query.whereEqualTo("card_id_fk",current_card.getCardId());
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
                 public void done(List<ParseObject> objects, ParseException e) {
+                    List<String> likes = new ArrayList<String>();
                     if(objects.size() > 0 && e == null) {
                         match = objects.get(0);
                         if (match.getList("like") == null) {
@@ -521,7 +569,7 @@ public class MainActivity extends BaseActivity {
                     else {
 
                         match = new ParseObject("Match");
-                        match.put("card_id_fk", current_card.getUserId());
+                        match.put("card_id_fk", current_card.getCardId());
                         likes.add(currentUser.getObjectId());
                         match.put("like", likes);
                         //match.saveEventually();

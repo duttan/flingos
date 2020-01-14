@@ -29,6 +29,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -44,7 +45,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.util.List;
 
 
 public class EditProfileActivity extends BaseActivity {
@@ -210,7 +211,11 @@ public class EditProfileActivity extends BaseActivity {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
         query.fromLocalDatastore();
+        query.fromPin("local");
+
         query.whereEqualTo("userobject_id_fk", currentuser.getObjectId());
+
+
         try {
             if(query.getFirst().isDataAvailable()) {
                 flingcard = query.getFirst();
@@ -231,6 +236,12 @@ public class EditProfileActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+    }
 
     private void updatedetails() {
 
@@ -259,7 +270,17 @@ public class EditProfileActivity extends BaseActivity {
             flingcard.put("company",company.getText().toString());
             flingcard.put("school",school.getText().toString());
             flingcard.put("job",job.getText().toString());
+            flingcard.put("cardname",currentuser.getUsername());
+            flingcard.put("age","20");
+            flingcard.put("interest","Temporary-updateMe");
             flingcard.pinInBackground();
+
+            try {
+                flingcard.pin("local");
+            }catch (Exception e)
+            {
+                Log.i("@@",e.getMessage());
+            }
 
 
             flingcard.saveInBackground(new SaveCallback() {
