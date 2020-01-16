@@ -49,14 +49,14 @@ public class BtnLikeActivity extends AppCompatActivity {
             public void run() {
 
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
 
-
-                Intent mainIntent = new Intent(BtnLikeActivity.this, MainActivity.class);
-                startActivity(mainIntent);
+                finish();
+                //Intent mainIntent = new Intent(BtnLikeActivity.this, MainActivity.class);
+                //startActivity(mainIntent);
             }
         }).start();
     }

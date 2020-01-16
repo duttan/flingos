@@ -179,7 +179,7 @@ MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\666299\.gradle\caches\
 	android:allowBackup
 		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:32:9-35
 	android:theme
-		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:35:9-52
+		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:35:9-40
 	android:name
 		ADDED from C:\Users\666299\AndroidStudioProjects\flingos\ParseStarterProject\src\main\AndroidManifest.xml:31:9-43
 meta-data#com.google.android.geo.API_KEY

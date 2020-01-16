@@ -18,7 +18,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,6 +36,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.starter.BaseActivity;
 import com.parse.starter.LaunchActivity;
+import com.parse.starter.Matched.Matched_Activity;
 import com.parse.starter.R;
 import com.parse.starter.Utilss.GPS;
 import com.parse.starter.Utilss.PulsatorLayout;
@@ -74,6 +77,7 @@ public class MainActivity extends BaseActivity {
     String mProvider = LocationManager.GPS_PROVIDER;
     LocationListener mLocationListener;
     SwipeFlingAdapterView flingContainer;
+    ImageButton chat;
 
 
 
@@ -88,6 +92,7 @@ public class MainActivity extends BaseActivity {
         cardFrame = findViewById(R.id.card_frame);
         moreFrame = findViewById(R.id.more_frame);
         dpimageView = findViewById(R.id.post);
+        chat = findViewById(R.id.commentbtn);
 
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
         // start pulsator
@@ -198,7 +203,16 @@ public class MainActivity extends BaseActivity {
 //        rowItems.add(cards);
             updateLocation();
 
+            chat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+                    Intent intent3 = new Intent(mContext, Matched_Activity.class);
+                    mContext.startActivity(intent3);
+
+
+                }
+            });
 
     }
 
@@ -438,7 +452,11 @@ public class MainActivity extends BaseActivity {
                 likedmatch(obj);
                 if(obj.getLikeStatus())
                 {
-                    Toast.makeText(mContext,"Its a Match",Toast.LENGTH_SHORT).show();
+//                  Toast.makeText(mContext,"Its a Match",Toast.LENGTH_SHORT).show();
+                    Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
+                    btnClick.putExtra("url", obj.getProfileImageUrl());
+                    startActivity(btnClick);
+                    chat.setVisibility(View.VISIBLE);
                 }
                 //check matches
                 final_stack.remove(0);
@@ -631,13 +649,27 @@ public class MainActivity extends BaseActivity {
             arrayAdapter.notifyDataSetChanged();
             likedmatch(card_item);
 
+//            if(card_item.getLikeStatus())
+//            {
+//                    Toast.makeText(mContext,"Its a Match",Toast.LENGTH_SHORT).show();
+//                triggerMatch(card_item);
+//            }
 
             Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
-//            Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
-//            btnClick.putExtra("url", card_item.getProfileImageUrl());
-//            startActivity(btnClick);
+
         }
     }
+
+
+
+
+
+
+
+    //   private void triggerMatch(Cards card_item)
+    //   {
+    //   chat.setVisibility(View.VISIBLE);
+    //   }
 
 
     /**
