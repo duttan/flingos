@@ -3,12 +3,14 @@ package com.parse.starter.Matched;
 
 public class Users {
     private String userId;
+    private String cardId;
     private String name, profileImageUrl, bio, interest;
-    private int age;
+    private String age;
     private int distance;
 
-    public Users(String userId, String name, int age, String profileImageUrl, String bio, String interest, int distance) {
+    public Users(String userId,String cardId, String name, String age, String profileImageUrl, String bio, String interest, int distance) {
         this.userId = userId;
+        this.cardId = cardId;
         this.name = name;
         this.age = age;
         this.profileImageUrl = profileImageUrl;
@@ -33,11 +35,11 @@ public class Users {
         return interest;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -53,9 +55,20 @@ public class Users {
         return userId;
     }
 
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+
 
     public String getName() {
         return name;

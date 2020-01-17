@@ -201,7 +201,7 @@ public class MainActivity extends BaseActivity {
 //        rowItems.add(cards);
 //        cards = new Cards("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
 //        rowItems.add(cards);
-            updateLocation();
+          updateLocation();
 
             chat.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -457,6 +457,7 @@ public class MainActivity extends BaseActivity {
                     btnClick.putExtra("url", obj.getProfileImageUrl());
                     startActivity(btnClick);
                     chat.setVisibility(View.VISIBLE);
+                    updateMatchList(obj.getUserId());
                 }
                 //check matches
                 final_stack.remove(0);
@@ -487,6 +488,27 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void updateMatchList(String id) {
+
+        List<String> like_eachother;
+
+        like_eachother = currentUser.getList("matches");
+        if(like_eachother == null)
+        {
+            like_eachother = new ArrayList<String>();
+            like_eachother.add(id);
+        }else {
+            if (!like_eachother.contains(id)) {
+                like_eachother.add(id);
+            }
+        }
+
+
+
+        currentUser.put("matches",like_eachother);
+        currentUser.saveInBackground();
     }
 
     private void dislikedmatch(final Cards current_card)  {

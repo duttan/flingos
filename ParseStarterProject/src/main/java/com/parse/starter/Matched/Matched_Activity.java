@@ -14,6 +14,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.starter.Main.Cards;
 import com.parse.starter.R;
 import com.parse.starter.Utilss.TopNavigationViewHelper;
 import com.parse.starter.Utilss.User;
@@ -35,8 +41,11 @@ public class Matched_Activity extends AppCompatActivity {
     private EditText search;
     private List<Users> usersList = new ArrayList<>();
     private RecyclerView recyclerView, mRecyclerView;
+    ParseUser user = ParseUser.getCurrentUser();
     private ActiveUserAdapter adapter;
     private MatchUserAdapter mAdapter;
+    public List<String> matchlist = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,49 +64,90 @@ public class Matched_Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-        prepareActiveData();
+     // prepareActiveData();
 
-        mAdapter = new MatchUserAdapter(matchList, getApplicationContext());
+        mAdapter = new MatchUserAdapter(usersList, getApplicationContext());
         RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(getApplicationContext());
         mRecyclerView.setLayoutManager(mLayoutManager1);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mRecyclerView.setAdapter(mAdapter);
 
-        prepareMatchData();
 
+
+       // prepareMatchData();
+        prepareBundle();
+
+
+
+    }
+
+
+
+
+    public void prepareBundle()
+    {
+        matchlist = user.getList("matches");
+        if(matchlist.size() > 0) {
+            ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+            query.whereContainedIn("userobject_id_fk", matchlist);
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
+                    if(e == null) {
+
+                        for(ParseObject card: objects)
+                        {
+                            if(objects.size() > 0 ) {
+                                Users newcard = new Users(card.get("userobject_id_fk").toString(), card.getObjectId() + "", card.get("cardname").toString(), card.get("age").toString(), card.getParseFile("profile_picture").getUrl(), card.get("bio").toString(), card.get("interest").toString(), 50);
+                                usersList.add(newcard);
+                            }
+                        }
+
+                        mRecyclerView.setAdapter(mAdapter);
+                        mAdapter.notifyDataSetChanged();
+
+                    }
+                }
+            });
+        }
 
     }
 
     private void prepareActiveData() {
-        Users users = new Users("1", "Swati Tripathy", 21, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "Simple and beautiful Girl", "Acting", 200);
-        usersList.add(users);
-        users = new Users("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
-        usersList.add(users);
-        users = new Users("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
-        usersList.add(users);
-        users = new Users("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
-        usersList.add(users);
-
-        adapter.notifyDataSetChanged();
+//        Users users = new Users("1", "Swati Tripathy", 21, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "Simple and beautiful Girl", "Acting", 200);
+//        usersList.add(users);
+//        users = new Users("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
+//        usersList.add(users);
+//        users = new Users("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
+//        usersList.add(users);
+//        users = new Users("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
+//        usersList.add(users);
+//
+//        adapter.notifyDataSetChanged();
     }
 
     private void prepareMatchData() {
-        Users users = new Users("1", "Swati Tripathy", 21, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "Simple and beautiful Girl", "Acting", 200);
-        matchList.add(users);
-        users = new Users("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
-        matchList.add(users);
-        users = new Users("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
-        matchList.add(users);
-        users = new Users("4", "Preety Deshmukh", 19, "http://profilepicturesdp.com/wp-content/uploads/2018/07/fb-real-girls-dp-3.jpg", "dashing girl", "swiming", 1308);
-        matchList.add(users);
-        users = new Users("5", "Srutimayee Sen", 20, "https://dp.profilepics.in/profile_pictures/selfie-girls-profile-pics-dp/selfie-pics-dp-for-whatsapp-facebook-profile-25.jpg", "chulbuli nautankibaj ", "Drawing", 1200);
-        matchList.add(users);
-        users = new Users("6", "Dikshya Agarawal", 21, "https://pbs.twimg.com/profile_images/485824669732200448/Wy__CJwU.jpeg", "Simple and beautiful Girl", "Sleeping", 700);
-        matchList.add(users);
-        users = new Users("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
-        matchList.add(users);
 
-        mAdapter.notifyDataSetChanged();
+     //  matchList = user.getList("matches");
+
+
+
+
+//        Users users = new Users("1", "Swati Tripathy", 21, "https://im.idiva.com/author/2018/Jul/shivani_chhabra-_author_s_profile.jpg", "Simple and beautiful Girl", "Acting", 200);
+//        matchList.add(users);
+//        users = new Users("2", "Ananaya Pandy", 20, "https://i0.wp.com/profilepicturesdp.com/wp-content/uploads/2018/06/beautiful-indian-girl-image-for-profile-picture-8.jpg", "cool Minded Girl", "Dancing", 800);
+//        matchList.add(users);
+//        users = new Users("3", "Anjali Kasyap", 22, "https://pbs.twimg.com/profile_images/967542394898952192/_M_eHegh_400x400.jpg", "Simple and beautiful Girl", "Singing", 400);
+//        matchList.add(users);
+//        users = new Users("4", "Preety Deshmukh", 19, "http://profilepicturesdp.com/wp-content/uploads/2018/07/fb-real-girls-dp-3.jpg", "dashing girl", "swiming", 1308);
+//        matchList.add(users);
+//        users = new Users("5", "Srutimayee Sen", 20, "https://dp.profilepics.in/profile_pictures/selfie-girls-profile-pics-dp/selfie-pics-dp-for-whatsapp-facebook-profile-25.jpg", "chulbuli nautankibaj ", "Drawing", 1200);
+//        matchList.add(users);
+//        users = new Users("6", "Dikshya Agarawal", 21, "https://pbs.twimg.com/profile_images/485824669732200448/Wy__CJwU.jpeg", "Simple and beautiful Girl", "Sleeping", 700);
+//        matchList.add(users);
+//        users = new Users("7", "Sudeshna Roy", 19, "https://talenthouse-res.cloudinary.com/image/upload/c_fill,f_auto,h_640,w_640/v1411380245/user-415406/submissions/hhb27pgtlp9akxjqlr5w.jpg", "Papa's Pari", "Art", 5000);
+//        matchList.add(users);
+
+//        mAdapter.notifyDataSetChanged();
     }
 
     private void searchFunc() {
