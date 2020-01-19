@@ -27,6 +27,7 @@ import android.widget.Toast;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
@@ -71,6 +72,7 @@ public class MainActivity extends BaseActivity {
     private ParseUser currentUser = ParseUser.getCurrentUser();
     private List<String> potential_matches = new ArrayList<String>();
     private List<String> likedme_users = new ArrayList<String>();
+    ParseUser userobj;
     Cards mycard;
     Bitmap bt = null;
     LocationManager mLocationManager;
@@ -458,6 +460,7 @@ public class MainActivity extends BaseActivity {
                     startActivity(btnClick);
                     chat.setVisibility(View.VISIBLE);
                     updateMatchList(obj.getUserId());
+                    updatePartnerMatchList(obj.getUserId());
                 }
                 //check matches
                 final_stack.remove(0);
@@ -506,9 +509,51 @@ public class MainActivity extends BaseActivity {
         }
 
 
-
         currentUser.put("matches",like_eachother);
         currentUser.saveInBackground();
+    }
+
+    private void updatePartnerMatchList(String id) {
+
+        ParseQuery<ParseUser> query  = ParseUser.getQuery();
+        userobj = new ParseUser();
+        query.getInBackground(id, new GetCallback<ParseUser>() {
+            @Override
+            public void done(ParseUser object, ParseException e) {
+                List<String> like_each;
+                if( e == null)
+                {
+                    userobj = object;
+                    like_each = userobj.getList("matches");
+
+                    if(like_each == null)
+                    {
+                        like_each = new ArrayList<String>();
+                        like_each.add(currentUser.getObjectId());
+                        userobj.put("matches",like_each);
+                    }else {
+                        if (!like_each.contains(currentUser.getObjectId())) {
+                            like_each.add(currentUser.getObjectId());
+                            userobj.put("matches",like_each);
+                        }
+                    }
+
+                    userobj.saveInBackground();
+
+                }
+
+            }
+        });
+
+//        query.whereEqualTo("objectId",id);
+//
+//        query.findInBackground(new FindCallback<ParseUser>() {
+//            @Override
+//            public void done(List<ParseUser> objects, ParseException e) {
+//
+//            }
+//        });
+
     }
 
     private void dislikedmatch(final Cards current_card)  {
