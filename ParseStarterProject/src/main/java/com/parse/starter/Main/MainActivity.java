@@ -460,7 +460,7 @@ public class MainActivity extends BaseActivity {
                     startActivity(btnClick);
                     chat.setVisibility(View.VISIBLE);
                     updateMatchList(obj.getUserId());
-                    updatePartnerMatchList(obj.getUserId());
+                    updatePartnerMatchList(obj.getCardId());
                 }
                 //check matches
                 final_stack.remove(0);
@@ -495,64 +495,81 @@ public class MainActivity extends BaseActivity {
 
     private void updateMatchList(String id) {
 
-        List<String> like_eachother;
+        final String card_fk_num = id;
+        ParseQuery<ParseObject> query  = ParseQuery.getQuery("Card");
+        query.whereEqualTo("userobject_id_fk",currentUser.getObjectId());
 
-        like_eachother = currentUser.getList("matches");
-        if(like_eachother == null)
-        {
-            like_eachother = new ArrayList<String>();
-            like_eachother.add(id);
-        }else {
-            if (!like_eachother.contains(id)) {
-                like_eachother.add(id);
-            }
-        }
-
-
-        currentUser.put("matches",like_eachother);
-        currentUser.saveInBackground();
-    }
-
-    private void updatePartnerMatchList(String id) {
-
-        ParseQuery<ParseUser> query  = ParseUser.getQuery();
-        userobj = new ParseUser();
-        query.getInBackground(id, new GetCallback<ParseUser>() {
+        query.findInBackground(new FindCallback<ParseObject>() {
             @Override
-            public void done(ParseUser object, ParseException e) {
-                List<String> like_each;
-                if( e == null)
-                {
-                    userobj = object;
-                    like_each = userobj.getList("matches");
+            public void done(List<ParseObject> objects, ParseException e) {
+                List<String> like_eachother;
+                ParseObject obj;
+                if(objects.size() > 0 && e == null) {
 
-                    if(like_each == null)
+                    obj = objects.get(0);
+                    like_eachother = obj.getList("matches");
+                    if(like_eachother == null)
                     {
-                        like_each = new ArrayList<String>();
-                        like_each.add(currentUser.getObjectId());
-                        userobj.put("matches",like_each);
+                        like_eachother = new ArrayList<String>();
+                        like_eachother.add(card_fk_num);
+
                     }else {
-                        if (!like_each.contains(currentUser.getObjectId())) {
-                            like_each.add(currentUser.getObjectId());
-                            userobj.put("matches",like_each);
+                        if (!like_eachother.contains(card_fk_num)) {
+                            like_eachother.add(card_fk_num);
                         }
                     }
 
-                    userobj.saveInBackground();
+
+                    obj.put("matches",like_eachother);
+                    obj.saveInBackground();
+
 
                 }
 
             }
         });
 
-//        query.whereEqualTo("objectId",id);
-//
-//        query.findInBackground(new FindCallback<ParseUser>() {
-//            @Override
-//            public void done(List<ParseUser> objects, ParseException e) {
-//
-//            }
-//        });
+
+    }
+
+    private void updatePartnerMatchList(String id) {
+
+        final String card_num = id;
+        ParseQuery<ParseObject> query  = ParseQuery.getQuery("Card");
+        query.whereEqualTo("objectId",card_num);
+
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                List<String> like_eachother;
+                ParseObject obj;
+                if(objects.size() > 0 && e == null) {
+
+                    obj = objects.get(0);
+                    like_eachother = obj.getList("matches");
+                    if(like_eachother == null)
+                    {
+                        like_eachother = new ArrayList<String>();
+                        like_eachother.add(currentUser.getObjectId());
+
+                    }else {
+                        if (!like_eachother.contains(currentUser.getObjectId())) {
+                            like_eachother.add(currentUser.getObjectId());
+                        }
+                    }
+
+
+                    obj.put("matches",like_eachother);
+                    obj.saveInBackground();
+
+
+                }
+
+            }
+        });
+
+
+
 
     }
 
@@ -691,7 +708,7 @@ public class MainActivity extends BaseActivity {
             flingContainer.getTopCardListener().selectLeft();
           //  rowItems.remove(0);
             arrayAdapter.notifyDataSetChanged();
-            dislikedmatch(card_item);
+           // dislikedmatch(card_item);
 
 
             Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
@@ -714,7 +731,7 @@ public class MainActivity extends BaseActivity {
 
             flingContainer.getTopCardListener().selectRight();
             arrayAdapter.notifyDataSetChanged();
-            likedmatch(card_item);
+          //  likedmatch(card_item);
 
 //            if(card_item.getLikeStatus())
 //            {
@@ -760,3 +777,36 @@ public class MainActivity extends BaseActivity {
 
 
 }
+/*
+
+      List<String> like_each1;
+                if( e == null)
+                {
+
+                    like_each1 = object.getList("matches");
+
+                    if(like_each1 == null)
+                    {
+                        like_each1 = new ArrayList<String>();
+                        like_each1.add(currentUser.getObjectId());
+                        object.put("matches",like_each1);
+
+                    }else {
+                        if (!like_each1.contains(currentUser.getObjectId())) {
+                            like_each1.add(currentUser.getObjectId());
+                            object.put("matches",like_each1);
+
+                        }
+                    }
+                    object.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if(e == null)
+                            { Log.i("@#@","inserted");}
+                            else
+                            { Log.i("@#@",e.getMessage());}
+                        }
+                    });
+                }
+
+*/

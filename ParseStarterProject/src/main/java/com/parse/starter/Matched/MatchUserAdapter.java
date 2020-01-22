@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 
@@ -18,7 +19,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 
 
-public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyViewHolder> {
+public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyViewHolder>  {
     List<Users> usersList;
     Context context;
 
@@ -30,8 +31,7 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
     @NonNull
     @Override
     public MatchUserAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.matched_user_item, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.matched_user_item, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -44,6 +44,10 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
         if (users.getProfileImageUrl() != null) {
             Picasso.get().load(users.getProfileImageUrl()).into(holder.imageView);
         }
+
+
+
+
     }
 
     @Override
@@ -61,5 +65,7 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
             name = itemView.findViewById(R.id.mui_name);
             profession = itemView.findViewById(R.id.mui_profession);
         }
+
+
     }
 }

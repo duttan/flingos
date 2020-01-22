@@ -74,21 +74,38 @@ public class Matched_Activity extends AppCompatActivity {
 
 
        // prepareMatchData();
-        prepareBundle();
+       // prepareBundle();
+        prepareChatUserData();
 
+    }
+
+    public void prepareChatUserData() {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
+        query.whereEqualTo("userobject_id_fk", ParseUser.getCurrentUser().getObjectId());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if(objects.size() > 0 && e == null)
+                {
+                    ParseObject obj = objects.get(0);
+                    matchList = obj.getList("matches");
+                    prepareBundle();
+
+                }
+            }
+        });
 
 
     }
 
 
 
-
     public void prepareBundle()
     {
-        matchlist = user.getList("matches");
-        if(matchlist.size() > 0) {
+        try{
+        if(matchList.size() > 0) {
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Card");
-            query.whereContainedIn("userobject_id_fk", matchlist);
+            query.whereContainedIn("userobject_id_fk", matchList);
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
                 public void done(List<ParseObject> objects, ParseException e) {
@@ -108,6 +125,11 @@ public class Matched_Activity extends AppCompatActivity {
                     }
                 }
             });
+        }
+        }
+        catch (Exception ex)
+        {
+            Log.i("@@Excep",ex.getMessage());
         }
 
     }
