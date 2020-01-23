@@ -3,6 +3,8 @@ package com.parse.starter.Matched;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 
+import com.parse.starter.ChatActivity;
 import com.parse.starter.R;
 import com.squareup.picasso.Picasso;
 
@@ -64,8 +67,18 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
             imageView = itemView.findViewById(R.id.mui_image);
             name = itemView.findViewById(R.id.mui_name);
             profession = itemView.findViewById(R.id.mui_profession);
+            context = itemView.getContext();
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    context.startActivity(new Intent(context, ChatActivity.class));
+
+                }
+            });
         }
 
 
     }
+
 }

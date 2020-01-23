@@ -89,6 +89,10 @@
         <activity android:name=".Profile.SettingsActivity" />
         <activity android:name=".Main.BtnLikeActivity" />
         <activity android:name=".Main.BtnDislikeActivity" />
+        <activity
+            android:name=".ChatActivity"
+            android:theme="@style/AppTheme.LightActionBar"
+            />
     </application>
 
 </manifest>
