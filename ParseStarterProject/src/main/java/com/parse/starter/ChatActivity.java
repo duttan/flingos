@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -31,6 +32,7 @@ public class ChatActivity extends AppCompatActivity {
     String activeUser = "";
     ArrayList<String> messages = new ArrayList<>();
     ArrayAdapter arrayAdapter;
+    Button send;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,10 +42,13 @@ public class ChatActivity extends AppCompatActivity {
         ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#EA2164")));
 
+        send = findViewById(R.id.sendChatButton);
 
-      /*  Intent intent = getIntent();
 
-        activeUser = intent.getStringExtra("username");
+     // /*
+        Intent intent = getIntent();
+
+        activeUser = intent.getStringExtra("cardname");
 
         setTitle("Chat with " + activeUser);
 
@@ -85,10 +90,11 @@ public class ChatActivity extends AppCompatActivity {
                         for (ParseObject message : objects) {
 
                             String messageContent = message.getString("message");
+                            String opponent = message.getString("sender");
 
                             if (!message.getString("sender").equals(ParseUser.getCurrentUser().getUsername())) {
 
-                                messageContent = "> " + messageContent;
+                                messageContent = ">> " + messageContent;
 
                             }
 
@@ -104,6 +110,13 @@ public class ChatActivity extends AppCompatActivity {
 
                 }
 
+            }
+        });
+
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendChat(view);
             }
         });
 
@@ -139,6 +152,6 @@ public class ChatActivity extends AppCompatActivity {
         });
 
 
-       */
+      // */
     }
 }

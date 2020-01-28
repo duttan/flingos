@@ -9,24 +9,25 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <Button
+            android:id="@+id/close_profile"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/ic_close_black_24dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <!-- contain back activity -->
+
+        <!-- contain back activity -->
 
             <RelativeLayout
+                android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="420dp"
+                >
 
 
                 <com.parse.starter.Utilss.SquareImageView
@@ -40,6 +41,7 @@
                     android:src="@drawable/monkey" />
 
                 <Button
+                    android:visibility="gone"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentEnd="true"
@@ -48,6 +50,13 @@
                     android:layout_marginRight="10dp"
                     android:background="@drawable/ic_down_arrow" />
             </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@+id/photo"
+            >
 
             <TextView
                 android:id="@+id/name_main"
@@ -96,7 +105,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"

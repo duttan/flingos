@@ -67,7 +67,7 @@ public class EditProfileActivity extends BaseActivity {
     private String userId, profileImageUri;
     private Uri resultUri;
     private String userSex;
-    private EditText phoneNumber, aboutMe, job, company, school;
+    private EditText phoneNumber, aboutMe, job, company, school, age, interest;
     private CheckBox sportsCheckBox, travelCheckBox, musicCheckBox, fishingCheckBox;
     private boolean isSportsClicked = false;
     private boolean isTravelClicked = false;
@@ -108,6 +108,8 @@ public class EditProfileActivity extends BaseActivity {
         job = findViewById(R.id.user_job);
         company = findViewById(R.id.user_company);
         school = findViewById(R.id.user_school);
+        age = findViewById(R.id.user_age);
+        interest = findViewById(R.id.user_interest);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -224,6 +226,8 @@ public class EditProfileActivity extends BaseActivity {
                 job.setText(flingcard.get("job").toString());
                 company.setText(flingcard.get("company").toString());
                 school.setText(flingcard.get("school").toString());
+                school.setText(flingcard.get("age").toString());
+                school.setText(flingcard.get("interest").toString());
             }
             else
             {
@@ -271,8 +275,8 @@ public class EditProfileActivity extends BaseActivity {
             flingcard.put("school",school.getText().toString());
             flingcard.put("job",job.getText().toString());
             flingcard.put("cardname",currentuser.getUsername());
-            flingcard.put("age","20");
-            flingcard.put("interest","Temporary-updateMe");
+            flingcard.put("age",age.getText().toString());
+            flingcard.put("interest",interest.getText().toString());
             flingcard.pinInBackground();
 
             try {

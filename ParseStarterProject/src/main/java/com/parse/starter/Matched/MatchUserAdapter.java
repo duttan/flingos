@@ -41,12 +41,25 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MatchUserAdapter.MyViewHolder holder, int position) {
-        Users users = usersList.get(position);
+        final Users users = usersList.get(position);
         holder.name.setText(users.getName());
         holder.profession.setText(users.getBio());
         if (users.getProfileImageUrl() != null) {
             Picasso.get().load(users.getProfileImageUrl()).into(holder.imageView);
         }
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(context, ChatActivity.class);
+                intent.putExtra("cardname",users.getName());
+                context.startActivity(intent);
+
+            }
+        });
+
 
 
 
@@ -62,20 +75,15 @@ public class MatchUserAdapter extends RecyclerView.Adapter<MatchUserAdapter.MyVi
         CircleImageView imageView;
         TextView name, profession;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull final View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.mui_image);
             name = itemView.findViewById(R.id.mui_name);
             profession = itemView.findViewById(R.id.mui_profession);
             context = itemView.getContext();
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    context.startActivity(new Intent(context, ChatActivity.class));
 
-                }
-            });
+
         }
 
 

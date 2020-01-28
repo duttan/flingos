@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-   * DatingApp
-    * https://github.com/quintuslabs/DatingApp
-    * Created on 25-sept-2018.
-    * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
-    -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -26,11 +21,11 @@
         android:layout_gravity="center_vertical"
         android:orientation="vertical">
 
-        <com.parse.starter.customfonts.MyTextView_Roboto_Bold
+        <TextView
             android:id="@+id/mui_name"
             android:layout_width="wrap_content"
+            android:text="User"
             android:layout_height="wrap_content"
-            android:text="santosh Dash"
             android:textColor="@color/black"
             android:textSize="18dp" />
 

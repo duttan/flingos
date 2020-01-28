@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,14 +25,14 @@ public class ProfileCheckinMain extends AppCompatActivity {
 
         mContext = ProfileCheckinMain.this;
 
-       /* ImageButton back = findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
+        Button close = findViewById(R.id.close_profile);
+        close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-*/
+
 
         TextView profileName = findViewById(R.id.name_main);
         ImageView profileImage = findViewById(R.id.profileImage);
@@ -65,19 +67,19 @@ public class ProfileCheckinMain extends AppCompatActivity {
     }
 
 
-    public void DislikeBtn(View v) {
-
-            Intent btnClick = new Intent(mContext, BtnDislikeActivity.class);
-            btnClick.putExtra("url", profileImageUrl);
-            startActivity(btnClick);
-
-    }
-
-    public void LikeBtn(View v) {
-            Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
-            btnClick.putExtra("url", profileImageUrl);
-            startActivity(btnClick);
-
-    }
+//    public void DislikeBtn(View v) {
+//
+//            Intent btnClick = new Intent(mContext, BtnDislikeActivity.class);
+//            btnClick.putExtra("url", profileImageUrl);
+//            startActivity(btnClick);
+//
+//    }
+//
+//    public void LikeBtn(View v) {
+//            Intent btnClick = new Intent(mContext, BtnLikeActivity.class);
+//            btnClick.putExtra("url", profileImageUrl);
+//            startActivity(btnClick);
+//
+//    }
 
 }

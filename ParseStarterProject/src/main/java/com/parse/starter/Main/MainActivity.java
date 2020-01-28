@@ -156,8 +156,8 @@ public class MainActivity extends BaseActivity {
 
 
 
-        arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
-        arrayAdapter.notifyDataSetChanged();
+ //       arrayAdapter = new PhotoAdapter(mContext, R.layout.item, rowItems);
+ //       arrayAdapter.notifyDataSetChanged();
 //        Thread timer = new Thread()
 //        {
 //            public void run()
